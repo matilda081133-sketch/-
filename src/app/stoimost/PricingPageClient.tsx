@@ -718,141 +718,324 @@ export default function PricingPageClient({ initialAudience = 'citizens' }: Pric
         </div>
       </section>
 
-      {/* 4. Расходы, информирование и онлайн-оплата (#oplata) — ЕДИНЫЙ ГАРМОНИЧНЫЙ БЛОК ПО ШАБЛОНАМ */}
+      {/* 4. Условия работы, ход дела и оплата (#oplata) — ШАБЛОННЫЕ КАРТОЧКИ */}
       <section
         id="oplata"
         className="section bg-light"
         style={{
-          padding: 'clamp(48px, 6vw, 80px) 0',
+          padding: 'clamp(56px, 7vw, 90px) 0',
           background: 'var(--gradient-cream)',
           borderBottom: '1px solid var(--color-border)',
           scrollMarginTop: '110px'
         }}
       >
-        <div className="container" style={{ maxWidth: '1040px', margin: '0 auto', display: 'flex', flexDirection: 'column', gap: '28px' }}>
-          {/* Верхний ряд: 2 карточки в сетке (Расходы и Информирование) */}
-          <div className="grid grid-2" style={{ gap: '24px' }}>
-            {/* Карточка 1: Дополнительные расходы */}
-            <div style={{
-              background: 'var(--color-white)',
-              border: '1px solid rgba(23, 50, 77, 0.1)',
-              borderTop: '3px solid var(--color-primary)',
-              padding: 'clamp(24px, 3.5vw, 32px) clamp(20px, 3vw, 28px)',
-              boxShadow: '0 6px 20px rgba(16, 39, 59, 0.05)',
-              display: 'flex',
-              flexDirection: 'column',
-              justifyContent: 'flex-start'
-            }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '14px' }}>
-                <div style={{ width: '32px', height: '2px', backgroundColor: 'var(--color-primary)' }}></div>
-                <span style={{ textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '12px', fontWeight: 600, color: 'var(--color-primary)' }}>
-                  Расходы по делу
-                </span>
-              </div>
-              <h2 style={{
-                fontSize: 'clamp(20px, 2.5vw, 24px)',
-                fontFamily: 'var(--font-serif)',
-                color: 'var(--color-deep-blue)',
-                margin: '0 0 16px 0',
-                fontWeight: 700,
-                lineHeight: 1.3,
-                textWrap: 'balance'
-              }}>
-                Дополнительные расходы
-              </h2>
-              <div style={{ fontSize: '15px', lineHeight: 1.65, color: 'var(--color-text-secondary)', display: 'flex', flexDirection: 'column', gap: '12px' }}>
-                <p style={{ margin: 0, textWrap: 'pretty' }}>
-                  Госпошлины, нотариальные действия и оформление доверенности, экспертизы, командировки и другие необходимые расходы по делу оплачиваются отдельно от вознаграждения за юридическую работу.
-                </p>
-                <p style={{ margin: 0, textWrap: 'pretty' }}>
-                  Их необходимость и порядок оплаты предварительно согласуем с вами. Если требуется выезд в другой город, отдельно обсудим связанные с ним расходы. Возможные альтернативы выезду рассматриваются с учётом задачи.
-                </p>
-              </div>
+        <div className="container">
+          {/* Стандартный заголовок секции по шаблону сайта */}
+          <div style={{ maxWidth: '820px', marginBottom: '44px' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '14px' }}>
+              <div style={{ width: '40px', height: '2px', backgroundColor: 'var(--color-primary)' }}></div>
+              <span style={{ textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '13px', fontWeight: 600, color: 'var(--color-primary)' }}>
+                Условия сотрудничества
+              </span>
             </div>
-
-            {/* Карточка 2: Как вы будете узнавать о ходе дела */}
-            <div style={{
-              background: 'var(--color-white)',
-              border: '1px solid rgba(23, 50, 77, 0.1)',
-              borderTop: '3px solid var(--color-primary)',
-              padding: 'clamp(24px, 3.5vw, 32px) clamp(20px, 3vw, 28px)',
-              boxShadow: '0 6px 20px rgba(16, 39, 59, 0.05)',
-              display: 'flex',
-              flexDirection: 'column',
-              justifyContent: 'flex-start'
+            <h2 style={{
+              fontSize: 'clamp(26px, 3.5vw, 36px)',
+              fontFamily: 'var(--font-serif)',
+              color: 'var(--color-deep-blue)',
+              margin: '0 0 14px 0',
+              fontWeight: 700,
+              lineHeight: 1.25,
+              textWrap: 'balance'
             }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '14px' }}>
-                <div style={{ width: '32px', height: '2px', backgroundColor: 'var(--color-primary)' }}></div>
-                <span style={{ textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '12px', fontWeight: 600, color: 'var(--color-primary)' }}>
-                  Информирование
-                </span>
-              </div>
-              <h2 style={{
-                fontSize: 'clamp(20px, 2.5vw, 24px)',
-                fontFamily: 'var(--font-serif)',
-                color: 'var(--color-deep-blue)',
-                margin: '0 0 16px 0',
-                fontWeight: 700,
-                lineHeight: 1.3,
-                textWrap: 'balance'
-              }}>
-                Как вы будете узнавать<br className="desktop-only" /> о ходе дела
-              </h2>
-              <div style={{ fontSize: '15px', lineHeight: 1.65, color: 'var(--color-text-secondary)', display: 'flex', flexDirection: 'column', gap: '12px' }}>
-                <p style={{ margin: 0, textWrap: 'pretty' }}>
-                  Вы общаетесь напрямую с выделенным юристом. В начале работы согласуете регулярность встреч и взаимодействия. Юрист объясняет ход дела, выполненные действия и дальнейшие шаги.
-                </p>
-                <p style={{ margin: 0, textWrap: 'pretty' }}>
-                  Если возникают дополнительные вопросы, вы можете запросить информацию вне согласованного графика.
-                </p>
-              </div>
-            </div>
+              Расходы, ход дела и порядок оплаты
+            </h2>
+            <p style={{
+              fontSize: '16px',
+              color: 'var(--color-text-secondary)',
+              margin: 0,
+              lineHeight: 1.6,
+              textWrap: 'balance'
+            }}>
+              Полная процессуальная прозрачность: предварительное согласование расходов, прямой контакт с ведущим юристом и защищённая оплата.
+            </p>
           </div>
 
-          {/* Нижняя часть блока: Оплата согласованных услуг */}
-          <div style={{
-            background: 'var(--color-white)',
-            border: '1px solid rgba(23, 50, 77, 0.1)',
-            borderTop: '4px solid var(--color-primary)',
-            padding: 'clamp(28px, 4vw, 36px) clamp(24px, 4vw, 40px)',
-            boxShadow: '0 8px 24px rgba(16, 39, 59, 0.06)',
-            display: 'flex',
-            flexDirection: 'column',
-            gap: '20px'
-          }}>
-            <div style={{
-              display: 'flex',
-              flexWrap: 'wrap',
-              gap: '24px',
-              alignItems: 'center',
-              justifyContent: 'space-between'
-            }}>
-              <div style={{ flex: '1 1 420px' }}>
-                <h3 style={{
-                  fontSize: 'clamp(20px, 2.5vw, 24px)',
-                  fontFamily: 'var(--font-serif)',
-                  color: 'var(--color-deep-blue)',
-                  margin: '0 0 10px 0',
+          {/* Сетка из 3 шаблонных карточек */}
+          <div className="grid grid-3" style={{ gap: '24px', alignItems: 'stretch' }}>
+            {/* Карточка 1: Дополнительные расходы */}
+            <div
+              className="card hover-lift"
+              style={{
+                background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(248, 250, 252, 0.95) 100%)',
+                border: '1px solid var(--color-border)',
+                borderTop: '3px solid var(--color-gold)',
+                borderRadius: '0',
+                padding: '32px 26px',
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'space-between',
+                boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
+                position: 'relative',
+                overflow: 'hidden'
+              }}
+            >
+              {/* Фоновая водяная иконка */}
+              <div style={{
+                position: 'absolute',
+                top: '-15px',
+                right: '-15px',
+                width: '90px',
+                height: '90px',
+                opacity: 0.04,
+                pointerEvents: 'none',
+                color: 'var(--color-deep-blue)'
+              }}>
+                <svg viewBox="0 0 24 24" fill="currentColor" width="100%" height="100%">
+                  <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+                </svg>
+              </div>
+
+              <div>
+                <div style={{
+                  fontSize: '11.5px',
                   fontWeight: 700,
-                  lineHeight: 1.3,
+                  color: 'var(--color-primary)',
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.06em',
+                  marginBottom: '14px',
+                  background: 'rgba(23, 50, 77, 0.06)',
+                  padding: '4px 10px',
+                  display: 'inline-block',
+                  borderRadius: '2px'
+                }}>
+                  Расходы по делу
+                </div>
+
+                <h3 style={{
+                  fontFamily: 'var(--font-serif)',
+                  fontSize: '20px',
+                  fontWeight: 700,
+                  color: 'var(--color-deep-blue)',
+                  margin: '0 0 14px 0',
+                  lineHeight: 1.35,
+                  textWrap: 'balance'
+                }}>
+                  Дополнительные расходы
+                </h3>
+
+                <p style={{
+                  fontSize: '14.5px',
+                  color: 'var(--color-deep-blue)',
+                  lineHeight: 1.55,
+                  margin: '0 0 16px 0',
+                  fontWeight: 500
+                }}>
+                  Оплачиваются отдельно от вознаграждения за юридическую работу:
+                </p>
+
+                <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 20px 0', display: 'flex', flexDirection: 'column', gap: '10px' }}>
+                  {[
+                    'Госпошлины и судебные сборы',
+                    'Нотариальные действия и оформление доверенности',
+                    'Судебные и независимые экспертизы',
+                    'Командировки и необходимые расходы по делу'
+                  ].map((item, idx) => (
+                    <li key={idx} style={{ display: 'flex', gap: '10px', fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.45, alignItems: 'flex-start' }}>
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                      </svg>
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div style={{
+                marginTop: 'auto',
+                padding: '12px 14px',
+                background: 'rgba(247, 244, 237, 0.75)',
+                borderLeft: '3px solid var(--color-gold)',
+                fontSize: '13px',
+                color: 'var(--color-deep-blue)',
+                lineHeight: 1.5
+              }}>
+                <strong>Порядок оплаты:</strong> их необходимость предварительно согласуем с вами. Если требуется выезд в другой город, отдельно обсудим расходы и альтернативы.
+              </div>
+            </div>
+
+            {/* Карточка 2: Информирование о ходе дела */}
+            <div
+              className="card hover-lift"
+              style={{
+                background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(248, 250, 252, 0.95) 100%)',
+                border: '1px solid var(--color-border)',
+                borderTop: '3px solid var(--color-gold)',
+                borderRadius: '0',
+                padding: '32px 26px',
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'space-between',
+                boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
+                position: 'relative',
+                overflow: 'hidden'
+              }}
+            >
+              {/* Фоновая водяная иконка */}
+              <div style={{
+                position: 'absolute',
+                top: '-15px',
+                right: '-15px',
+                width: '90px',
+                height: '90px',
+                opacity: 0.04,
+                pointerEvents: 'none',
+                color: 'var(--color-deep-blue)'
+              }}>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" width="100%" height="100%">
+                  <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                </svg>
+              </div>
+
+              <div>
+                <div style={{
+                  fontSize: '11.5px',
+                  fontWeight: 700,
+                  color: 'var(--color-primary)',
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.06em',
+                  marginBottom: '14px',
+                  background: 'rgba(23, 50, 77, 0.06)',
+                  padding: '4px 10px',
+                  display: 'inline-block',
+                  borderRadius: '2px'
+                }}>
+                  Информирование
+                </div>
+
+                <h3 style={{
+                  fontFamily: 'var(--font-serif)',
+                  fontSize: '20px',
+                  fontWeight: 700,
+                  color: 'var(--color-deep-blue)',
+                  margin: '0 0 14px 0',
+                  lineHeight: 1.35,
+                  textWrap: 'balance'
+                }}>
+                  Как вы будете узнавать<br className="desktop-only" /> о ходе дела
+                </h3>
+
+                <p style={{
+                  fontSize: '14.5px',
+                  color: 'var(--color-deep-blue)',
+                  lineHeight: 1.55,
+                  margin: '0 0 16px 0',
+                  fontWeight: 500
+                }}>
+                  Прямое взаимодействие на каждом этапе работы:
+                </p>
+
+                <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 20px 0', display: 'flex', flexDirection: 'column', gap: '10px' }}>
+                  {[
+                    'Общение напрямую с выделенным юристом без посредников',
+                    'Согласование регулярности встреч и отчётов на старте дела',
+                    'Разъяснение выполненных действий и дальнейших шагов'
+                  ].map((item, idx) => (
+                    <li key={idx} style={{ display: 'flex', gap: '10px', fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.45, alignItems: 'flex-start' }}>
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                      </svg>
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div style={{
+                marginTop: 'auto',
+                padding: '12px 14px',
+                background: 'rgba(247, 244, 237, 0.75)',
+                borderLeft: '3px solid var(--color-gold)',
+                fontSize: '13px',
+                color: 'var(--color-deep-blue)',
+                lineHeight: 1.5
+              }}>
+                <strong>Вне графика:</strong> если возникают дополнительные вопросы, вы можете запросить информацию вне согласованного расписания.
+              </div>
+            </div>
+
+            {/* Карточка 3: Оплата согласованных услуг */}
+            <div
+              className="card hover-lift"
+              style={{
+                background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(248, 250, 252, 0.95) 100%)',
+                border: '1px solid var(--color-border)',
+                borderTop: '3px solid var(--color-gold)',
+                borderRadius: '0',
+                padding: '32px 26px',
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'space-between',
+                boxShadow: '0 4px 20px rgba(23, 50, 77, 0.05)',
+                position: 'relative',
+                overflow: 'hidden'
+              }}
+            >
+              {/* Фоновая водяная иконка */}
+              <div style={{
+                position: 'absolute',
+                top: '-15px',
+                right: '-15px',
+                width: '90px',
+                height: '90px',
+                opacity: 0.04,
+                pointerEvents: 'none',
+                color: 'var(--color-deep-blue)'
+              }}>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" width="100%" height="100%">
+                  <rect x="2" y="5" width="20" height="14" rx="2"></rect>
+                  <line x1="2" y1="10" x2="22" y2="10"></line>
+                </svg>
+              </div>
+
+              <div>
+                <div style={{
+                  fontSize: '11.5px',
+                  fontWeight: 700,
+                  color: 'var(--color-primary)',
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.06em',
+                  marginBottom: '14px',
+                  background: 'rgba(23, 50, 77, 0.06)',
+                  padding: '4px 10px',
+                  display: 'inline-block',
+                  borderRadius: '2px'
+                }}>
+                  Онлайн-оплата
+                </div>
+
+                <h3 style={{
+                  fontFamily: 'var(--font-serif)',
+                  fontSize: '20px',
+                  fontWeight: 700,
+                  color: 'var(--color-deep-blue)',
+                  margin: '0 0 14px 0',
+                  lineHeight: 1.35,
                   textWrap: 'balance'
                 }}>
                   Оплата согласованных услуг
                 </h3>
+
                 <p style={{
-                  fontSize: '15.5px',
-                  color: 'var(--color-deep-blue)',
-                  opacity: 0.9,
-                  fontWeight: 500,
-                  margin: 0,
+                  fontSize: '14.5px',
+                  color: 'var(--color-text-secondary)',
                   lineHeight: 1.6,
-                  textWrap: 'balance'
+                  margin: '0 0 20px 0'
                 }}>
                   Уже согласовали с юристом услугу и сумму? Перейдите на платёжную страницу и оплатите по реквизитам и назначению, указанным в договоре или счёте.
                 </p>
               </div>
 
-              <div style={{ flexShrink: 0 }}>
+              <div style={{ marginTop: 'auto', display: 'flex', flexDirection: 'column', gap: '14px' }}>
                 <a
                   href={PAYMENT_URL || "tel:+74742201525"}
                   target={PAYMENT_URL ? "_blank" : undefined}
@@ -866,35 +1049,34 @@ export default function PricingPageClient({ initialAudience = 'citizens' }: Pric
                   }}
                   className="btn btn-gold"
                   style={{
-                    display: 'inline-flex',
+                    display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    whiteSpace: 'nowrap',
-                    padding: '16px 36px',
-                    fontSize: '15.5px',
+                    width: '100%',
+                    padding: '16px 24px',
+                    fontSize: '15px',
                     borderRadius: 0,
                     fontWeight: 600,
                     backgroundColor: 'var(--color-gold)',
                     borderColor: 'var(--color-gold)',
                     color: 'var(--color-white)',
-                    boxShadow: '0 4px 14px rgba(184, 156, 114, 0.3)'
+                    boxShadow: '0 4px 14px rgba(184, 156, 114, 0.3)',
+                    cursor: 'pointer'
                   }}
                 >
                   Перейти к оплате
                 </a>
-              </div>
-            </div>
 
-            <div style={{ borderTop: '1px solid rgba(23, 50, 77, 0.08)', paddingTop: '14px' }}>
-              <p style={{
-                fontSize: '13px',
-                color: 'var(--color-text-secondary)',
-                margin: 0,
-                lineHeight: 1.5,
-                textWrap: 'balance'
-              }}>
-                Через эту платёжную страницу оплачиваются услуги ООО ЮК «Де-Юре».<br className="desktop-only" /> Оплата адвокатской помощи производится в порядке, предусмотренном отдельным соглашением с адвокатом.
-              </p>
+                <p style={{
+                  fontSize: '12px',
+                  color: 'var(--color-text-secondary)',
+                  margin: 0,
+                  lineHeight: 1.45,
+                  opacity: 0.85
+                }}>
+                  Оплата услуг ООО ЮК «Де-Юре». Адвокатская помощь оплачивается по отдельному соглашению.
+                </p>
+              </div>
             </div>
           </div>
         </div>
