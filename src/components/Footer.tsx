@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import { PAYMENT_URL, PAYMENT_BUTTON_TEXT, PAYMENT_FOOTER_NOTE } from '@/lib/payment';
 
 export default function Footer() {
   const [openSection, setOpenSection] = useState<string | null>(null);
@@ -191,7 +192,7 @@ export default function Footer() {
                 <polyline points="6 9 12 15 18 9"></polyline>
               </svg>
             </button>
-            <div className={`footer-link-list ${openSection === 'company' ? 'show-mobile' : ''}`}>
+                        <div className={`footer-link-list ${openSection === 'company' ? 'show-mobile' : ''}`}>
               <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '10px' }}>
                 {companyLinks.map((link, i) => (
                   <li key={i}>
@@ -202,6 +203,35 @@ export default function Footer() {
                 ))}
               </ul>
             </div>
+
+            {PAYMENT_URL && (
+              <div style={{ marginTop: '20px' }}>
+                <a
+                  href={PAYMENT_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => {
+                    if (typeof window !== 'undefined' && (window as any).ym) {
+                      (window as any).ym(98402484, 'reachGoal', 'payment_click', {
+                        placement: 'footer',
+                        source_page: window.location.pathname,
+                      });
+                    }
+                  }}
+                  className="footer-pay-btn"
+                >
+                  {PAYMENT_BUTTON_TEXT}
+                </a>
+                <p style={{
+                  color: 'rgba(255, 255, 255, 0.55)',
+                  fontSize: '11px',
+                  lineHeight: 1.45,
+                  margin: '8px 0 0 0',
+                }}>
+                  {PAYMENT_FOOTER_NOTE}
+                </p>
+              </div>
+            )}
           </div>
 
         </div>
@@ -276,6 +306,35 @@ export default function Footer() {
           color: rgba(255,255,255,0.5);
           font-size: 13px;
         }
+        .footer-pay-btn {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          width: 100%;
+          min-height: 44px;
+          padding: 10px 16px;
+          border: 1px solid rgba(194, 149, 87, 0.6);
+          background: transparent;
+          color: var(--color-gold, #C29557);
+          font-family: inherit;
+          font-size: 13px;
+          font-weight: 600;
+          letter-spacing: 0.04em;
+          text-decoration: none;
+          border-radius: 4px;
+          transition: all 0.2s ease;
+          box-sizing: border-box;
+          text-align: center;
+        }
+        .footer-pay-btn:hover {
+          background: rgba(194, 149, 87, 0.12);
+          border-color: var(--color-gold, #C29557);
+          color: #DFC394;
+        }
+        .footer-pay-btn:focus-visible {
+          outline: 2px solid var(--color-gold, #C29557);
+          outline-offset: 2px;
+        }
         .footer-legal-links {
           display: flex;
           flex-direction: column;
@@ -324,7 +383,36 @@ export default function Footer() {
             grid-template-columns: 1fr !important;
             gap: 20px !important;
           }
-          .footer-legal-links {
+          .footer-pay-btn {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          width: 100%;
+          min-height: 44px;
+          padding: 10px 16px;
+          border: 1px solid rgba(194, 149, 87, 0.6);
+          background: transparent;
+          color: var(--color-gold, #C29557);
+          font-family: inherit;
+          font-size: 13px;
+          font-weight: 600;
+          letter-spacing: 0.04em;
+          text-decoration: none;
+          border-radius: 4px;
+          transition: all 0.2s ease;
+          box-sizing: border-box;
+          text-align: center;
+        }
+        .footer-pay-btn:hover {
+          background: rgba(194, 149, 87, 0.12);
+          border-color: var(--color-gold, #C29557);
+          color: #DFC394;
+        }
+        .footer-pay-btn:focus-visible {
+          outline: 2px solid var(--color-gold, #C29557);
+          outline-offset: 2px;
+        }
+        .footer-legal-links {
             align-items: flex-start !important;
             text-align: left !important;
           }

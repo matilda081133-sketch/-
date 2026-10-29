@@ -5,8 +5,7 @@ import Link from 'next/link';
 import { PRICING_DIRECTIONS, PricingDirection } from '@/data/pricingData';
 import { sendLeadToCRM } from '@/lib/crm';
 
-// Ссылка на эквайринг (предоставляется заказчиком). До получения ссылки блок оплаты и якорная кнопка скрыты per TZ п. 8
-const PAYMENT_URL: string | null = null;
+import { PAYMENT_URL } from '@/lib/payment';
 
 interface PricingPageClientProps {
   initialAudience?: 'citizens' | 'business';
