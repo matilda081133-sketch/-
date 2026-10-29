@@ -815,18 +815,20 @@ export default function ProcessBlock({
           {/* CTA inside Process Block */}
           {ctaTitle && (
             <div className="process-cta-banner" style={{ 
-              marginTop: '40px', 
+              marginTop: '36px', 
               background: 'var(--color-white)', 
-              padding: '38px 40px',
-              minHeight: '120px',
+              padding: '24px 32px',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'space-between',
               gap: '24px',
               flexWrap: 'wrap',
-              boxShadow: '0 10px 30px rgba(16, 39, 59, 0.12), 0 2px 8px rgba(16, 39, 59, 0.08)',
+              boxShadow: '0 8px 24px rgba(16, 39, 59, 0.07), 0 2px 6px rgba(16, 39, 59, 0.04)',
               border: '1px solid var(--color-border)',
-              borderTop: '3px solid var(--color-primary)'
+              borderTop: '3px solid var(--color-primary)',
+              maxWidth: '920px',
+              marginLeft: 'auto',
+              marginRight: 'auto'
             }}>
               <div style={{ flex: '1 1 300px' }}>
                 <h3 style={{ fontSize: '24px', color: 'var(--color-deep-blue)', marginBottom: '10px', fontWeight: '600', fontFamily: 'var(--font-serif)', lineHeight: 1.3, textWrap: 'balance' }}>

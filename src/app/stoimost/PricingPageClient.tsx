@@ -561,7 +561,7 @@ export default function PricingPageClient({ initialAudience = 'citizens' }: Pric
             }
           ]}
           ctaTitle={<>Рассчитать стоимость<br className="desktop-only" /> для вашей задачи</>}
-          ctaSubtitle={<>Опишите вопрос, и юрист определит<br className="desktop-only" /> состав и стоимость необходимых услуг.</>}
+          ctaSubtitle={<>Опишите вопрос, и юрист определит состав и стоимость необходимых услуг.<br className="desktop-only" /> Выяснение сути обращения и подбор специалиста — бесплатны.</>}
           ctaButtonText="Получить расчёт"
           ctaButtonHref="#consultation"
         />
@@ -718,110 +718,179 @@ export default function PricingPageClient({ initialAudience = 'citizens' }: Pric
         </div>
       </section>
 
-      {/* 4. Дополнительные расходы и ход дела — ШАБЛОННЫЙ ТЕКСТОВЫЙ БЛОК */}
+      {/* 4. Расходы, информирование и онлайн-оплата (#oplata) — ЕДИНЫЙ ГАРМОНИЧНЫЙ БЛОК ПО ШАБЛОНАМ */}
       <section
+        id="oplata"
         className="section bg-light"
         style={{
           padding: 'clamp(48px, 6vw, 80px) 0',
           background: 'var(--gradient-cream)',
-          borderBottom: '1px solid var(--color-border)'
-        }}
-      >
-        <div className="container" style={{ maxWidth: '880px', margin: '0 auto', display: 'flex', flexDirection: 'column', gap: '40px' }}>
-          <div>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '16px' }}>
-              <div style={{ width: '40px', height: '2px', backgroundColor: 'var(--color-primary)' }}></div>
-              <span style={{ textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '13px', fontWeight: 600, color: 'var(--color-primary)' }}>
-                Расходы по делу
-              </span>
-            </div>
-            <h2
-              style={{
-                fontSize: 'clamp(24px, 3.2vw, 32px)',
-                fontFamily: 'var(--font-serif)',
-                color: 'var(--color-deep-blue)',
-                margin: '0 0 16px 0',
-                fontWeight: 700,
-                lineHeight: 1.3,
-                textWrap: 'balance'
-              }}
-            >
-              Дополнительные расходы
-            </h2>
-            <div style={{ fontSize: '15.5px', lineHeight: 1.65, color: 'var(--color-text-secondary)', display: 'flex', flexDirection: 'column', gap: '12px' }}>
-              <p style={{ margin: 0 }}>
-                Госпошлины, нотариальные действия и оформление доверенности, экспертизы, командировки и другие необходимые расходы по делу оплачиваются отдельно от вознаграждения за юридическую работу.
-              </p>
-              <p style={{ margin: 0 }}>
-                Их необходимость и порядок оплаты предварительно согласуем с вами. Если требуется выезд в другой город, отдельно обсудим связанные с ним расходы. Возможные альтернативы выезду рассматриваются с учётом задачи.
-              </p>
-            </div>
-          </div>
-
-          <div style={{ width: '100%', height: '1px', backgroundColor: 'var(--color-border)' }} />
-
-          <div>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '16px' }}>
-              <div style={{ width: '40px', height: '2px', backgroundColor: 'var(--color-primary)' }}></div>
-              <span style={{ textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '13px', fontWeight: 600, color: 'var(--color-primary)' }}>
-                Информирование
-              </span>
-            </div>
-            <h2
-              style={{
-                fontSize: 'clamp(24px, 3.2vw, 32px)',
-                fontFamily: 'var(--font-serif)',
-                color: 'var(--color-deep-blue)',
-                margin: '0 0 16px 0',
-                fontWeight: 700,
-                lineHeight: 1.3,
-                textWrap: 'balance'
-              }}
-            >
-              Как вы будете узнавать<br className="desktop-only" /> о ходе дела
-            </h2>
-            <div style={{ fontSize: '15.5px', lineHeight: 1.65, color: 'var(--color-text-secondary)', display: 'flex', flexDirection: 'column', gap: '12px' }}>
-              <p style={{ margin: 0 }}>
-                Вы общаетесь напрямую с выделенным юристом. В начале работы согласуете регулярность встреч и взаимодействия. Юрист объясняет ход дела, выполненные действия и дальнейшие шаги.
-              </p>
-              <p style={{ margin: 0 }}>
-                Если возникают дополнительные вопросы, вы можете запросить информацию вне согласованного графика.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 5. Оплата согласованных услуг (#oplata) — ШАБЛОННЫЙ CtaCard */}
-      <section
-        id="oplata"
-        className="section bg-white"
-        style={{
-          padding: 'clamp(48px, 6vw, 80px) 0',
           borderBottom: '1px solid var(--color-border)',
           scrollMarginTop: '110px'
         }}
       >
-        <div className="container" style={{ maxWidth: '960px', margin: '0 auto' }}>
-          <CtaCard
-            title="Оплата согласованных услуг"
-            subtitle="Уже согласовали с юристом услугу и сумму? Перейдите на платёжную страницу и оплатите по реквизитам и назначению, указанным в договоре или счёте."
-            buttonText="Перейти к оплате"
-            buttonLink={PAYMENT_URL || "tel:+74742201525"}
-            buttonTarget={PAYMENT_URL ? "_blank" : undefined}
-            buttonRel={PAYMENT_URL ? "noopener noreferrer" : undefined}
-            buttonOnClick={(e) => {
-              trackEvent('payment_click', { placement: 'pricing_page' });
-              if (!PAYMENT_URL) {
-                e.preventDefault();
-                alert('Платёжная страница эквайринга подключается банком. Для согласования счёта и реквизитов оплаты свяжитесь с вашим юристом: +7 (4742) 20-15-25');
-              }
-            }}
-            style={{ marginTop: 0 }}
-          />
-          <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', margin: '16px 0 0 0', lineHeight: 1.5, textAlign: 'center', textWrap: 'balance' }}>
-            Через эту платёжную страницу оплачиваются услуги ООО ЮК «Де-Юре».<br className="desktop-only" /> Оплата адвокатской помощи производится в порядке, предусмотренном отдельным соглашением с адвокатом.
-          </p>
+        <div className="container" style={{ maxWidth: '1040px', margin: '0 auto', display: 'flex', flexDirection: 'column', gap: '28px' }}>
+          {/* Верхний ряд: 2 карточки в сетке (Расходы и Информирование) */}
+          <div className="grid grid-2" style={{ gap: '24px' }}>
+            {/* Карточка 1: Дополнительные расходы */}
+            <div style={{
+              background: 'var(--color-white)',
+              border: '1px solid rgba(23, 50, 77, 0.1)',
+              borderTop: '3px solid var(--color-primary)',
+              padding: 'clamp(24px, 3.5vw, 32px) clamp(20px, 3vw, 28px)',
+              boxShadow: '0 6px 20px rgba(16, 39, 59, 0.05)',
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'flex-start'
+            }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '14px' }}>
+                <div style={{ width: '32px', height: '2px', backgroundColor: 'var(--color-primary)' }}></div>
+                <span style={{ textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '12px', fontWeight: 600, color: 'var(--color-primary)' }}>
+                  Расходы по делу
+                </span>
+              </div>
+              <h2 style={{
+                fontSize: 'clamp(20px, 2.5vw, 24px)',
+                fontFamily: 'var(--font-serif)',
+                color: 'var(--color-deep-blue)',
+                margin: '0 0 16px 0',
+                fontWeight: 700,
+                lineHeight: 1.3,
+                textWrap: 'balance'
+              }}>
+                Дополнительные расходы
+              </h2>
+              <div style={{ fontSize: '15px', lineHeight: 1.65, color: 'var(--color-text-secondary)', display: 'flex', flexDirection: 'column', gap: '12px' }}>
+                <p style={{ margin: 0, textWrap: 'pretty' }}>
+                  Госпошлины, нотариальные действия и оформление доверенности, экспертизы, командировки и другие необходимые расходы по делу оплачиваются отдельно от вознаграждения за юридическую работу.
+                </p>
+                <p style={{ margin: 0, textWrap: 'pretty' }}>
+                  Их необходимость и порядок оплаты предварительно согласуем с вами. Если требуется выезд в другой город, отдельно обсудим связанные с ним расходы. Возможные альтернативы выезду рассматриваются с учётом задачи.
+                </p>
+              </div>
+            </div>
+
+            {/* Карточка 2: Как вы будете узнавать о ходе дела */}
+            <div style={{
+              background: 'var(--color-white)',
+              border: '1px solid rgba(23, 50, 77, 0.1)',
+              borderTop: '3px solid var(--color-primary)',
+              padding: 'clamp(24px, 3.5vw, 32px) clamp(20px, 3vw, 28px)',
+              boxShadow: '0 6px 20px rgba(16, 39, 59, 0.05)',
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'flex-start'
+            }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '14px' }}>
+                <div style={{ width: '32px', height: '2px', backgroundColor: 'var(--color-primary)' }}></div>
+                <span style={{ textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '12px', fontWeight: 600, color: 'var(--color-primary)' }}>
+                  Информирование
+                </span>
+              </div>
+              <h2 style={{
+                fontSize: 'clamp(20px, 2.5vw, 24px)',
+                fontFamily: 'var(--font-serif)',
+                color: 'var(--color-deep-blue)',
+                margin: '0 0 16px 0',
+                fontWeight: 700,
+                lineHeight: 1.3,
+                textWrap: 'balance'
+              }}>
+                Как вы будете узнавать<br className="desktop-only" /> о ходе дела
+              </h2>
+              <div style={{ fontSize: '15px', lineHeight: 1.65, color: 'var(--color-text-secondary)', display: 'flex', flexDirection: 'column', gap: '12px' }}>
+                <p style={{ margin: 0, textWrap: 'pretty' }}>
+                  Вы общаетесь напрямую с выделенным юристом. В начале работы согласуете регулярность встреч и взаимодействия. Юрист объясняет ход дела, выполненные действия и дальнейшие шаги.
+                </p>
+                <p style={{ margin: 0, textWrap: 'pretty' }}>
+                  Если возникают дополнительные вопросы, вы можете запросить информацию вне согласованного графика.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Нижняя часть блока: Оплата согласованных услуг */}
+          <div style={{
+            background: 'var(--color-white)',
+            border: '1px solid rgba(23, 50, 77, 0.1)',
+            borderTop: '4px solid var(--color-primary)',
+            padding: 'clamp(28px, 4vw, 36px) clamp(24px, 4vw, 40px)',
+            boxShadow: '0 8px 24px rgba(16, 39, 59, 0.06)',
+            display: 'flex',
+            flexDirection: 'column',
+            gap: '20px'
+          }}>
+            <div style={{
+              display: 'flex',
+              flexWrap: 'wrap',
+              gap: '24px',
+              alignItems: 'center',
+              justifyContent: 'space-between'
+            }}>
+              <div style={{ flex: '1 1 420px' }}>
+                <h3 style={{
+                  fontSize: 'clamp(20px, 2.5vw, 24px)',
+                  fontFamily: 'var(--font-serif)',
+                  color: 'var(--color-deep-blue)',
+                  margin: '0 0 10px 0',
+                  fontWeight: 700,
+                  lineHeight: 1.3,
+                  textWrap: 'balance'
+                }}>
+                  Оплата согласованных услуг
+                </h3>
+                <p style={{
+                  fontSize: '15.5px',
+                  color: 'var(--color-deep-blue)',
+                  opacity: 0.9,
+                  fontWeight: 500,
+                  margin: 0,
+                  lineHeight: 1.6,
+                  textWrap: 'balance'
+                }}>
+                  Уже согласовали с юристом услугу и сумму? Перейдите на платёжную страницу и оплатите по реквизитам и назначению, указанным в договоре или счёте.
+                </p>
+              </div>
+
+              <div style={{ flexShrink: 0 }}>
+                <a
+                  href={PAYMENT_URL || "tel:+74742201525"}
+                  target={PAYMENT_URL ? "_blank" : undefined}
+                  rel={PAYMENT_URL ? "noopener noreferrer" : undefined}
+                  onClick={(e) => {
+                    trackEvent('payment_click', { placement: 'pricing_page' });
+                    if (!PAYMENT_URL) {
+                      e.preventDefault();
+                      alert('Платёжная страница эквайринга подключается банком. Для согласования счёта и реквизитов оплаты свяжитесь с вашим юристом: +7 (4742) 20-15-25');
+                    }
+                  }}
+                  className="btn btn-primary"
+                  style={{
+                    display: 'inline-block',
+                    whiteSpace: 'nowrap',
+                    padding: '16px 36px',
+                    fontSize: '15px',
+                    borderRadius: 0,
+                    fontWeight: 600
+                  }}
+                >
+                  Перейти к оплате
+                </a>
+              </div>
+            </div>
+
+            <div style={{ borderTop: '1px solid rgba(23, 50, 77, 0.08)', paddingTop: '14px' }}>
+              <p style={{
+                fontSize: '13px',
+                color: 'var(--color-text-secondary)',
+                margin: 0,
+                lineHeight: 1.5,
+                textWrap: 'balance'
+              }}>
+                Через эту платёжную страницу оплачиваются услуги ООО ЮК «Де-Юре».<br className="desktop-only" /> Оплата адвокатской помощи производится в порядке, предусмотренном отдельным соглашением с адвокатом.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 
