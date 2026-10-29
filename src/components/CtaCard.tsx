@@ -5,6 +5,9 @@ interface CtaCardProps {
   subtitle: string;
   buttonText?: string;
   buttonLink?: string;
+  buttonTarget?: string;
+  buttonRel?: string;
+  buttonOnClick?: (e: React.MouseEvent<HTMLAnchorElement>) => void;
   className?: string;
   style?: React.CSSProperties;
 }
@@ -14,6 +17,9 @@ export default function CtaCard({
   subtitle, 
   buttonText = "Описать ситуацию", 
   buttonLink = "#form",
+  buttonTarget,
+  buttonRel,
+  buttonOnClick,
   className = "",
   style = {}
 }: CtaCardProps) {
@@ -43,7 +49,14 @@ export default function CtaCard({
         </p>
       </div>
       <div>
-        <a href={buttonLink} className={isDark ? "btn white-btn-custom" : "btn btn-primary"} style={{ padding: '16px 40px', display: 'inline-block' }}>
+        <a 
+          href={buttonLink} 
+          target={buttonTarget}
+          rel={buttonRel}
+          onClick={buttonOnClick}
+          className={isDark ? "btn white-btn-custom" : "btn btn-primary"} 
+          style={{ padding: '16px 40px', display: 'inline-block' }}
+        >
           {buttonText}
         </a>
       </div>

@@ -74,6 +74,7 @@ interface ContactsFormProps {
   analyticsGoal?: string;
   commentLabel?: string;
   customFields?: React.ReactNode;
+  topFields?: React.ReactNode;
   direction?: string;
 }
 
@@ -88,6 +89,7 @@ export default function ContactsForm({
   agreementNotice,
   analyticsGoal,
   customFields,
+  topFields,
   direction
 }: ContactsFormProps = {}) {
   const pathname = usePathname() || '';
@@ -369,6 +371,8 @@ export default function ContactsForm({
           </div>
         )}
         
+        {topFields}
+
         <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
           <label htmlFor="name" style={{ fontSize: '14px', fontWeight: 500, color: 'var(--color-deep-blue)' }}>Имя (необязательно)</label>
           <input 

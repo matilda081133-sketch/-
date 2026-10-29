@@ -12,6 +12,7 @@ export interface ProcessStep {
 }
 
 interface ProcessBlockProps {
+  id?: string;
   title?: string | React.ReactNode;
   subtitle?: React.ReactNode;
   steps: ProcessStep[];
@@ -24,6 +25,7 @@ interface ProcessBlockProps {
 }
 
 export default function ProcessBlock({
+  id,
   title = "Что происходит после обращения",
   subtitle = "Каждое судебное дело уникально, но наш подход всегда остается системным. Прозрачный процесс работы от первой юридической консультации и досудебного урегулирования до вынесения итогового решения суда.",
   steps,
@@ -64,7 +66,7 @@ export default function ProcessBlock({
   const is8PureSteps = steps.length === 8 && bannerSteps.length === 0;
 
   return (
-    <section className="section bg-light" style={{ position: 'relative', overflow: 'hidden', padding: '80px 0', background: 'var(--color-white)' }}>
+    <section id={id} className="section bg-light" style={{ position: 'relative', overflow: 'hidden', padding: '80px 0', background: 'var(--color-white)', scrollMarginTop: id ? '110px' : undefined }}>
       {/* Organic graphic background */}
       <div style={{ position: 'absolute', top: '0', left: '0', width: '100%', height: '100%', background: 'radial-gradient(circle at 0% 0%, rgba(193, 160, 102, 0.04) 0%, transparent 50%), radial-gradient(circle at 100% 100%, rgba(23, 50, 77, 0.03) 0%, transparent 50%)', pointerEvents: 'none' }}></div>
       
