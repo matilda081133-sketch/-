@@ -51,6 +51,12 @@ jobs:
             -e "s|'/-/|'/|g"
           echo "JS done."
 
+      - name: Touch HTML files to force update
+        run: |
+          echo "Setting mtime of all HTML and JS files to future to ensure FTP upload"
+          find out/ -type f -name "*.html" -exec touch -d "+2 days" {} +
+          find out/ -type f -name "*.js" -exec touch -d "+2 days" {} +
+
       - name: Install lftp
         run: sudo apt-get update -qq && sudo apt-get install -y -qq lftp
 
@@ -71,8 +77,7 @@ jobs:
             set ftp:passive-mode yes;
             set ftp:timezone 'Europe/Moscow';
             set mirror:parallel-transfer-count 8;
-            mirror --reverse --only-newer=no --transfer-all --verbose=1 --include-rx '\.html$' out/ /public_html/;
-            mirror --reverse --delete --verbose=1 --exclude-glob .git* --exclude-glob node_modules/ out/ /public_html/;
+            mirror --reverse --delete --verbose=1 --exclude-glob .git* --exclude-glob node_modules/ out/ /public_html/
             bye
           "
           echo "FTP deploy completed successfully."
