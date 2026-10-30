@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import ContactsForm from '@/components/ContactsForm';
 import ProcessBlock from '@/components/ProcessBlock';
 import CtaCard from '@/components/CtaCard';
@@ -1175,12 +1176,53 @@ export default function PricingPageClient({ initialAudience = 'citizens' }: Pric
                   fontSize: '15px',
                   color: 'var(--color-text-secondary)',
                   lineHeight: 1.6,
-                  margin: '0 0 24px 0',
+                  margin: '0 0 18px 0',
                   position: 'relative',
                   zIndex: 1
                 }}>
-                  Уже согласовали с юристом услугу и сумму? Перейдите на платёжную страницу и оплатите по реквизитам и назначению, указанным в договоре или счёте.
+                  Уже согласовали с юристом услугу и сумму? Перейдите на платёжную страницу или отсканируйте QR-код для быстрой оплаты в мобильном банке.
                 </p>
+
+                {/* QR-код Альфа-Банк / СБП для быстрой оплаты со смартфона */}
+                <div style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '14px',
+                  padding: '12px 14px',
+                  background: '#FFFFFF',
+                  border: '1px solid var(--color-border)',
+                  marginBottom: '20px',
+                  position: 'relative',
+                  zIndex: 1
+                }}>
+                  <div style={{
+                    width: '74px',
+                    height: '74px',
+                    flexShrink: 0,
+                    background: '#FFFFFF',
+                    border: '1px solid var(--color-border-light)',
+                    padding: '2px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center'
+                  }}>
+                    <Image
+                      src="/images/alfa-pay-qr.jpg"
+                      alt="QR-код для оплаты через Альфа-Банк или СБП"
+                      width={70}
+                      height={70}
+                      style={{ objectFit: 'contain', width: '100%', height: '100%' }}
+                    />
+                  </div>
+                  <div style={{ fontSize: '13px', lineHeight: 1.45 }}>
+                    <div style={{ fontWeight: 700, marginBottom: '3px', color: 'var(--color-deep-blue)' }}>
+                      Оплата по QR-коду
+                    </div>
+                    <div style={{ color: 'var(--color-text-secondary)', fontSize: '12px', lineHeight: 1.4 }}>
+                      Отсканируйте камерой смартфона или в приложении любого банка (Альфа-Банк / СБП).
+                    </div>
+                  </div>
+                </div>
               </div>
 
               <div style={{ marginTop: 'auto', display: 'flex', flexDirection: 'column', gap: '14px', position: 'relative', zIndex: 1 }}>
