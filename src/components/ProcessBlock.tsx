@@ -817,7 +817,7 @@ export default function ProcessBlock({
             <div className="process-cta-banner" style={{ 
               marginTop: '36px', 
               background: 'var(--color-white)', 
-              padding: '24px 32px',
+              padding: '28px 36px',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'space-between',
@@ -826,9 +826,8 @@ export default function ProcessBlock({
               boxShadow: '0 8px 24px rgba(16, 39, 59, 0.07), 0 2px 6px rgba(16, 39, 59, 0.04)',
               border: '1px solid var(--color-border)',
               borderTop: '3px solid var(--color-primary)',
-              maxWidth: '920px',
-              marginLeft: 'auto',
-              marginRight: 'auto'
+              width: '100%',
+              boxSizing: 'border-box'
             }}>
               <div style={{ flex: '1 1 300px' }}>
                 <h3 style={{ fontSize: '24px', color: 'var(--color-deep-blue)', marginBottom: '10px', fontWeight: '600', fontFamily: 'var(--font-serif)', lineHeight: 1.3, textWrap: 'balance' }}>
