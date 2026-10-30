@@ -1197,7 +1197,7 @@ export default function YuridicheskijAuditClient() {
                   margin: 0,
                   display: 'flex',
                   flexDirection: 'column',
-                  gap: '13px',
+                  gap: '14px',
                   position: 'relative',
                   zIndex: 1
                 }}>
@@ -1209,9 +1209,10 @@ export default function YuridicheskijAuditClient() {
                     'Первоочередной шаг и пошаговую дорожную карту исправлений',
                     'Очную либо дистанционную презентацию результатов первому лицу'
                   ].map((deliv, dIdx) => (
-                    <li key={dIdx} style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', fontSize: '14.5px', color: 'var(--color-text-secondary)', lineHeight: 1.55 }}>
-                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
-                        <polyline points="20 6 9 17 4 12"></polyline>
+                    <li key={dIdx} style={{ display: 'flex', alignItems: 'flex-start', gap: '14px', fontSize: '15px', color: 'var(--color-deep-blue)', lineHeight: 1.55 }}>
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                        <polyline points="9 11 12 14 22 4" />
+                        <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
                       </svg>
                       <span style={{ textWrap: 'pretty' }}>{deliv}</span>
                     </li>
@@ -1287,33 +1288,33 @@ export default function YuridicheskijAuditClient() {
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', position: 'relative', zIndex: 1 }}>
                   <div style={{
                     background: '#FFFFFF',
-                    padding: '14px 18px',
+                    padding: '16px 20px',
                     border: '1px solid var(--color-border)',
                     borderLeft: '4px solid var(--color-gold)',
-                    fontSize: '13.5px',
-                    color: 'var(--color-text-secondary)',
+                    fontSize: '14.5px',
+                    color: 'var(--color-deep-blue)',
                     lineHeight: 1.6
                   }}>
                     <strong style={{ color: 'var(--color-deep-blue)', fontWeight: 700 }}>Основание:</strong> Выборка контрактов за 2025 г., отсутствие доверенностей в архиве.
                   </div>
                   <div style={{
                     background: '#FFFFFF',
-                    padding: '14px 18px',
+                    padding: '16px 20px',
                     border: '1px solid var(--color-border)',
                     borderLeft: '4px solid var(--color-primary)',
-                    fontSize: '13.5px',
-                    color: 'var(--color-text-secondary)',
+                    fontSize: '14.5px',
+                    color: 'var(--color-deep-blue)',
                     lineHeight: 1.6
                   }}>
                     <strong style={{ color: 'var(--color-deep-blue)', fontWeight: 700 }}>Риск:</strong> Возможность оспаривания сделок и отказа контрагентов от оплаты поставленного товара.
                   </div>
                   <div style={{
                     background: '#FFFFFF',
-                    padding: '14px 18px',
+                    padding: '16px 20px',
                     border: '1px solid var(--color-border)',
                     borderLeft: '4px solid var(--color-gold)',
-                    fontSize: '13.5px',
-                    color: 'var(--color-text-secondary)',
+                    fontSize: '14.5px',
+                    color: 'var(--color-deep-blue)',
                     lineHeight: 1.6
                   }}>
                     <strong style={{ color: 'var(--color-deep-blue)', fontWeight: 700 }}>Рекомендация:</strong> Актуализировать матрицу полномочий, выдать нотариальные доверенности и ввести входной контроль договоров.
