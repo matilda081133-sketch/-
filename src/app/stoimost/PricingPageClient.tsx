@@ -1184,17 +1184,27 @@ export default function PricingPageClient({ initialAudience = 'citizens' }: Pric
                 </p>
 
                 {/* QR-код Альфа-Банк / СБП для быстрой оплаты со смартфона */}
-                <div style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: '14px',
-                  padding: '12px 14px',
-                  background: '#FFFFFF',
-                  border: '1px solid var(--color-border)',
-                  marginBottom: '20px',
-                  position: 'relative',
-                  zIndex: 1
-                }}>
+                <a
+                  href={PAYMENT_URL || "https://pay.alfabank.ru/sc/LFFpbIZfUkRdZgrC"}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => trackEvent('payment_qr_click', { placement: 'pricing_page' })}
+                  style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '14px',
+                    padding: '12px 14px',
+                    background: '#FFFFFF',
+                    border: '1px solid var(--color-border)',
+                    marginBottom: '20px',
+                    position: 'relative',
+                    zIndex: 1,
+                    textDecoration: 'none',
+                    color: 'inherit',
+                    cursor: 'pointer'
+                  }}
+                  title="Открыть платёжную страницу Альфа-Банка"
+                >
                   <div style={{
                     width: '74px',
                     height: '74px',
@@ -1219,10 +1229,10 @@ export default function PricingPageClient({ initialAudience = 'citizens' }: Pric
                       Оплата по QR-коду
                     </div>
                     <div style={{ color: 'var(--color-text-secondary)', fontSize: '12px', lineHeight: 1.4 }}>
-                      Отсканируйте камерой смартфона или в приложении любого банка (Альфа-Банк / СБП).
+                      Отсканируйте камерой смартфона или нажмите для перехода на платёжную страницу (Альфа-Банк / СБП).
                     </div>
                   </div>
-                </div>
+                </a>
               </div>
 
               <div style={{ marginTop: 'auto', display: 'flex', flexDirection: 'column', gap: '14px', position: 'relative', zIndex: 1 }}>
