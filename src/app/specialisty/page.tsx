@@ -30,7 +30,8 @@ const specialistListRoles: Record<string, string> = {
   'smolyaninova-marina-valerevna': 'Ведущий юрист ЮК «Де-Юре»',
   'gusev-oleg-yurevich': 'Адвокат',
   'nacheshnikov-vladimir-viktorovich': 'Специалист ЮК «Де-Юре»',
-  'polozova-elena-anatolevna': 'Юрист ЮК «Де-Юре»'
+  'polozova-elena-anatolevna': 'Юрист ЮК «Де-Юре»',
+  'nalivkina-svetlana-andreevna': 'Юрист, партнёр ЮК «Де-Юре»'
 };
 
 const specialistListDescriptions: Record<string, string> = {
@@ -39,7 +40,8 @@ const specialistListDescriptions: Record<string, string> = {
   'smolyaninova-marina-valerevna': 'Более 13 лет работала в службе судебных приставов,\nв том числе на руководящих должностях. Более пяти лет\nпредставляет интересы граждан по семейным и трудовым\nспорам, а также вопросам исполнительного производства.',
   'gusev-oleg-yurevich': 'Более 15 лет работал в органах прокуратуры Липецкой области,\nв том числе заместителем прокурора района. С 2015 года\nосуществляет адвокатскую деятельность. Защищает доверителей по уголовным делам общеуголовной и экономической направленности.',
   'nacheshnikov-vladimir-viktorovich': 'С 1997 года сопровождает корпоративные процедуры и проекты по изменению структуры бизнеса. Работал в различных регионах России и Республике Беларусь. Консультирует, готовит документы и координирует досудебные этапы корпоративных процедур.',
-  'polozova-elena-anatolevna': 'Специалист по гражданским делам. Оказывает юридическую помощь по вопросам военного и трудового права — от консультации и подготовки документов до досудебной работы и обжалования.'
+  'polozova-elena-anatolevna': 'Специалист по гражданским делам. Оказывает юридическую помощь по вопросам военного и трудового права — от консультации и подготовки документов до досудебной работы и обжалования.',
+  'nalivkina-svetlana-andreevna': 'Юридическая практика с 2001 года. Работала юрисконсультом и руководителем юридического отдела в банковской сфере. Приоритетные направления — банкротство физических лиц и арбитражные споры. Также помогает по вопросам недвижимости и земли, наследственного, военного, семейного и трудового права.'
 };
 
 const specialistAreas: Record<string, { name: string; href?: string }[]> = {
@@ -68,6 +70,16 @@ const specialistAreas: Record<string, { name: string; href?: string }[]> = {
   'polozova-elena-anatolevna': [
     { name: 'Военное право', href: '/grazhdanam/voennyj-yurist/' },
     { name: 'Трудовое право' }
+  ],
+  'nalivkina-svetlana-andreevna': [
+    { name: 'Банкротство физических лиц', href: '/grazhdanam/bankrotstvo-fizicheskih-lic/' },
+    { name: 'Арбитражные споры', href: '/biznesu/arbitrazhnyj-yurist/' },
+    { name: 'Земельные споры', href: '/grazhdanam/zemelnyj-yurist/' },
+    { name: 'Недвижимость', href: '/grazhdanam/yurist-po-nedvizhimosti/' },
+    { name: 'Наследственные вопросы', href: '/grazhdanam/yurist-po-nasledstvu/' },
+    { name: 'Военное право', href: '/grazhdanam/voennyj-yurist/' },
+    { name: 'Семейные споры', href: '/grazhdanam/semejnyj-yurist/' },
+    { name: 'Трудовые споры', href: '/grazhdanam/trudovoj-yurist/' }
   ]
 };
 
@@ -77,7 +89,8 @@ const specialistAlts: Record<string, string> = {
   'smolyaninova-marina-valerevna': 'Марина Валерьевна Смольянинова — ведущий юрист ЮК Де-Юре',
   'gusev-oleg-yurevich': 'Олег Юрьевич Гусев — адвокат',
   'nacheshnikov-vladimir-viktorovich': 'Владимир Викторович Начешников — специалист ЮК Де-Юре',
-  'polozova-elena-anatolevna': 'Елена Анатольевна Полозова — юрист ЮК Де-Юре'
+  'polozova-elena-anatolevna': 'Елена Анатольевна Полозова — юрист ЮК Де-Юре',
+  'nalivkina-svetlana-andreevna': 'Светлана Андреевна Наливкина — юрист, партнёр ЮК Де-Юре'
 };
 
 const specialistRegistryNumbers: Record<string, string> = {
@@ -173,6 +186,17 @@ export default function SpecialistyPage() {
                 'url': 'https://dejure-help.ru/'
               }
             }
+          },
+          {
+            '@type': 'ListItem',
+            'position': 6,
+            'item': {
+              '@type': 'Person',
+              'name': 'Наливкина Светлана Андреевна',
+              'jobTitle': 'Юрист, партнёр ЮК «Де-Юре»',
+              'image': 'https://dejure-help.ru/images/nalivkina.webp',
+              'url': 'https://dejure-help.ru/specialisty/nalivkina-svetlana-andreevna/'
+            }
           }
         ]
       }
@@ -252,7 +276,7 @@ export default function SpecialistyPage() {
 
           <div style={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>
             {specialists
-              .filter((sp) => sp.orgType === 'legalCompanySpecialist' || (sp.slug !== 'konopkin-dmitriy-sergeevich' && sp.slug !== 'gusev-oleg-yurevich'))
+              .filter((sp) => (sp.orgType === 'legalCompanySpecialist' || (sp.slug !== 'konopkin-dmitriy-sergeevich' && sp.slug !== 'gusev-oleg-yurevich')) && sp.slug !== 'nalivkina-svetlana-andreevna' && sp.orgType !== 'partner')
               .map((sp) => {
                 const areas = specialistAreas[sp.slug] || [];
                 const altText = specialistAlts[sp.slug] || `${sp.name} — ${sp.companyRole || sp.status}`;
@@ -450,7 +474,187 @@ export default function SpecialistyPage() {
           {/* Neutral Divider Line between groups */}
           <hr style={{ border: 'none', borderTop: '1px solid rgba(23, 50, 77, 0.1)', margin: '48px 0' }} />
 
-          {/* Group 2: Адвокаты, с которыми сотрудничает ЮК «Де-Юре» */}
+          {/* Group 2: Партнёры ЮК «Де-Юре» */}
+          <h2 className="with-accent" style={{ 
+            fontSize: 'clamp(26px, 3vw, 32px)', 
+            fontFamily: 'var(--font-serif)', 
+            color: 'var(--color-deep-blue)', 
+            marginBottom: '32px', 
+            marginTop: 0 
+          }}>
+            Партнёры ЮК «Де-Юре»
+          </h2>
+
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>
+            {specialists
+              .filter((sp) => sp.orgType === 'partner' || sp.slug === 'nalivkina-svetlana-andreevna')
+              .map((sp) => {
+                const areas = specialistAreas[sp.slug] || [];
+                const altText = specialistAlts[sp.slug] || `${sp.name} — ${sp.companyRole || sp.status}`;
+
+                return (
+                  <article 
+                    key={sp.id} 
+                    style={{ 
+                      background: 'var(--color-white)', 
+                      border: '1px solid rgba(23, 50, 77, 0.12)',
+                      borderRadius: '4px',
+                      boxShadow: '0 4px 14px rgba(16, 39, 59, 0.08), 0 1px 3px rgba(16, 39, 59, 0.04)',
+                      overflow: 'hidden',
+                      transition: 'border-color 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease',
+                      display: 'flex',
+                      flexDirection: 'row',
+                      alignItems: 'stretch',
+                      minHeight: '330px'
+                    }}
+                    className="specialist-card-hover specialist-card-container"
+                  >
+                    {/* Photo Column (~33% width, 330px) */}
+                    <div 
+                      className="specialist-photo-col"
+                      style={{ 
+                        flex: '0 0 330px',
+                        width: '330px',
+                        maxWidth: '35%',
+                        position: 'relative', 
+                        overflow: 'hidden',
+                        background: 'var(--color-cream)',
+                        userSelect: 'none'
+                      }}
+                    >
+                        <img 
+                          src={sp.image} 
+                          alt={altText}
+                          width={330}
+                          height={440}
+                          loading="lazy"
+                          decoding="async"
+                          style={{ 
+                            position: 'absolute',
+                            top: 0,
+                            left: 0,
+                            width: '100%', 
+                            height: '100%', 
+                            objectFit: 'cover', 
+                            objectPosition: 'center 15%',
+                            display: 'block' 
+                          }}
+                        />
+                    </div>
+
+                    {/* Content Column */}
+                    <div 
+                      className="specialist-content-col"
+                      style={{ 
+                        flex: '1 1 auto',
+                        padding: '32px 36px', 
+                        display: 'flex', 
+                        flexDirection: 'column', 
+                        justifyContent: 'space-between',
+                        gap: '16px'
+                      }}
+                    >
+                      <div>
+                        {/* 1. Full Name (FIO) */}
+                        <h3 style={{ 
+                          fontSize: 'clamp(22px, 2.3vw, 26px)', 
+                          fontFamily: 'var(--font-serif)', 
+                          color: 'var(--color-deep-blue)', 
+                          margin: '0 0 4px 0', 
+                          lineHeight: 1.3 
+                        }}>
+                          <Link href={`/specialisty/${sp.slug}/`} style={{ color: 'inherit', textDecoration: 'none' }}>
+                            <span style={{ display: 'block' }}>Наливкина</span>
+                            <span style={{ display: 'block' }}>Светлана Андреевна</span>
+                          </Link>
+                        </h3>
+
+                        {/* 2. Position / Role */}
+                        <div style={{ 
+                          fontSize: '14px', 
+                          color: '#4A607A', 
+                          fontWeight: 500, 
+                          marginBottom: '16px',
+                          whiteSpace: 'pre-line'
+                        }}>
+                          {specialistListRoles[sp.slug] || sp.status}
+                        </div>
+
+                        {/* 3. Substantive Description */}
+                        <p style={{ 
+                          fontSize: '15px', 
+                          color: 'var(--color-text-secondary)', 
+                          lineHeight: 1.6, 
+                          margin: '0 0 20px 0', 
+                          maxWidth: '740px',
+                          whiteSpace: 'pre-line'
+                        }}>
+                          {specialistListDescriptions[sp.slug] || sp.shortDescription}
+                        </p>
+
+                        {/* 4. Main Practice Areas */}
+                        <div style={{ marginBottom: '8px' }}>
+                          <div style={{ 
+                            fontSize: '13px', 
+                            fontWeight: 600, 
+                            color: 'var(--color-deep-blue)', 
+                            marginBottom: '10px',
+                            letterSpacing: '0.02em'
+                          }}>
+                            Основные направления работы
+                          </div>
+                          
+                          <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                            {areas.map((area, idx) => (
+                              <li key={idx} style={{ display: 'flex', alignItems: 'center', fontSize: '14px', color: 'var(--color-deep-blue)' }}>
+                                <span style={{ color: 'var(--color-gold)', marginRight: '10px', fontSize: '12px' }}>◆</span>
+                                {area.href ? (
+                                  <Link 
+                                    href={area.href} 
+                                    className="area-link"
+                                    style={{ color: 'var(--color-deep-blue)', textDecoration: 'none', transition: 'color 0.2s ease' }}
+                                  >
+                                    {area.name} <span className="area-arrow" style={{ opacity: 0, display: 'inline-block', transform: 'translateX(-4px)', transition: 'all 0.2s ease', color: 'var(--color-primary)' }}>→</span>
+                                  </Link>
+                                ) : (
+                                  <span>{area.name}</span>
+                                )}
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      </div>
+
+                      {/* 5. Detail Page Text Link */}
+                      <div style={{ alignSelf: 'flex-start', marginTop: '12px' }}>
+                        <Link 
+                          href={`/specialisty/${sp.slug}/`} 
+                          className="detail-text-link"
+                          style={{ 
+                            display: 'inline-flex',
+                            alignItems: 'center',
+                            gap: '6px',
+                            fontSize: '15px',
+                            fontWeight: 600,
+                            color: 'var(--color-deep-blue)',
+                            textDecoration: 'none',
+                            transition: 'color 0.2s ease'
+                          }}
+                        >
+                          <span>Подробнее о юристе</span>
+                          <span className="detail-arrow" style={{ transition: 'transform 0.2s ease', display: 'inline-block' }}>→</span>
+                        </Link>
+                      </div>
+                    </div>
+                  </article>
+                );
+              })}
+          </div>
+
+          {/* Neutral Divider Line between groups */}
+          <hr style={{ border: 'none', borderTop: '1px solid rgba(23, 50, 77, 0.1)', margin: '48px 0' }} />
+
+          {/* Group 3: Адвокаты, с которыми сотрудничает ЮК «Де-Юре» */}
           <h2 className="with-accent" style={{ 
             fontSize: 'clamp(26px, 3vw, 32px)', 
             fontFamily: 'var(--font-serif)', 
@@ -736,7 +940,7 @@ export default function SpecialistyPage() {
             maxWidth: '820px', 
             marginBottom: '40px'
           }}>
-            В зависимости от характера обращения над задачей работают специалисты ЮК «Де-Юре» либо независимые адвокаты соответствующего профиля. Если требуется адвокатская помощь, условия участия адвоката согласовываются отдельно, а соглашение заключается непосредственно между адвокатом и доверителем.
+            В зависимости от характера обращения над задачей работают специалисты ЮК «Де-Юре», юристы-партнёры либо независимые адвокаты соответствующего профиля. Если требуется адвокатская помощь, условия участия адвоката согласовываются отдельно, а соглашение заключается непосредственно между адвокатом и доверителем.
           </p>
           
           <div style={{ 

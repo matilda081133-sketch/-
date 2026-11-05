@@ -14,7 +14,7 @@
 </url>
 <url>
 <loc>https://dejure-help.ru/biznesu/</loc>
-<lastmod>2026-10-29T00:00:00.000Z</lastmod>
+<lastmod>2026-10-30T00:00:00.000Z</lastmod>
 <changefreq>weekly</changefreq>
 <priority>0.9</priority>
 </url>
@@ -44,7 +44,7 @@
 </url>
 <url>
 <loc>https://dejure-help.ru/stoimost/</loc>
-<lastmod>2026-10-29T00:00:00.000Z</lastmod>
+<lastmod>2026-10-30T00:00:00.000Z</lastmod>
 <changefreq>weekly</changefreq>
 <priority>0.9</priority>
 </url>
@@ -218,13 +218,13 @@
 </url>
 <url>
 <loc>https://dejure-help.ru/biznesu/yuridicheskoe-soprovozhdenie-biznesa/</loc>
-<lastmod>2026-10-09T00:00:00.000Z</lastmod>
+<lastmod>2026-10-30T00:00:00.000Z</lastmod>
 <changefreq>weekly</changefreq>
 <priority>0.85</priority>
 </url>
 <url>
 <loc>https://dejure-help.ru/biznesu/yuridicheskoe-soprovozhdenie-biznesa/yuridicheskij-audit-biznesa/</loc>
-<lastmod>2026-10-09T00:00:00.000Z</lastmod>
+<lastmod>2026-10-30T00:00:00.000Z</lastmod>
 <changefreq>weekly</changefreq>
 <priority>0.85</priority>
 </url>
@@ -998,6 +998,12 @@
 </url>
 <url>
 <loc>https://dejure-help.ru/specialisty/nacheshnikov-vladimir-viktorovich/</loc>
+<lastmod>2026-09-22T00:00:00.000Z</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://dejure-help.ru/specialisty/nalivkina-svetlana-andreevna/</loc>
 <lastmod>2026-09-22T00:00:00.000Z</lastmod>
 <changefreq>weekly</changefreq>
 <priority>0.8</priority>

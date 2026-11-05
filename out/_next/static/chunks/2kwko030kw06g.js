@@ -1,0 +1,141 @@
+(globalThis.TURBOPACK||(globalThis.TURBOPACK=[])).push(["object"==typeof document?document.currentScript:void 0,74648,e=>{"use strict";var t=e.i(43476);e.s(["default",0,function({cases:e,title:i="Результаты нашей работы",subtitle:o,showAllLink:r="/praktika",showAllText:a="Смотреть все дела",showDemoWarning:l=!1,resultLabel:s="Результат"}){let n=e.map(e=>({...e,category:e.category||(e.duration?`Срок: ${e.duration}`:"Практика"),problem:e.problem||e.description||"",action:e.action||(e.points?e.points.join(". "):""),result:e.result||"Задачи успешно выполнены по утвержденному регламенту"}));return(0,t.jsxs)("section",{className:"section bg-white",style:{padding:"clamp(48px, 6vw, 80px) 0"},children:[(0,t.jsxs)("div",{className:"container",children:[(0,t.jsxs)("div",{style:{marginBottom:"40px"},children:[(0,t.jsxs)("div",{style:{display:"flex",alignItems:"center",gap:"16px",marginBottom:"16px"},children:[(0,t.jsx)("div",{style:{width:"40px",height:"1px",backgroundColor:"var(--color-primary)"}}),(0,t.jsx)("span",{style:{textTransform:"uppercase",letterSpacing:"0.15em",fontSize:"12px",color:"var(--color-primary)"},children:"Практика"})]}),(0,t.jsxs)("div",{style:{display:"flex",justifyContent:"space-between",alignItems:"flex-start",flexWrap:"wrap",gap:"20px"},children:[(0,t.jsxs)("div",{style:{maxWidth:"820px",flex:"1 1 auto"},children:[(0,t.jsx)("h2",{style:{margin:0,fontSize:"clamp(28px, 4vw, 42px)",fontFamily:"var(--font-serif)",color:"var(--color-deep-blue)",lineHeight:1.25},children:i}),o&&(0,t.jsx)("p",{style:{margin:"8px 0 0",color:"var(--color-text-secondary)",fontSize:"15px",lineHeight:1.5},children:o})]}),r&&(0,t.jsx)("a",{href:r,className:"btn btn-outline",style:{padding:"12px 24px",height:"fit-content",whiteSpace:"nowrap",flexShrink:0,alignSelf:"flex-start"},children:a})]})]}),(0,t.jsx)("div",{className:"cases-grid",children:n.map((e,i)=>(0,t.jsxs)("div",{className:"case-card group",style:{padding:"36px 30px 30px 30px",border:"1px solid var(--color-border)",borderRadius:"0",display:"flex",flexDirection:"column",background:"var(--color-white)",boxShadow:"0 4px 10px rgba(0,0,0,0.12)",position:"relative",overflow:"hidden",height:"100%"},children:[(0,t.jsx)("div",{style:{position:"absolute",top:0,left:0,width:"4px",height:"0%",background:"var(--color-gold)",transition:"height 0.4s ease"},className:"case-accent-line"}),(0,t.jsxs)("div",{style:{paddingBottom:"20px",marginBottom:"20px",paddingTop:"0"},children:[(0,t.jsx)("span",{style:{display:"block",fontSize:"11px",textTransform:"uppercase",letterSpacing:"0.1em",color:"#D4AF37",marginBottom:"12px",fontWeight:600,lineHeight:1.45},children:e.category}),(0,t.jsx)("h3",{style:{margin:0,color:"var(--color-deep-blue)",fontSize:"19px",fontFamily:"var(--font-serif)",lineHeight:1.4,wordBreak:"break-word",overflowWrap:"break-word"},children:e.title})]}),(0,t.jsxs)("div",{style:{display:"flex",flexDirection:"column",gap:"18px",flexGrow:1},children:[(0,t.jsxs)("div",{children:[(0,t.jsx)("div",{style:{display:"inline-block",background:"rgba(23, 50, 77, 0.08)",color:"var(--color-deep-blue)",padding:"3px 10px",fontSize:"11px",fontWeight:700,letterSpacing:"0.06em",borderRadius:"3px",marginBottom:"8px"},children:"ПРОБЛЕМА"}),(0,t.jsx)("p",{style:{fontSize:"14px",margin:0,lineHeight:1.6,color:"var(--color-text-main)"},children:e.problem})]}),(0,t.jsxs)("div",{children:[(0,t.jsx)("div",{style:{display:"inline-block",background:"rgba(193, 160, 102, 0.16)",color:"#8C6F34",padding:"3px 10px",fontSize:"11px",fontWeight:700,letterSpacing:"0.06em",borderRadius:"3px",marginBottom:"8px"},children:"ЧТО СДЕЛАЛИ"}),(0,t.jsx)("p",{style:{fontSize:"14px",margin:0,lineHeight:1.6,color:"var(--color-text-main)"},children:e.action})]})]}),(0,t.jsxs)("div",{style:{marginTop:"24px",background:"rgba(193, 160, 102, 0.05)",padding:"18px",borderRadius:"0",border:"1px solid rgba(193, 160, 102, 0.2)",borderLeft:"4px solid var(--color-gold)"},children:[(0,t.jsx)("h4",{style:{fontSize:"12px",textTransform:"uppercase",letterSpacing:"0.05em",color:"var(--color-primary)",marginBottom:"6px",fontWeight:600},children:s}),(0,t.jsx)("p",{style:{fontSize:"14.5px",margin:0,fontWeight:500,color:"var(--color-deep-blue)",lineHeight:1.5},children:e.result})]})]},i))})]}),(0,t.jsx)("style",{dangerouslySetInnerHTML:{__html:`
+        .cases-grid {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 24px;
+        }
+        @media (max-width: 1024px) and (min-width: 768px) {
+          .cases-grid {
+            grid-template-columns: repeat(2, 1fr) !important;
+            gap: 20px !important;
+          }
+        }
+        @media (max-width: 767px) {
+          .cases-grid {
+            grid-template-columns: 1fr !important;
+            gap: 16px !important;
+          }
+          .case-card {
+            padding: 28px 20px 24px 20px !important;
+          }
+        }
+        .case-card h3 span {
+          word-break: break-word !important;
+          overflow-wrap: break-word !important;
+        }
+        .case-card {
+          transition: all 0.4s ease;
+        }
+        .case-card:hover {
+          box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+          border-color: transparent;
+          transform: translateY(-4px);
+        }
+        .case-card:hover .case-accent-line {
+          height: 100%;
+        }
+      `}})]})}])},35812,e=>{"use strict";var t=e.i(43476);function i({items:e,marginTop:o}){return e&&0!==e.length?(0,t.jsx)("div",{style:{display:"flex",flexDirection:"column",gap:"14px",marginTop:o||"20px",marginBottom:"24px",width:"100%",maxWidth:"640px"},children:e.map((e,i)=>(0,t.jsx)("div",{style:{paddingLeft:"16px",borderLeft:"3px solid var(--color-gold)",fontSize:"15px",color:"var(--color-deep-blue)",lineHeight:1.45,fontWeight:500,whiteSpace:"pre-line"},children:"string"==typeof e?e:e.text},i))}):null}e.s(["default",0,function({breadcrumbs:e,superTitle:o,badge:r,title:a,subtitle:l,primaryCtaText:s,primaryButtonText:n,primaryCtaSubtext:p,primaryCtaLink:d,primaryButtonHref:x,primaryCtaAnalytics:c,secondaryCtaText:m,secondaryButtonText:h,secondaryCtaLink:g,secondaryButtonHref:b,urgentHint:y,trustItems:f=[],trustPosition:u="above-cta",imageUrl:v,imageName:j,imageSubtitle:w,trustMarginTop:S,imageMarginTop:T,ctaMarginTop:z,imageObjectPosition:k,rightContent:B,afterTrustContent:C}){let F=m||h,N=g||b,W=!!(v||B);return(0,t.jsxs)("section",{className:"military-hero-section",style:{position:"relative",minHeight:"85vh",display:"flex",alignItems:"center",paddingTop:"clamp(120px, 9vw, 160px)",paddingBottom:"80px",background:"linear-gradient(145deg, var(--color-cream) 0%, rgba(247, 244, 237, 0.4) 100%)",overflow:"hidden"},children:[(0,t.jsx)("div",{style:{position:"absolute",top:"-10%",right:"-5%",width:"600px",height:"600px",background:"radial-gradient(circle, rgba(234, 241, 246, 0.8) 0%, transparent 70%)",borderRadius:"50%",zIndex:0}}),(0,t.jsxs)("div",{className:"container",style:{position:"relative",zIndex:1,paddingTop:"0px"},children:[e&&(0,t.jsx)("div",{style:{fontSize:"13px",color:"var(--color-text-secondary)",marginBottom:"32px"},children:e}),(0,t.jsxs)("div",{className:W?"grid grid-2 land-hero-grid":"",style:{display:W?"grid":"flex",flexDirection:W?"row":"column",gap:"40px",alignItems:"flex-start"},children:[(0,t.jsxs)("div",{style:{flex:"1 1 0%",paddingTop:"0px"},children:[(0,t.jsxs)("div",{style:{display:"flex",alignItems:"center",gap:"16px",marginBottom:"12px",flexWrap:"wrap"},children:[(0,t.jsx)("div",{style:{width:"40px",height:"2px",backgroundColor:"#9B7E55",flexShrink:0}}),(0,t.jsx)("span",{className:"military-hero-supertitle",style:{textTransform:"uppercase",letterSpacing:"0.08em",fontSize:"clamp(11px, 2vw, 14px)",fontWeight:600,color:"var(--color-gold-text, #80633F)",overflowWrap:"anywhere"},children:o||r})]}),(0,t.jsx)("h1",{className:"military-hero-h1",style:{fontSize:"clamp(26px, 3.8vw, 50px)",color:"var(--color-deep-blue)",fontFamily:"var(--font-serif)",margin:"0 0 16px 0",lineHeight:1.15},children:a}),(0,t.jsx)("p",{className:"military-hero-subtitle",style:{fontSize:"16px",color:"var(--color-deep-blue)",opacity:.9,fontWeight:500,marginBottom:"16px",maxWidth:"750px",lineHeight:1.55},children:l}),"above-cta"===u&&f&&f.length>0&&(0,t.jsx)(i,{items:f,marginTop:S||"16px"}),C&&(0,t.jsx)("div",{style:{marginTop:"16px",marginBottom:"8px"},children:C}),(0,t.jsxs)("div",{className:"military-hero-cta",style:{display:"flex",flexDirection:"column",alignItems:"flex-start",gap:"14px",marginTop:z||(f&&f.length>0?"20px":"32px"),marginBottom:y?"16px":"24px"},children:[(0,t.jsxs)("div",{style:{display:"flex",flexWrap:"wrap",alignItems:"center",gap:"16px"},children:[(0,t.jsx)("a",{href:d||x||"#form",className:"btn btn-primary military-hero-primary-btn","data-analytics":c||"military_hero_consultation_click",children:s||n||"Получить консультацию"}),F&&N&&(0,t.jsx)("a",{href:N,className:"btn btn-outline",style:{padding:"15px 36px",fontSize:"15px"},children:F})]}),p&&(0,t.jsx)("div",{style:{fontSize:"14px",color:"var(--color-text-secondary)",marginTop:"4px",lineHeight:1.5},children:p})]}),y&&(0,t.jsxs)("div",{style:{background:"rgba(200, 169, 126, 0.1)",borderLeft:"4px solid var(--color-gold)",padding:"14px 20px",marginBottom:"20px",fontSize:"14px",color:"var(--color-deep-blue)",lineHeight:1.5},children:[(0,t.jsx)("strong",{style:{display:"block",marginBottom:"4px"},children:"Важно:"}),y]}),"below-cta"===u&&f&&f.length>0&&(0,t.jsx)(i,{items:f,marginTop:S||"16px"})]}),W&&(0,t.jsx)("div",{className:"military-hero-right",style:{width:"100%",maxWidth:"440px",margin:"0 auto",flexShrink:0,display:"flex",flexDirection:"column",paddingTop:T||0,marginTop:0},children:B||(0,t.jsxs)("div",{className:"hero-photo-hover",style:{width:"100%",borderRadius:"0",overflow:"hidden",position:"relative",boxShadow:"0 4px 14px rgba(16, 39, 59, 0.12)",zIndex:1,display:"block",background:"transparent"},children:[v&&(0,t.jsx)("img",{src:v,alt:j||a?.toString()||"Специалист",width:440,height:460,fetchPriority:"high",decoding:"async",style:{width:"100%",height:"460px",objectFit:"cover",objectPosition:k||"center 20%",display:"block",filter:"brightness(1.05)",aspectRatio:"440/460"},className:"hero-photo-img"}),(j||w)&&(0,t.jsxs)("div",{style:{padding:"16px 20px",background:"rgba(255, 255, 255, 0.75)",backdropFilter:"blur(10px)",borderTop:"3px solid var(--color-gold)",borderLeft:"1px solid rgba(255, 255, 255, 0.9)",borderRight:"1px solid rgba(255, 255, 255, 0.9)",borderBottom:"1px solid rgba(255, 255, 255, 0.9)",boxShadow:"0 4px 14px rgba(16, 39, 59, 0.08)"},children:[j&&(0,t.jsx)("div",{style:{fontSize:"16px",fontWeight:700,color:"var(--color-deep-blue)",fontFamily:"var(--font-serif)",marginBottom:"2px",lineHeight:1.3},children:"Дмитрий Сергеевич Конопкин"===j||"Конопкин Дмитрий Сергеевич"===j?(0,t.jsxs)(t.Fragment,{children:["Конопкин ",(0,t.jsx)("br",{}),"Дмитрий Сергеевич"]}):"Марина Валерьевна Смольянинова"===j||"Смольянинова Марина Валерьевна"===j?(0,t.jsxs)(t.Fragment,{children:["Смольянинова ",(0,t.jsx)("br",{}),"Марина Валерьевна"]}):"Владимир Викторович Начешников"===j||"Начешников Владимир Викторович"===j?(0,t.jsxs)(t.Fragment,{children:["Начешников ",(0,t.jsx)("br",{}),"Владимир Викторович"]}):j}),w&&(0,t.jsx)("div",{style:{fontSize:"13px",color:"var(--color-text-secondary)",fontWeight:500,lineHeight:1.35},children:"string"==typeof w&&w.includes("•")?w:"string"==typeof w&&w.includes("куратор")?(0,t.jsxs)(t.Fragment,{children:[w.split("куратор")[0].trim().replace(/,$/,""),",",(0,t.jsx)("br",{}),"куратор",w.split("куратор")[1]]}):w})]})]})})]}),(0,t.jsx)("style",{dangerouslySetInnerHTML:{__html:`
+          .military-hero-primary-btn {
+            padding: 15px 36px !important;
+            font-size: 15px !important;
+            color: #FFFFFF !important;
+            background-color: #10273B !important;
+            border: 1px solid #9B7E55 !important;
+            box-shadow: 0 4px 14px rgba(16, 39, 59, 0.25) !important;
+            transition: all 0.3s ease !important;
+            border-radius: var(--radius-md) !important;
+            text-decoration: none !important;
+            display: inline-flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            cursor: pointer !important;
+          }
+          .military-hero-primary-btn:hover {
+            background-color: #17324D !important;
+            border: 1px solid #FFFFFF !important;
+            border-color: #FFFFFF !important;
+            color: #FFFFFF !important;
+            transform: translateY(-2px) !important;
+            box-shadow: 0 8px 24px rgba(16, 39, 59, 0.35) !important;
+          }
+
+          @media (max-width: 1440px) {
+            .military-hero-section {
+              padding-top: 130px !important;
+              padding-bottom: 50px !important;
+              min-height: auto !important;
+            }
+            .military-hero-h1 {
+              font-size: clamp(24px, 3.4vw, 44px) !important;
+              margin-bottom: 12px !important;
+            }
+            .military-hero-subtitle {
+              margin-bottom: 12px !important;
+              font-size: 15px !important;
+              line-height: 1.5 !important;
+            }
+            .military-hero-cta {
+              margin-top: 12px !important;
+              margin-bottom: 16px !important;
+            }
+          }
+          @media (max-width: 1200px) {
+            .land-hero-grid {
+              grid-template-columns: minmax(0, 1fr) 360px !important;
+              gap: 28px !important;
+            }
+            .military-hero-h1 {
+              font-size: clamp(22px, 3.1vw, 38px) !important;
+            }
+          }
+          @media (max-width: 1024px) {
+            .land-hero-grid {
+              grid-template-columns: minmax(0, 1fr) 320px !important;
+              gap: 20px !important;
+            }
+            .military-hero-h1 {
+              font-size: clamp(22px, 2.8vw, 32px) !important;
+            }
+          }
+          @media (max-width: 900px) {
+            .land-hero-grid {
+              grid-template-columns: 1fr !important;
+            }
+          }
+          @media (max-width: 768px) {
+            .military-hero-section {
+              padding-top: 100px !important;
+              padding-bottom: 40px !important;
+            }
+            .military-hero-cta {
+              width: 100% !important;
+            }
+            .military-hero-cta .btn {
+              width: 100% !important;
+              text-align: center !important;
+            }
+          }
+          @media (max-width: 480px) {
+            .military-hero-h1, .hero-title-span-mobile {
+              white-space: normal !important;
+              overflow-wrap: anywhere !important;
+              word-break: normal !important;
+            }
+            .military-hero-section .container {
+              width: 100% !important;
+              max-width: 100% !important;
+              min-width: 0 !important;
+              padding-left: 16px !important;
+              padding-right: 16px !important;
+            }
+            .military-hero-supertitle {
+              white-space: normal !important;
+            }
+            .military-hero-subtitle {
+              width: 100% !important;
+              max-width: 100% !important;
+              min-width: 0 !important;
+              overflow-wrap: anywhere !important;
+            }
+          }
+        `}})]})]})}],35812)},70604,e=>{"use strict";var t=e.i(43476);e.s(["default",0,function({variant:e="hub"}){let i={hub:{docType:"АРБИТРАЖНОЕ ДЕЛО",docSub:"B2B экономические споры",title:"В АРБИТРАЖНЫЙ СУД ЛИПЕЦКОЙ ОБЛАСТИ",caseNum:"Дело № А36-8421/2026",items:[{label:"1. ПРЕДМЕТ И ОСНОВАНИЯ ИСКА",tag:"ОБОСНОВАНО",statusColor:"#16a34a",sub:"Договор, первичка, соблюдение досудебного порядка"},{label:"2. ДОКАЗАТЕЛЬСТВЕННАЯ БАЗА",tag:"СОБРАНА",statusColor:"#16a34a",sub:"Акты КС-2/УПД, переписка, судебная экспертиза"},{label:"3. СУДЕБНЫЕ ЗАСЕДАНИЯ",tag:"ПРАКТИКА",statusColor:"#C1A066",sub:"Лично и онлайн через систему «Мой Арбитр»"},{label:"4. СУДЕБНЫЕ РАСХОДЫ",tag:"К ВОЗВРАТУ",statusColor:"#16a34a",sub:"Взыскание расходов на представителя с оппонента"}],stampText:"АРБИТРАЖНАЯ ПРАКТИКА",sealText:"СУДЕБНЫЙ АУДИТ ✓",sheet2Title:"РЕЕСТР ДОКАЗАТЕЛЬСТВ",sheet2Sub:"Приложение к позиции",sheet2Rows:["Договорная документация и первичные акты","Акт сверки взаимных расчётов сторон","Претензия с подтверждением вручения"],sheet3Title:"СИСТЕМА «МОЙ АРБИТР»",sheet3Sub:"Регистрация № 48-АС/2026"},isk:{docType:"ИСКОВОЕ ЗАЯВЛЕНИЕ",docSub:"Арбитражное судопроизводство",title:"В АРБИТРАЖНЫЙ СУД ЛИПЕЦКОЙ ОБЛАСТИ",caseNum:"Истец: Доверитель ЮК «Де-Юре»",items:[{label:"1. ВЗЫСКАНИЕ ОСНОВНОГО ДОЛГА",tag:"ТРЕБОВАНИЕ",statusColor:"#16a34a",sub:"Полный расчёт суммы неисполненных обязательств"},{label:"2. НЕУСТОЙКА И ПРОЦЕНТЫ",tag:"РАСЧЁТ",statusColor:"#C1A066",sub:"ст. 395 ГК РФ / договорная ставка неустойки"},{label:"3. ДОСУДЕБНЫЙ ПОРЯДОК",tag:"СОБЛЮДЁН",statusColor:"#16a34a",sub:"Претензия направлена с описью вложения"},{label:"4. ОБЕСПЕЧЕНИЕ ИСКА",tag:"ХОДАТАЙСТВО",statusColor:"#C1A066",sub:"Арест счетов и имущества должника"}],stampText:"ИСК ПОДГОТОВЛЕН",sealText:"ПРИНЯТО К ДЕЛУ ✓",sheet2Title:"РАСЧЁТ ЦЕНЫ ИСКА",sheet2Sub:"Справка-расчёт требований",sheet2Rows:["Основной долг по договорам поставки / подряда","Штрафные санкции и законная неустойка","Квитанция об оплате государственной пошлины"],sheet3Title:"СИСТЕМА «МОЙ АРБИТР»",sheet3Sub:"Исковое заявление принято"},zashchita:{docType:"МОТИВИРОВАННЫЙ ОТЗЫВ",docSub:"Защита ответчика в арбитраже",title:"В АРБИТРАЖНЫЙ СУД ЛИПЕЦКОЙ ОБЛАСТИ",caseNum:"Дело № А36-... / Возражения на иск",items:[{label:"1. ИСКЛЮЧЕНИЕ СУММ ДОЛГА",tag:"ВОЗРАЖЕНИЕ",statusColor:"#16a34a",sub:"Недоказанность объёма и дефекты приёмки"},{label:"2. СНИЖЕНИЕ НЕУСТОЙКИ",tag:"ст. 333 ГК РФ",statusColor:"#C1A066",sub:"Несоразмерность последствиям нарушения"},{label:"3. ВСТРЕЧНЫЙ ИСК ИЛИ ЗАЧЁТ",tag:"КОНТРПОЗИЦИЯ",statusColor:"#16a34a",sub:"Встречные финансовые требования к истцу"},{label:"4. ЗАЩИТА СЧЕТОВ И АКТИВОВ",tag:"ОТМЕНА МЕР",statusColor:"#C1A066",sub:"Снятие несоразмерного судебного ареста"}],stampText:"ОТЗЫВ НА ИСК",sealText:"ПОЗИЦИЯ ГОТОВА ✓",sheet2Title:"КОНТРРАСЧЁТ ТРЕБОВАНИЙ",sheet2Sub:"Снижение необоснованных санкций",sheet2Rows:["Снижение штрафных санкций по ст. 333 ГК РФ","Исключение неподтверждённых объёмов работ","Обоснование пропуска срока исковой давности"],sheet3Title:"ОПРЕДЕЛЕНИЕ СУДА",sheet3Sub:"Отзыв приобщён к материалам"},obzhalovanie:{docType:"АПЕЛЛЯЦИОННАЯ ЖАЛОБА",docSub:"19 ААС Воронеж • АС ЦО Калуга",title:"В 19 АРБИТРАЖНЫЙ АПЕЛЛЯЦИОННЫЙ СУД",caseNum:"На решение АС Липецкой области",items:[{label:"1. НАРУШЕНИЕ НОРМ ПРАВА",tag:"ОСНОВАНИЕ",statusColor:"#16a34a",sub:"Неправильное применение материальных норм"},{label:"2. НЕПОЛНОТА ИССЛЕДОВАНИЯ",tag:"ДОВОД",statusColor:"#C1A066",sub:"Игнорирование ключевых доказательств судом"},{label:"3. ПРИОСТАНОВЛЕНИЕ РЕШЕНИЯ",tag:"ст. 283 АПК РФ",statusColor:"#16a34a",sub:"Блокировка взыскания до рассмотрения жалобы"},{label:"4. ОТМЕНА СУДЕБНОГО АКТА",tag:"ЦЕЛЬ",statusColor:"#C1A066",sub:"Вынесение нового решения в пользу доверителя"}],stampText:"ЖАЛОБА ПОДАНА",sealText:"ИСПОЛНЕНИЕ СТОП ✓",sheet2Title:"ХОДАТАЙСТВО О ПРИОСТАНОВКЕ",sheet2Sub:"ст. 283 АПК РФ",sheet2Rows:["Предотвращение списания банком по инкассо","Обеспечение поворота исполнения судебного акта","Предоставление встречного обеспечения"],sheet3Title:"СИСТЕМА «МОЙ АРБИТР»",sheet3Sub:"Жалоба принята к производству"}}[e];return(0,t.jsxs)("div",{className:"hero-right-col-creative",style:{display:"flex",justifyContent:"center",position:"relative",width:"100%"},children:[(0,t.jsx)("div",{style:{position:"absolute",top:"50%",left:"50%",transform:"translate(-50%, -50%)",width:"140%",height:"140%",background:"radial-gradient(circle, rgba(193, 160, 102, 0.12) 0%, rgba(23, 50, 77, 0.05) 35%, transparent 65%)",zIndex:0,pointerEvents:"none"}}),(0,t.jsx)("svg",{className:"hero-vector-svg",style:{position:"absolute",top:"35%",left:"80%",transform:"translate(-50%, -50%)",width:"580px",height:"580px",opacity:.08,zIndex:0,pointerEvents:"none"},viewBox:"0 0 24 24",fill:"none",stroke:"var(--color-primary)",strokeWidth:"0.6",children:(0,t.jsx)("path",{d:"M3 21h18 M4 21v-2h16v2 M6 19V9 M10 19V9 M14 19V9 M18 19V9 M12 4l-9 5h18l-9-5z M4 9h16"})}),(0,t.jsxs)("div",{className:"mockup-container",style:{zIndex:1,margin:0},children:[(0,t.jsx)("div",{style:{position:"absolute",width:"220px",height:"220px",background:"var(--color-primary)",filter:"blur(90px)",opacity:.12,borderRadius:"50%"}}),(0,t.jsx)("div",{className:"doc-wrapper-float-3",children:(0,t.jsx)("div",{className:"doc-sheet doc-sheet-3",children:(0,t.jsxs)("div",{style:{padding:"24px 20px",position:"relative",height:"100%",display:"flex",flexDirection:"column"},children:[(0,t.jsxs)("div",{style:{display:"flex",justifyContent:"space-between",alignItems:"center",borderBottom:"1px solid rgba(23,50,77,0.12)",paddingBottom:"6px",marginBottom:"12px"},children:[(0,t.jsx)("span",{style:{fontSize:"6.5px",fontWeight:"bold",color:"var(--color-deep-blue)",letterSpacing:"0.04em"},children:i.sheet3Title}),(0,t.jsx)("span",{style:{fontSize:"5.5px",color:"var(--color-primary)"},children:"Электронная подача"})]}),(0,t.jsxs)("div",{style:{background:"rgba(247, 244, 237, 0.8)",padding:"6px 8px",borderLeft:"2px solid var(--color-gold)",marginBottom:"10px"},children:[(0,t.jsx)("div",{style:{fontSize:"6px",fontWeight:600,color:"var(--color-deep-blue)"},children:i.sheet3Sub}),(0,t.jsx)("div",{style:{fontSize:"5px",color:"var(--color-text-secondary)",marginTop:"2px"},children:"Статус: Документы зарегистрированы судом"})]}),(0,t.jsxs)("div",{style:{display:"flex",flexDirection:"column",gap:"6px",opacity:.7},children:[(0,t.jsx)("div",{style:{width:"100%",height:"3px",background:"rgba(23,50,77,0.12)"}}),(0,t.jsx)("div",{style:{width:"90%",height:"3px",background:"rgba(23,50,77,0.08)"}}),(0,t.jsx)("div",{style:{width:"75%",height:"3px",background:"rgba(23,50,77,0.08)"}})]})]})})}),(0,t.jsx)("div",{className:"doc-wrapper-float-2",children:(0,t.jsx)("div",{className:"doc-sheet doc-sheet-2",children:(0,t.jsxs)("div",{style:{padding:"26px 20px",position:"relative",height:"100%",display:"flex",flexDirection:"column"},children:[(0,t.jsxs)("div",{style:{display:"flex",justifyContent:"space-between",alignItems:"center",borderBottom:"1px solid rgba(23,50,77,0.15)",paddingBottom:"8px",marginBottom:"12px"},children:[(0,t.jsx)("span",{style:{fontSize:"7px",fontWeight:"bold",color:"var(--color-deep-blue)",letterSpacing:"0.05em"},children:i.sheet2Title}),(0,t.jsx)("span",{style:{fontSize:"6px",color:"var(--color-gold)",fontWeight:600},children:"Приложение № 1"})]}),(0,t.jsx)("div",{style:{fontSize:"5.5px",color:"var(--color-text-secondary)",marginBottom:"10px"},children:i.sheet2Sub}),(0,t.jsx)("div",{style:{display:"flex",flexDirection:"column",gap:"7px",marginBottom:"14px"},children:i.sheet2Rows.map((e,i)=>(0,t.jsxs)("div",{style:{display:"flex",alignItems:"center",gap:"6px"},children:[(0,t.jsx)("span",{style:{width:"4px",height:"4px",borderRadius:"50%",background:"var(--color-gold)",flexShrink:0}}),(0,t.jsx)("span",{style:{fontSize:"5.5px",color:"var(--color-deep-blue)",lineHeight:1.3},children:e})]},i))}),(0,t.jsxs)("div",{style:{marginTop:"auto",display:"flex",justifyContent:"space-between",paddingTop:"8px",borderTop:"1px dashed rgba(23,50,77,0.15)"},children:[(0,t.jsx)("div",{style:{fontSize:"5px",color:"rgba(23,50,77,0.6)"},children:"Госпошлина: оплачена / отсрочена"}),(0,t.jsx)("div",{style:{fontSize:"5px",color:"var(--color-gold)",fontWeight:"bold"},children:i.sealText})]})]})})}),(0,t.jsx)("div",{className:"doc-wrapper-float-1",children:(0,t.jsx)("div",{className:"doc-sheet doc-sheet-1",children:(0,t.jsxs)("div",{style:{padding:"24px 20px",position:"relative",height:"100%",display:"flex",flexDirection:"column"},children:[(0,t.jsxs)("div",{style:{display:"flex",justifyContent:"space-between",alignItems:"center",borderBottom:"1px solid rgba(23,50,77,0.2)",paddingBottom:"8px",marginBottom:"10px"},children:[(0,t.jsx)("img",{src:"/images/logo_dark.png",alt:"Де-Юре",style:{width:"52px",height:"auto",opacity:.95}}),(0,t.jsxs)("div",{style:{display:"flex",flexDirection:"column",gap:"2px",alignItems:"flex-end"},children:[(0,t.jsx)("span",{style:{fontSize:"6.5px",fontWeight:"bold",color:"var(--color-deep-blue)",letterSpacing:"0.04em"},children:i.docType}),(0,t.jsx)("span",{style:{fontSize:"5px",color:"var(--color-primary)"},children:i.docSub})]})]}),(0,t.jsxs)("div",{style:{marginBottom:"10px",padding:"4px 6px",background:"rgba(23,50,77,0.04)",borderLeft:"2px solid var(--color-primary)"},children:[(0,t.jsx)("div",{style:{fontSize:"5.5px",fontWeight:600,color:"var(--color-deep-blue)"},children:i.title}),(0,t.jsx)("div",{style:{fontSize:"5px",color:"var(--color-gold-text, #80633F)",fontWeight:600},children:i.caseNum})]}),(0,t.jsx)("div",{style:{display:"flex",flexDirection:"column",gap:"6px",marginBottom:"10px"},children:i.items.map((e,i)=>(0,t.jsxs)("div",{style:{background:"rgba(247, 244, 237, 0.75)",borderLeft:"3px solid #C1A066",padding:"5px 7px"},children:[(0,t.jsxs)("div",{style:{display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:"2px"},children:[(0,t.jsx)("span",{style:{fontSize:"5.8px",fontWeight:"bold",color:"var(--color-deep-blue)"},children:e.label}),(0,t.jsx)("span",{style:{fontSize:"4.8px",color:e.statusColor,fontWeight:"bold"},children:e.tag})]}),(0,t.jsx)("div",{style:{fontSize:"4.8px",color:"var(--color-text-secondary)",lineHeight:1.2},children:e.sub})]},i))}),(0,t.jsxs)("div",{style:{marginTop:"auto",display:"flex",justifyContent:"space-between",alignItems:"flex-end",paddingTop:"6px",borderTop:"1px solid rgba(23,50,77,0.15)"},children:[(0,t.jsxs)("div",{style:{display:"flex",flexDirection:"column",gap:"1px"},children:[(0,t.jsx)("span",{style:{fontSize:"5.2px",color:"rgba(23,50,77,0.7)",fontWeight:600},children:"ЮК «ДЕ-ЮРЕ» • АРБИТРАЖ"}),(0,t.jsx)("span",{style:{fontSize:"4.8px",color:"#C1A066"},children:"Липецк • Защита бизнеса"})]}),(0,t.jsx)("div",{style:{border:"1px solid #C1A066",padding:"2px 5px",display:"flex",alignItems:"center",justifyContent:"center",background:"rgba(193, 160, 102, 0.08)"},children:(0,t.jsx)("span",{style:{fontSize:"4.5px",fontWeight:"bold",color:"#80633F"},children:i.stampText})})]})]})})})]})]})}])}]);
