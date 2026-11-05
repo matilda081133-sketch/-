@@ -3,5 +3,5 @@
 :HL["/_next/static/media/6bbcb5b36acd717c-s.p.24zmmel7ed1zj.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/_next/static/media/83afe278b6a6bb3c-s.p.2bn3s6zvc0dyp.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/_next/static/media/9c72aa0f40e4eef8-s.p.1y4-pdgsjb-pw.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
-:HL["/images/nalivkina.webp","image",{"fetchPriority":"high"}]
-0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"team","param":null,"prefetchHints":0,"slots":{"children":{"name":"slug","param":{"type":"d","key":"nalivkina-svetlana-andreevna","siblings":null},"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}}}},"staleTime":300,"buildId":"RA38cQtf4kNqpCW5TxmhT"}
+:HL["/images/nalivkina.webp","image",{"imageSrcSet":"/images/nalivkina-420.webp 420w, /images/nalivkina.webp 683w","imageSizes":"(max-width: 768px) 100vw, 440px","fetchPriority":"high"}]
+0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"team","param":null,"prefetchHints":0,"slots":{"children":{"name":"slug","param":{"type":"d","key":"nalivkina-svetlana-andreevna","siblings":null},"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}}}},"staleTime":300,"buildId":"pOWXYghhI3UjTRkIvc90G"}

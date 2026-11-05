@@ -76,7 +76,7 @@ const specialistAreas: Record<string, { name: string; href?: string }[]> = {
     { name: 'Арбитражные споры', href: '/biznesu/arbitrazhnyj-yurist/' },
     { name: 'Земельные споры', href: '/grazhdanam/zemelnyj-yurist/' },
     { name: 'Недвижимость', href: '/grazhdanam/yurist-po-nedvizhimosti/' },
-    { name: 'Наследственные вопросы', href: '/grazhdanam/yurist-po-nasledstvu/' },
+    { name: 'Наследственные вопросы', href: '/grazhdanam/nasledstvennyj-yurist/' },
     { name: 'Военное право', href: '/grazhdanam/voennyj-yurist/' },
     { name: 'Семейные споры', href: '/grazhdanam/semejnyj-yurist/' },
     { name: 'Трудовые споры', href: '/grazhdanam/trudovoj-yurist/' }
@@ -121,12 +121,12 @@ export default function SpecialistyPage() {
             'item': {
               '@type': 'Person',
               'name': 'Бобкин Аркадий Евгеньевич',
-              'jobTitle': 'Директор, управляющий партнёр ЮК «Де-Юре»',
+              'jobTitle': 'Руководитель, юрист ЮК «Де-Юре»',
               'image': 'https://dejure-help.ru/images/bobkin.webp',
               'url': 'https://dejure-help.ru/specialisty/bobkin-arkadiy-evgenevich/',
               'worksFor': {
                 '@type': 'LegalService',
-                'name': 'ООО ЮК «Де-Юре»',
+                'name': 'ЮК «Де-Юре»',
                 'url': 'https://dejure-help.ru/'
               }
             }
@@ -134,6 +134,65 @@ export default function SpecialistyPage() {
           {
             '@type': 'ListItem',
             'position': 2,
+            'item': {
+              '@type': 'Person',
+              'name': 'Смольянинова Марина Валерьевна',
+              'jobTitle': 'Ведущий юрист ЮК «Де-Юре»',
+              'image': 'https://dejure-help.ru/images/smolyaninova.webp',
+              'url': 'https://dejure-help.ru/specialisty/smolyaninova-marina-valerevna/',
+              'worksFor': {
+                '@type': 'LegalService',
+                'name': 'ЮК «Де-Юре»',
+                'url': 'https://dejure-help.ru/'
+              }
+            }
+          },
+          {
+            '@type': 'ListItem',
+            'position': 3,
+            'item': {
+              '@type': 'Person',
+              'name': 'Начешников Владимир Викторович',
+              'jobTitle': 'Юрист ЮК «Де-Юре»',
+              'image': 'https://dejure-help.ru/images/nacheshnikov.webp',
+              'url': 'https://dejure-help.ru/specialisty/nacheshnikov-vladimir-viktorovich/',
+              'worksFor': {
+                '@type': 'LegalService',
+                'name': 'ЮК «Де-Юре»',
+                'url': 'https://dejure-help.ru/'
+              }
+            }
+          },
+          {
+            '@type': 'ListItem',
+            'position': 4,
+            'item': {
+              '@type': 'Person',
+              'name': 'Полозова Елена Анатольевна',
+              'jobTitle': 'Юрист ЮК «Де-Юре»',
+              'image': 'https://dejure-help.ru/images/polozova.webp',
+              'url': 'https://dejure-help.ru/specialisty/polozova-elena-anatolevna/',
+              'worksFor': {
+                '@type': 'LegalService',
+                'name': 'ЮК «Де-Юре»',
+                'url': 'https://dejure-help.ru/'
+              }
+            }
+          },
+          {
+            '@type': 'ListItem',
+            'position': 5,
+            'item': {
+              '@type': 'Person',
+              'name': 'Наливкина Светлана Андреевна',
+              'jobTitle': 'Юрист, арбитражный управляющий, юрист-партнёр',
+              'image': 'https://dejure-help.ru/images/nalivkina.webp',
+              'url': 'https://dejure-help.ru/specialisty/nalivkina-svetlana-andreevna/'
+            }
+          },
+          {
+            '@type': 'ListItem',
+            'position': 6,
             'item': {
               '@type': 'Person',
               'name': 'Конопкин Дмитрий Сергеевич',
@@ -145,23 +204,7 @@ export default function SpecialistyPage() {
           },
           {
             '@type': 'ListItem',
-            'position': 3,
-            'item': {
-              '@type': 'Person',
-              'name': 'Смольянинова Марина Валерьевна',
-              'jobTitle': 'Ведущий юрист ЮК «Де-Юре»',
-              'image': 'https://dejure-help.ru/images/smolyaninova.webp',
-              'url': 'https://dejure-help.ru/specialisty/smolyaninova-marina-valerevna/',
-              'worksFor': {
-                '@type': 'LegalService',
-                'name': 'ООО ЮК «Де-Юре»',
-                'url': 'https://dejure-help.ru/'
-              }
-            }
-          },
-          {
-            '@type': 'ListItem',
-            'position': 4,
+            'position': 7,
             'item': {
               '@type': 'Person',
               'name': 'Гусев Олег Юрьевич',
@@ -169,33 +212,6 @@ export default function SpecialistyPage() {
               'identifier': '48/672',
               'image': 'https://dejure-help.ru/images/gusev.webp',
               'url': 'https://dejure-help.ru/specialisty/gusev-oleg-yurevich/'
-            }
-          },
-          {
-            '@type': 'ListItem',
-            'position': 5,
-            'item': {
-              '@type': 'Person',
-              'name': 'Начешников Владимир Викторович',
-              'jobTitle': 'Специалист ЮК «Де-Юре»',
-              'image': 'https://dejure-help.ru/images/nacheshnikov.webp',
-              'url': 'https://dejure-help.ru/specialisty/nacheshnikov-vladimir-viktorovich/',
-              'worksFor': {
-                '@type': 'LegalService',
-                'name': 'ООО ЮК «Де-Юре»',
-                'url': 'https://dejure-help.ru/'
-              }
-            }
-          },
-          {
-            '@type': 'ListItem',
-            'position': 6,
-            'item': {
-              '@type': 'Person',
-              'name': 'Наливкина Светлана Андреевна',
-              'jobTitle': 'Юрист, партнёр ЮК «Де-Юре»',
-              'image': 'https://dejure-help.ru/images/nalivkina.webp',
-              'url': 'https://dejure-help.ru/specialisty/nalivkina-svetlana-andreevna/'
             }
           }
         ]
@@ -522,6 +538,12 @@ export default function SpecialistyPage() {
                         userSelect: 'none'
                       }}
                     >
+                      <Link 
+                        href={`/specialisty/${sp.slug}/`}
+                        style={{ display: 'block', width: '100%', height: '100%', position: 'relative' }}
+                        tabIndex={-1}
+                        aria-hidden="true"
+                      >
                         <img 
                           src={sp.image} 
                           alt={altText}
@@ -529,6 +551,10 @@ export default function SpecialistyPage() {
                           height={440}
                           loading="lazy"
                           decoding="async"
+                          {...(sp.slug === 'nalivkina-svetlana-andreevna' ? {
+                            srcSet: '/images/nalivkina-420.webp 420w, /images/nalivkina.webp 683w',
+                            sizes: '(max-width: 768px) 100vw, 330px'
+                          } : {})}
                           style={{ 
                             position: 'absolute',
                             top: 0,
@@ -540,6 +566,7 @@ export default function SpecialistyPage() {
                             display: 'block' 
                           }}
                         />
+                      </Link>
                     </div>
 
                     {/* Content Column */}

@@ -40,8 +40,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       images: [
         {
           url: imageUrl,
-          width: 1200,
-          height: 630,
+          width: member.slug === 'nalivkina-svetlana-andreevna' ? 683 : 1200,
+          height: member.slug === 'nalivkina-svetlana-andreevna' ? 1024 : 630,
           alt: member.slug === 'bobkin-arkadiy-evgenevich'
             ? 'Аркадий Евгеньевич Бобкин — директор, управляющий партнёр ЮК «Де-Юре»'
             : member.slug === 'konopkin-dmitriy-sergeevich'
@@ -395,6 +395,10 @@ export default async function SpecialistPage({ params }: PageProps) {
                   height={540}
                   fetchPriority="high"
                   decoding="async"
+                  {...(member.slug === 'nalivkina-svetlana-andreevna' ? {
+                    srcSet: '/images/nalivkina-420.webp 420w, /images/nalivkina.webp 683w',
+                    sizes: '(max-width: 768px) 100vw, 440px'
+                  } : {})}
                   alt={
                     member.slug === 'konopkin-dmitriy-sergeevich'
                       ? 'Конопкин Дмитрий Сергеевич — адвокат'
