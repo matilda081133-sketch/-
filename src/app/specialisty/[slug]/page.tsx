@@ -239,10 +239,11 @@ export default async function SpecialistPage({ params }: PageProps) {
             <div className="specialist-detail-info">
               <h1 style={{ fontSize: 'clamp(32px, 4vw, 48px)', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)', marginBottom: '16px', lineHeight: 1.2 }}>
                 {member.slug === 'nalivkina-svetlana-andreevna' ? (
-                <div style={{ marginTop: '16px', fontSize: '13px', color: 'var(--color-text-secondary)', lineHeight: 1.5, textAlign: 'left', padding: '10px 14px', background: 'rgba(16, 39, 59, 0.04)', borderLeft: '3px solid var(--color-deep-blue, #10273B)' }}>
-                  Светлана Андреевна Наливкина является юристом-партнёром ЮК «Де-Юре» и ведёт приём по предварительной записи. Условия оказания юридической помощи и формат работы согласовываются до начала сотрудничества.
-                </div>
-              ) : member.slug === 'konopkin-dmitriy-sergeevich' ? (
+                  <>
+                    <span style={{ display: 'block' }}>Наливкина</span>
+                    <span style={{ display: 'block' }}>Светлана Андреевна</span>
+                  </>
+                ) : member.slug === 'konopkin-dmitriy-sergeevich' ? (
                   <>
                     <span style={{ display: 'block' }}>Конопкин</span>
                     <span style={{ display: 'block' }}>Дмитрий Сергеевич</span>
@@ -271,11 +272,6 @@ export default async function SpecialistPage({ params }: PageProps) {
                   <>
                     <span style={{ display: 'block' }}>Начешников</span>
                     <span style={{ display: 'block' }}>Владимир Викторович</span>
-                  </>
-                ) : member.slug === 'nalivkina-svetlana-andreevna' ? (
-                  <>
-                    <span style={{ display: 'block' }}>Наливкина</span>
-                    <span style={{ display: 'block' }}>Светлана Андреевна</span>
                   </>
                 ) : (
                   member.name
@@ -439,6 +435,10 @@ export default async function SpecialistPage({ params }: PageProps) {
             .nowrap-desk {
               white-space: normal !important;
             }
+            .chronology-grid {
+              grid-template-columns: repeat(2, 1fr) !important;
+              gap: 24px !important;
+            }
           }
         `}} />
       </section>
@@ -582,7 +582,8 @@ export default async function SpecialistPage({ params }: PageProps) {
             <div style={{ position: 'relative', paddingTop: '10px' }}>
               {/* Horizontal line */}
               <div style={{ position: 'absolute', top: '20px', left: '10px', right: '10px', height: '2px', background: 'rgba(212, 175, 55, 0.3)', zIndex: 0 }} className="d-md-block d-none"></div>
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '30px' }}>
+              <div className="chronology-grid"
+              style={{ display: 'grid', gridTemplateColumns: `repeat(${member.experienceChronology.length}, minmax(0, 1fr))`, gap: '20px' }}>
                 {member.experienceChronology.map((item, i) => (
                   <div key={i} style={{ position: 'relative', zIndex: 1, display: 'flex', flexDirection: 'column' }}>
                     <div style={{ width: '22px', height: '22px', borderRadius: '50%', background: 'var(--color-gold)', border: '4px solid #f9f6f0', boxShadow: '0 0 0 1px rgba(212, 175, 55, 0.3)', marginBottom: '16px' }}></div>
