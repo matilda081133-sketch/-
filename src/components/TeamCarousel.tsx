@@ -118,6 +118,20 @@ export default function TeamCarousel({
     {
       name: (
         <>
+          <span style={{ display: 'block' }}>Наливкина</span>
+          <span style={{ display: 'block' }}>Светлана Андреевна</span>
+        </>
+      ),
+      rawName: 'Наливкина Светлана Андреевна',
+      role: 'Юрист, арбитражный управляющий\nЮрист-партнёр',
+      desc: 'Специализация: банкротство граждан и бизнеса, арбитражные споры. Стаж с 2001 г.',
+      img: '/images/nalivkina.webp',
+      link: '/specialisty/nalivkina-svetlana-andreevna/',
+      imgPosition: 'center 20%'
+    },
+    {
+      name: (
+        <>
           <span style={{ display: 'block' }}>Полозова</span>
           <span style={{ display: 'block' }}>Елена Анатольевна</span>
         </>
