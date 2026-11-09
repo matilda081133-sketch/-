@@ -121,7 +121,7 @@ export default function SpecialistyPage() {
             'item': {
               '@type': 'Person',
               'name': 'Бобкин Аркадий Евгеньевич',
-              'jobTitle': 'Руководитель, юрист ЮК «Де-Юре»',
+              'jobTitle': 'Директор, управляющий партнёр ЮК «Де-Юре»',
               'image': 'https://dejure-help.ru/images/bobkin.webp',
               'url': 'https://dejure-help.ru/specialisty/bobkin-arkadiy-evgenevich/',
               'worksFor': {
@@ -153,7 +153,7 @@ export default function SpecialistyPage() {
             'item': {
               '@type': 'Person',
               'name': 'Начешников Владимир Викторович',
-              'jobTitle': 'Юрист ЮК «Де-Юре»',
+              'jobTitle': 'Специалист ЮК «Де-Юре»',
               'image': 'https://dejure-help.ru/images/nacheshnikov.webp',
               'url': 'https://dejure-help.ru/specialisty/nacheshnikov-vladimir-viktorovich/',
               'worksFor': {
@@ -185,7 +185,7 @@ export default function SpecialistyPage() {
             'item': {
               '@type': 'Person',
               'name': 'Наливкина Светлана Андреевна',
-              'jobTitle': 'Юрист, арбитражный управляющий, юрист-партнёр',
+              'jobTitle': 'Юрист, партнёр ЮК «Де-Юре»',
               'image': 'https://dejure-help.ru/images/nalivkina.webp',
               'url': 'https://dejure-help.ru/specialisty/nalivkina-svetlana-andreevna/'
             }

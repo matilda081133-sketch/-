@@ -123,7 +123,7 @@ export default function TeamCarousel({
         </>
       ),
       rawName: 'Наливкина Светлана Андреевна',
-      role: 'Юрист, арбитражный управляющий\nЮрист-партнёр',
+      role: 'Юрист, партнёр ЮК «Де-Юре»',
       desc: 'Специализация: банкротство граждан и бизнеса, арбитражные споры. Стаж с 2001 г.',
       img: '/images/nalivkina.webp',
       link: '/specialisty/nalivkina-svetlana-andreevna/',
