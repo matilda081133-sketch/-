@@ -6,8 +6,10 @@ import Link from 'next/link';
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+  const [specialistsSubmenuOpen, setSpecialistsSubmenuOpen] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [mobileAccordion, setMobileAccordion] = useState<string | null>(null);
+  const [mobileSubAccordion, setMobileSubAccordion] = useState<string | null>(null);
 
   useEffect(() => {
     let prev = false;
@@ -47,6 +49,7 @@ export default function Header() {
   const closeMobileMenu = () => {
     setMobileMenuOpen(false);
     setMobileAccordion(null);
+    setMobileSubAccordion(null);
   };
 
   const b2cHubs = [
@@ -79,6 +82,16 @@ export default function Header() {
     { title: "Миграционное сопровождение бизнеса", href: "/biznesu/migracionnoe-soprovozhdenie-biznesa/" },
     { title: "Разблокировка расчётного счёта по 115-ФЗ", href: "/biznesu/razblokirovka-raschetnogo-scheta-po-115-fz/" },
     { title: "Уголовно-правовая защита бизнеса", href: "/biznesu/ugolovno-pravovaya-zashchita-biznesa/" }
+  ];
+
+  const specialistsList = [
+    { name: "Бобкин Аркадий Евгеньевич", role: "Директор, управляющий партнёр", href: "/specialisty/bobkin-arkadiy-evgenevich/" },
+    { name: "Смольянинова Марина Валерьевна", role: "Руководитель практики", href: "/specialisty/smolyaninova-marina-valerevna/" },
+    { name: "Начешников Владимир Викторович", role: "Специалист ЮК «Де-Юре»", href: "/specialisty/nacheshnikov-vladimir-viktorovich/" },
+    { name: "Полозова Елена Анатольевна", role: "Юрист", href: "/specialisty/polozova-elena-anatolevna/" },
+    { name: "Наливкина Светлана Андреевна", role: "Юрист, партнёр", href: "/specialisty/nalivkina-svetlana-andreevna/" },
+    { name: "Конопкин Дмитрий Сергеевич", role: "Адвокат", href: "/specialisty/konopkin-dmitriy-sergeevich/" },
+    { name: "Гусев Олег Юрьевич", role: "Адвокат", href: "/specialisty/gusev-oleg-yurevich/" }
   ];
 
   return (
@@ -160,9 +173,9 @@ export default function Header() {
           <div 
             className="nav-item-dropdown"
             onMouseEnter={() => setOpenDropdown('about')} 
-            onMouseLeave={() => setOpenDropdown(null)}
+            onMouseLeave={() => { setOpenDropdown(null); setSpecialistsSubmenuOpen(false); }}
             onFocus={() => setOpenDropdown('about')}
-            onBlur={() => setOpenDropdown(null)}
+            onBlur={() => { setOpenDropdown(null); setSpecialistsSubmenuOpen(false); }}
           >
             <Link href="/o-kompanii" className="nav-link" style={{ display: 'inline-flex', alignItems: 'center', gap: '5px' }}>
               <span>О компании</span>
@@ -172,7 +185,76 @@ export default function Header() {
             </Link>
             <ul id="dropdown-about" className={`dropdown-simple ${openDropdown === 'about' ? 'show' : ''}`} style={{ minWidth: '250px', width: 'auto' }}>
               <li><Link href="/o-kompanii" className="dropdown-link-2" style={{ fontWeight: 600 }}>О компании</Link></li>
-              <li><Link href="/specialisty" className="dropdown-link-2">Специалисты</Link></li>
+              
+              {/* Специалисты с выпадающим списком */}
+              <li 
+                className="nav-subdropdown-item"
+                onMouseEnter={() => setSpecialistsSubmenuOpen(true)}
+                onMouseLeave={() => setSpecialistsSubmenuOpen(false)}
+                style={{ position: 'relative' }}
+              >
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                  <Link 
+                    href="/specialisty" 
+                    className="dropdown-link-2" 
+                    style={{ flexGrow: 1, display: 'flex', alignItems: 'center', justifyContent: 'space-between', paddingRight: '16px' }}
+                    onClick={() => { setOpenDropdown(null); setSpecialistsSubmenuOpen(false); }}
+                  >
+                    <span>Специалисты</span>
+                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ opacity: 0.6, transform: specialistsSubmenuOpen ? 'translateX(2px)' : 'none', transition: 'transform 0.2s' }}>
+                      <polyline points="9 18 15 12 9 6"></polyline>
+                    </svg>
+                  </Link>
+                </div>
+
+                {/* Выпадающий список каждого специалиста */}
+                <ul 
+                  className={`subdropdown-menu ${specialistsSubmenuOpen ? 'show' : ''}`}
+                  style={{
+                    position: 'absolute',
+                    left: '100%',
+                    top: '-6px',
+                    minWidth: '290px',
+                    background: 'var(--color-white)',
+                    border: '1px solid var(--color-border)',
+                    boxShadow: '0 8px 24px rgba(0,0,0,0.12)',
+                    borderRadius: '4px',
+                    padding: '8px 0',
+                    margin: 0,
+                    listStyle: 'none',
+                    zIndex: 1005,
+                    opacity: specialistsSubmenuOpen ? 1 : 0,
+                    visibility: specialistsSubmenuOpen ? 'visible' : 'hidden',
+                    transition: 'opacity 0.2s, visibility 0.2s',
+                    pointerEvents: specialistsSubmenuOpen ? 'auto' : 'none'
+                  }}
+                >
+                  <li>
+                    <Link 
+                      href="/specialisty" 
+                      className="dropdown-link-2" 
+                      style={{ fontWeight: 600, color: 'var(--color-primary)', borderBottom: '1px solid var(--color-border)', paddingBottom: '8px', marginBottom: '4px' }}
+                      onClick={() => { setOpenDropdown(null); setSpecialistsSubmenuOpen(false); }}
+                    >
+                      Все специалисты
+                    </Link>
+                  </li>
+                  {specialistsList.map((spec) => (
+                    <li key={spec.href}>
+                      <Link 
+                        href={spec.href} 
+                        className="dropdown-link-2" 
+                        style={{ display: 'flex', flexDirection: 'column', gap: '2px', padding: '6px 20px' }}
+                        onClick={() => { setOpenDropdown(null); setSpecialistsSubmenuOpen(false); }}
+                      >
+                        <span style={{ fontSize: '13.5px', fontWeight: 500, color: 'var(--color-deep-blue)' }}>{spec.name}</span>
+                        <span style={{ fontSize: '11.5px', color: 'var(--color-text-secondary)' }}>{spec.role}</span>
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </li>
+
               <li><Link href="/praktika" className="dropdown-link-2">Практика</Link></li>
               <li><Link href="/stoimost" className="dropdown-link-2">Стоимость и оплата</Link></li>
               <li><Link href="/distancionnaya-yuridicheskaya-pomoshch" className="dropdown-link-2">Дистанционная помощь</Link></li>
@@ -433,9 +515,52 @@ export default function Header() {
                 <Link href="/o-kompanii" onClick={closeMobileMenu} style={{ fontWeight: 'bold', color: 'var(--color-primary)', fontSize: '15px' }}>
                   О компании
                 </Link>
-                <Link href="/specialisty" onClick={closeMobileMenu} style={{ color: 'var(--color-text-main)', fontSize: '15px', padding: '4px 0' }}>
-                  Специалисты
-                </Link>
+
+                {/* Специалисты с раскрывающимся списком */}
+                <div style={{ display: 'flex', flexDirection: 'column' }}>
+                  <button
+                    type="button"
+                    onClick={() => setMobileSubAccordion(mobileSubAccordion === 'specialisty' ? null : 'specialisty')}
+                    style={{
+                      width: '100%',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'space-between',
+                      padding: '6px 0',
+                      background: 'none',
+                      border: 'none',
+                      fontSize: '15px',
+                      color: mobileSubAccordion === 'specialisty' ? 'var(--color-primary)' : 'var(--color-text-main)',
+                      fontWeight: mobileSubAccordion === 'specialisty' ? 600 : 400,
+                      cursor: 'pointer',
+                      textAlign: 'left'
+                    }}
+                  >
+                    <span>Специалисты</span>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" style={{ transform: mobileSubAccordion === 'specialisty' ? 'rotate(180deg)' : 'rotate(0deg)', transition: 'transform 0.3s', opacity: 0.7 }}>
+                      <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                  </button>
+
+                  {mobileSubAccordion === 'specialisty' && (
+                    <div style={{ paddingLeft: '12px', borderLeft: '2px solid rgba(212, 175, 55, 0.4)', margin: '4px 0 8px 4px', display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                      <Link href="/specialisty" onClick={closeMobileMenu} style={{ fontSize: '13.5px', fontWeight: 600, color: 'var(--color-primary)', textDecoration: 'none', padding: '2px 0' }}>
+                        Все специалисты
+                      </Link>
+                      {specialistsList.map((spec) => (
+                        <Link 
+                          key={spec.href}
+                          href={spec.href} 
+                          onClick={closeMobileMenu}
+                          style={{ fontSize: '13.5px', color: 'var(--color-text-main)', textDecoration: 'none', padding: '3px 0', display: 'flex', flexDirection: 'column', gap: '1px' }}
+                        >
+                          <span style={{ fontWeight: 500 }}>{spec.name}</span>
+                          <span style={{ fontSize: '11.5px', color: 'var(--color-text-secondary)' }}>{spec.role}</span>
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                </div>
                 <Link href="/praktika" onClick={closeMobileMenu} style={{ color: 'var(--color-text-main)', fontSize: '15px', padding: '4px 0' }}>
                   Практика
                 </Link>

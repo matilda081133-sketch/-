@@ -1032,6 +1032,28 @@ a:hover .related-service-card .card-arrow svg {
   color: var(--color-primary);
 }
 
+.subdropdown-menu {
+  position: absolute;
+  left: 100%;
+  top: -6px;
+  min-width: 290px;
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  border-radius: 4px;
+  padding: 8px 0;
+  margin: 0;
+  list-style: none;
+  z-index: 1005;
+}
+
+@media (min-width: 992px) and (max-width: 1120px) {
+  .subdropdown-menu {
+    left: auto !important;
+    right: 100% !important;
+  }
+}
+
 @media (max-width: 991px) {
   .dropdown-simple {
     position: static;
