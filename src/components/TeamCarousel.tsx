@@ -147,7 +147,7 @@ export default function TeamCarousel({
       rawName: 'Зубова Наталья Юрьевна',
       role: 'Юрист, партнёр ЮК «Де-Юре»',
       desc: 'Специализация: недвижимость, земельное и жилищное право, юридическое сопровождение бизнеса. Руководила юридическим отделом Департамента экономики администрации Липецка.',
-      img: '/images/zubova.webp',
+      img: '',
       link: '/specialisty/zubova-natalya-yuryevna/',
       imgPosition: 'center 15%'
     },
@@ -247,9 +247,9 @@ export default function TeamCarousel({
                             {person.img ? (
                               <img src={person.img} alt={person.rawName} width={300} height={270} style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: person.imgPosition || 'center 15%' }} loading="lazy" decoding="async" />
                             ) : (
-                              <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', background: 'var(--color-deep-blue)', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', color: 'rgba(255,255,255,0.4)' }}>
-                                <div style={{ width: '40px', height: '40px', border: '1px solid rgba(212, 175, 55, 0.4)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '12px', color: 'var(--color-primary)', fontFamily: 'var(--font-serif)', fontSize: '20px' }}>DJ</div>
-                                <span style={{ fontSize: '12px', textTransform: 'uppercase', letterSpacing: '0.1em' }}>Фото ожидается</span>
+                              <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', background: 'var(--color-deep-blue)', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
+                                <div style={{ width: '48px', height: '48px', border: '1px solid rgba(212, 175, 55, 0.6)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '14px', color: 'var(--color-gold, #B89C72)', fontFamily: 'var(--font-serif)', fontSize: '22px', fontWeight: 600 }}>DJ</div>
+                                <span style={{ fontSize: '12px', textTransform: 'uppercase', letterSpacing: '0.12em', color: 'rgba(255,255,255,0.7)', fontWeight: 500 }}>Фото ожидается</span>
                               </div>
                             )}
                           </Link>
@@ -344,9 +344,9 @@ export default function TeamCarousel({
                       {person.img ? (
                         <img src={person.img} alt={person.rawName} width={300} height={270} style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: person.imgPosition || 'center 15%' }} loading="lazy" decoding="async" />
                       ) : (
-                        <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', background: 'var(--color-deep-blue)', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', color: 'rgba(255,255,255,0.4)' }}>
-                          <div style={{ width: '40px', height: '40px', border: '1px solid rgba(212, 175, 55, 0.4)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '12px', color: 'var(--color-primary)', fontFamily: 'var(--font-serif)', fontSize: '20px' }}>DJ</div>
-                          <span style={{ fontSize: '12px', textTransform: 'uppercase', letterSpacing: '0.1em' }}>Фото ожидается</span>
+                        <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', background: 'var(--color-deep-blue)', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
+                          <div style={{ width: '48px', height: '48px', border: '1px solid rgba(212, 175, 55, 0.6)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '14px', color: 'var(--color-gold, #B89C72)', fontFamily: 'var(--font-serif)', fontSize: '22px', fontWeight: 600 }}>DJ</div>
+                          <span style={{ fontSize: '12px', textTransform: 'uppercase', letterSpacing: '0.12em', color: 'rgba(255,255,255,0.7)', fontWeight: 500 }}>Фото ожидается</span>
                         </div>
                       )}
                     </Link>
