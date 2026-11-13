@@ -208,7 +208,7 @@ export default function SpecialistyPage() {
               '@id': 'https://dejure-help.ru/specialisty/zubova-natalya-yuryevna/#person',
               'name': 'Зубова Наталья Юрьевна',
               'jobTitle': 'Юрист, партнёр ЮК «Де-Юре»',
-              'image': 'https://dejure-help.ru/images/zubova.webp',
+              'image': 'https://dejure-help.ru/images/zubova-placeholder.jpg',
               'url': 'https://dejure-help.ru/specialisty/zubova-natalya-yuryevna/'
             }
           },
@@ -566,31 +566,46 @@ export default function SpecialistyPage() {
                         tabIndex={-1}
                         aria-hidden="true"
                       >
-                        <img 
-                          src={sp.image} 
-                          alt={altText}
-                          width={330}
-                          height={440}
-                          loading="lazy"
-                          decoding="async"
-                          {...(sp.slug === 'nalivkina-svetlana-andreevna' ? {
-                            srcSet: '/images/nalivkina-420.webp 420w, /images/nalivkina.webp 683w',
-                            sizes: '(max-width: 768px) 100vw, 330px'
-                          } : sp.slug === 'zubova-natalya-yuryevna' ? {
-                            srcSet: '/images/zubova-420.webp 420w, /images/zubova.webp 683w',
-                            sizes: '(max-width: 768px) 100vw, 330px'
-                          } : {})}
-                          style={{ 
+                        {sp.slug === 'zubova-natalya-yuryevna' ? (
+                          <div style={{
                             position: 'absolute',
                             top: 0,
                             left: 0,
-                            width: '100%', 
-                            height: '100%', 
-                            objectFit: 'cover', 
-                            objectPosition: 'center 15%',
-                            display: 'block' 
-                          }}
-                        />
+                            width: '100%',
+                            height: '100%',
+                            background: 'var(--color-deep-blue)',
+                            display: 'flex',
+                            flexDirection: 'column',
+                            alignItems: 'center',
+                            justifyContent: 'center'
+                          }}>
+                            <div style={{ width: '48px', height: '48px', border: '1px solid rgba(212, 175, 55, 0.6)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '14px', color: 'var(--color-gold, #B89C72)', fontFamily: 'var(--font-serif)', fontSize: '22px', fontWeight: 600 }}>DJ</div>
+                            <span style={{ fontSize: '12px', textTransform: 'uppercase', letterSpacing: '0.12em', color: 'rgba(255,255,255,0.75)', fontWeight: 500 }}>Фото ожидается</span>
+                          </div>
+                        ) : (
+                          <img 
+                            src={sp.image} 
+                            alt={altText}
+                            width={330}
+                            height={440}
+                            loading="lazy"
+                            decoding="async"
+                            {...(sp.slug === 'nalivkina-svetlana-andreevna' ? {
+                              srcSet: '/images/nalivkina-420.webp 420w, /images/nalivkina.webp 683w',
+                              sizes: '(max-width: 768px) 100vw, 330px'
+                            } : {})}
+                            style={{ 
+                              position: 'absolute',
+                              top: 0,
+                              left: 0,
+                              width: '100%', 
+                              height: '100%', 
+                              objectFit: 'cover', 
+                              objectPosition: 'center 15%',
+                              display: 'block' 
+                            }}
+                          />
+                        )}
                       </Link>
                     </div>
 
