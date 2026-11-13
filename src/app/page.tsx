@@ -532,11 +532,24 @@ export default function Home() {
         customSectionLabel="Партнёры «Де-Юре»"
         customTitle="Независимые специалисты и организации"
         customSubtitle="В зависимости от задачи ЮК привлекает независимых адвокатов, экспертные, оценочные, аудиторские и иные профильные организации."
-        filterSlugs={[
-          'konopkin-dmitriy-sergeevich',
-          'gusev-oleg-yurevich'
+        subgroups={[
+          {
+            title: 'Юристы-партнёры',
+            slugs: [
+              'nalivkina-svetlana-andreevna',
+              'zubova-natalya-yuryevna'
+            ],
+            linkText: 'Подробнее о специалисте'
+          },
+          {
+            title: 'Адвокаты',
+            slugs: [
+              'konopkin-dmitriy-sergeevich',
+              'gusev-oleg-yurevich'
+            ],
+            linkText: 'Подробнее об адвокате'
+          }
         ]}
-        customLinkText="Подробнее об адвокате"
         hideAllLink={true}
         bgClass="bg-white"
         id="advocates"

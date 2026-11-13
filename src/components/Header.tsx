@@ -90,6 +90,7 @@ export default function Header() {
     { name: "Начешников Владимир Викторович", role: "Специалист ЮК «Де-Юре»", href: "/specialisty/nacheshnikov-vladimir-viktorovich/" },
     { name: "Полозова Елена Анатольевна", role: "Юрист", href: "/specialisty/polozova-elena-anatolevna/" },
     { name: "Наливкина Светлана Андреевна", role: "Юрист, партнёр", href: "/specialisty/nalivkina-svetlana-andreevna/" },
+    { name: "Зубова Наталья Юрьевна", role: "Юрист, партнёр", href: "/specialisty/zubova-natalya-yuryevna/" },
     { name: "Конопкин Дмитрий Сергеевич", role: "Адвокат", href: "/specialisty/konopkin-dmitriy-sergeevich/" },
     { name: "Гусев Олег Юрьевич", role: "Адвокат", href: "/specialisty/gusev-oleg-yurevich/" }
   ];

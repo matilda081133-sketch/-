@@ -24,7 +24,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     return { title: 'Специалист не найден' };
   }
 
-  const imageUrl = `https://dejure-help.ru/images/${member.slug === 'konopkin-dmitriy-sergeevich' ? 'konopkin.jpg' : member.slug === 'bobkin-arkadiy-evgenevich' ? 'bobkin.jpg' : member.slug === 'smolyaninova-marina-valerevna' ? 'smolyaninova.jpg' : member.slug === 'gusev-oleg-yurevich' ? 'gusev.jpg' : member.slug === 'nacheshnikov-vladimir-viktorovich' ? 'nacheshnikov.jpg' : member.slug === 'nalivkina-svetlana-andreevna' ? 'nalivkina.webp' : 'logo_dark.png'}`;
+  const imageUrl = `https://dejure-help.ru/images/${member.slug === 'konopkin-dmitriy-sergeevich' ? 'konopkin.jpg' : member.slug === 'bobkin-arkadiy-evgenevich' ? 'bobkin.jpg' : member.slug === 'smolyaninova-marina-valerevna' ? 'smolyaninova.jpg' : member.slug === 'gusev-oleg-yurevich' ? 'gusev.jpg' : member.slug === 'nacheshnikov-vladimir-viktorovich' ? 'nacheshnikov.jpg' : member.slug === 'nalivkina-svetlana-andreevna' ? 'nalivkina.webp' : member.slug === 'zubova-natalya-yuryevna' ? 'zubova.webp' : 'logo_dark.png'}`;
 
   return {
     title: member.seo.title,
@@ -40,8 +40,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       images: [
         {
           url: imageUrl,
-          width: member.slug === 'nalivkina-svetlana-andreevna' ? 683 : 1200,
-          height: member.slug === 'nalivkina-svetlana-andreevna' ? 1024 : 630,
+          width: (member.slug === 'nalivkina-svetlana-andreevna' || member.slug === 'zubova-natalya-yuryevna') ? 683 : 1200,
+          height: (member.slug === 'nalivkina-svetlana-andreevna' || member.slug === 'zubova-natalya-yuryevna') ? 1024 : 630,
           alt: member.slug === 'bobkin-arkadiy-evgenevich'
             ? 'Аркадий Евгеньевич Бобкин — директор, управляющий партнёр ЮК «Де-Юре»'
             : member.slug === 'konopkin-dmitriy-sergeevich'
@@ -52,6 +52,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
             ? 'Владимир Викторович Начешников — специалист ЮК «Де-Юре»'
             : member.slug === 'nalivkina-svetlana-andreevna'
             ? 'Светлана Андреевна Наливкина — юрист, партнёр ЮК «Де-Юре»'
+            : member.slug === 'zubova-natalya-yuryevna'
+            ? 'Наталья Юрьевна Зубова, юрист'
             : `${member.name} — специалист ЮК «Де-Юре»`
         }
       ],
@@ -73,7 +75,7 @@ export default async function SpecialistPage({ params }: PageProps) {
     notFound();
   }
 
-  const imageUrl = `https://dejure-help.ru/images/${member.slug === 'konopkin-dmitriy-sergeevich' ? 'konopkin.jpg' : member.slug === 'bobkin-arkadiy-evgenevich' ? 'bobkin.jpg' : member.slug === 'smolyaninova-marina-valerevna' ? 'smolyaninova.jpg' : member.slug === 'gusev-oleg-yurevich' ? 'gusev.jpg' : member.slug === 'nacheshnikov-vladimir-viktorovich' ? 'nacheshnikov.jpg' : member.slug === 'polozova-elena-anatolevna' ? 'polozova.jpg' : member.slug === 'nalivkina-svetlana-andreevna' ? 'nalivkina.webp' : 'logo_dark.png'}`;
+  const imageUrl = `https://dejure-help.ru/images/${member.slug === 'konopkin-dmitriy-sergeevich' ? 'konopkin.jpg' : member.slug === 'bobkin-arkadiy-evgenevich' ? 'bobkin.jpg' : member.slug === 'smolyaninova-marina-valerevna' ? 'smolyaninova.jpg' : member.slug === 'gusev-oleg-yurevich' ? 'gusev.jpg' : member.slug === 'nacheshnikov-vladimir-viktorovich' ? 'nacheshnikov.jpg' : member.slug === 'polozova-elena-anatolevna' ? 'polozova.jpg' : member.slug === 'nalivkina-svetlana-andreevna' ? 'nalivkina.webp' : member.slug === 'zubova-natalya-yuryevna' ? 'zubova.webp' : 'logo_dark.png'}`;
 
   // Generate JSON-LD Person
   const jsonLdPerson = member.slug === 'bobkin-arkadiy-evgenevich' ? {
@@ -170,6 +172,30 @@ export default async function SpecialistPage({ params }: PageProps) {
       'Семейные споры',
       'Трудовые споры'
     ]
+  } : member.slug === 'zubova-natalya-yuryevna' ? {
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    '@id': 'https://dejure-help.ru/specialisty/zubova-natalya-yuryevna/#person',
+    name: 'Зубова Наталья Юрьевна',
+    jobTitle: 'Юрист, партнёр ЮК «Де-Юре»',
+    url: 'https://dejure-help.ru/specialisty/zubova-natalya-yuryevna/',
+    image: 'https://dejure-help.ru/images/zubova.webp',
+    alumniOf: [
+      {
+        '@type': 'CollegeOrUniversity',
+        name: 'Московский государственный индустриальный университет'
+      },
+      {
+        '@type': 'EducationalOrganization',
+        name: 'Липецкий машиностроительный техникум'
+      }
+    ],
+    knowsAbout: [
+      'Недвижимость',
+      'Земельное право',
+      'Жилищное право',
+      'Юридическое сопровождение бизнеса'
+    ]
   } : {
     '@context': 'https://schema.org',
     '@type': 'Person',
@@ -243,6 +269,11 @@ export default async function SpecialistPage({ params }: PageProps) {
                     <span style={{ display: 'block' }}>Наливкина</span>
                     <span style={{ display: 'block' }}>Светлана Андреевна</span>
                   </>
+                ) : member.slug === 'zubova-natalya-yuryevna' ? (
+                  <>
+                    <span style={{ display: 'block' }}>Зубова</span>
+                    <span style={{ display: 'block' }}>Наталья Юрьевна</span>
+                  </>
                 ) : member.slug === 'konopkin-dmitriy-sergeevich' ? (
                   <>
                     <span style={{ display: 'block' }}>Конопкин</span>
@@ -292,6 +323,15 @@ export default async function SpecialistPage({ params }: PageProps) {
                   </div>
                   <div style={{ fontSize: '15px', color: 'var(--color-text-secondary)', fontWeight: 500, lineHeight: 1.6 }}>
                     Юридическая практика с 2001 года. Опыт работы в банковском секторе, ведение процедур банкротства граждан и арбитражных споров. Юридическая помощь по вопросам недвижимости, наследственного, военного, семейного и трудового права.
+                  </div>
+                </div>
+              ) : member.slug === 'zubova-natalya-yuryevna' ? (
+                <div style={{ marginBottom: '24px' }}>
+                  <div style={{ fontSize: '15px', color: 'var(--color-text-secondary)', fontWeight: 600, marginBottom: '10px' }}>
+                    Недвижимость · Земельное право · Жилищное право · Юридическое сопровождение бизнеса
+                  </div>
+                  <div style={{ fontSize: '15px', color: 'var(--color-text-secondary)', fontWeight: 500, lineHeight: 1.6 }}>
+                    Помогает гражданам и организациям решать вопросы, связанные с недвижимостью, землёй и жильём. Сопровождает договорную работу бизнеса: от проверки условий сделки до подготовки претензии, если договорённости нарушены.
                   </div>
                 </div>
               ) : (
@@ -398,9 +438,14 @@ export default async function SpecialistPage({ params }: PageProps) {
                   {...(member.slug === 'nalivkina-svetlana-andreevna' ? {
                     srcSet: '/images/nalivkina-420.webp 420w, /images/nalivkina.webp 683w',
                     sizes: '(max-width: 768px) 100vw, 440px'
+                  } : member.slug === 'zubova-natalya-yuryevna' ? {
+                    srcSet: '/images/zubova-420.webp 420w, /images/zubova.webp 683w',
+                    sizes: '(max-width: 768px) 100vw, 440px'
                   } : {})}
                   alt={
-                    member.slug === 'konopkin-dmitriy-sergeevich'
+                    member.slug === 'zubova-natalya-yuryevna'
+                      ? 'Наталья Юрьевна Зубова, юрист'
+                      : member.slug === 'konopkin-dmitriy-sergeevich'
                       ? 'Конопкин Дмитрий Сергеевич — адвокат'
                       : member.slug === 'gusev-oleg-yurevich'
                       ? 'Гусев Олег Юрьевич — адвокат'
@@ -414,7 +459,7 @@ export default async function SpecialistPage({ params }: PageProps) {
                       ? 'Светлана Андреевна Наливкина — юрист, партнёр ЮК «Де-Юре»'
                       : `${member.name} — специалист ЮК «Де-Юре»`
                   }
-                  style={{ width: '100%', height: '540px', objectFit: 'cover', objectPosition: member.slug === 'gusev-oleg-yurevich' ? 'center 32%' : member.slug === 'smolyaninova-marina-valerevna' ? 'center 28%' : member.slug === 'konopkin-dmitriy-sergeevich' ? 'center 35%' : member.slug === 'nacheshnikov-vladimir-viktorovich' ? 'center 20%' : member.slug === 'nalivkina-svetlana-andreevna' ? 'center 15%' : 'center 25%', display: 'block', filter: 'brightness(1.05)' }}
+                  style={{ width: '100%', height: '540px', objectFit: 'cover', objectPosition: member.slug === 'gusev-oleg-yurevich' ? 'center 32%' : member.slug === 'smolyaninova-marina-valerevna' ? 'center 28%' : member.slug === 'konopkin-dmitriy-sergeevich' ? 'center 35%' : member.slug === 'nacheshnikov-vladimir-viktorovich' ? 'center 20%' : member.slug === 'nalivkina-svetlana-andreevna' ? 'center 15%' : member.slug === 'zubova-natalya-yuryevna' ? 'center 15%' : 'center 25%', display: 'block', filter: 'brightness(1.05)' }}
                 />
               </div>
             </div>
@@ -608,11 +653,13 @@ export default async function SpecialistPage({ params }: PageProps) {
         <section className="section" style={{ background: 'var(--color-white)' }}>
           <div className="container">
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: '40px', flexWrap: 'wrap', gap: '20px' }}>
-              <h2 style={{ fontSize: '32px', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)', margin: 0 }}>{member.slug === 'nalivkina-svetlana-andreevna' ? 'Примеры задач, с которыми помогает специалист' : 'Примеры из практики'}</h2>
+              <h2 style={{ fontSize: '32px', color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)', margin: 0 }}>
+                {(member.slug === 'nalivkina-svetlana-andreevna' || member.slug === 'zubova-natalya-yuryevna') ? 'Примеры задач, с которыми помогает специалист' : 'Примеры из практики'}
+              </h2>
             </div>
             
-            <div className="grid grid-3" style={{ gap: '30px' }}>
-              {member.cases.slice(0, 3).map((c, i) => (
+            <div className={`grid ${(member.slug === 'zubova-natalya-yuryevna' || member.cases.length === 4 || member.cases.length === 2) ? 'grid-2' : 'grid-3'}`} style={{ gap: '30px' }}>
+              {(member.slug === 'zubova-natalya-yuryevna' ? member.cases : member.cases.slice(0, 3)).map((c, i) => (
                 <div key={i} className="card" style={{ padding: '40px', border: '1px solid rgba(23, 50, 77, 0.05)', borderRadius: '0', borderTop: '4px solid var(--color-primary)', display: 'flex', flexDirection: 'column', background: 'var(--color-white)', boxShadow: '0 25px 50px -12px rgba(23, 50, 77, 0.25), 0 8px 24px rgba(23, 50, 77, 0.08)' }} data-analytics="case-click">
                   <div style={{ paddingBottom: '20px', marginBottom: '24px' }}>
                     <span style={{ display: 'block', fontSize: '11px', textTransform: 'uppercase', letterSpacing: '0.1em', color: '#D4AF37', marginBottom: '12px', fontWeight: 600 }}>{c.category}</span>
@@ -621,23 +668,29 @@ export default async function SpecialistPage({ params }: PageProps) {
                   
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '20px', flexGrow: 1 }}>
                     <div>
-                      <h4 style={{ fontSize: '12px', textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--color-text-secondary)', marginBottom: '8px', margin: 0 }}>{member.slug === 'nalivkina-svetlana-andreevna' ? 'Ситуация' : 'Проблема'}</h4>
+                      <h4 style={{ fontSize: '12px', textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--color-text-secondary)', marginBottom: '8px', margin: 0 }}>
+                        {(member.slug === 'nalivkina-svetlana-andreevna' || member.slug === 'zubova-natalya-yuryevna') ? 'Ситуация' : 'Проблема'}
+                      </h4>
                       <p style={{ fontSize: '14px', margin: 0, lineHeight: 1.6 }}>{c.problem}</p>
                     </div>
                     <div>
-                      <h4 style={{ fontSize: '12px', textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--color-text-secondary)', marginBottom: '8px', margin: 0 }}>{member.slug === 'nalivkina-svetlana-andreevna' ? 'Как помогает юрист' : 'Что сделали'}</h4>
+                      <h4 style={{ fontSize: '12px', textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--color-text-secondary)', marginBottom: '8px', margin: 0 }}>
+                        {(member.slug === 'nalivkina-svetlana-andreevna' || member.slug === 'zubova-natalya-yuryevna') ? 'Как помогает юрист' : 'Что сделали'}
+                      </h4>
                       <p style={{ fontSize: '14px', margin: 0, lineHeight: 1.6 }}>{c.action}</p>
                     </div>
                   </div>
                   
                   <div style={{ marginTop: '30px', background: 'rgba(193, 160, 102, 0.05)', padding: '20px', borderRadius: '4px', borderLeft: '4px solid var(--color-gold)' }}>
-                    <h4 style={{ fontSize: '12px', textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--color-primary)', marginBottom: '8px', fontWeight: 600, margin: 0 }}>{member.slug === 'nalivkina-svetlana-andreevna' ? 'Цель работы' : 'Результат'}</h4>
+                    <h4 style={{ fontSize: '12px', textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--color-primary)', marginBottom: '8px', fontWeight: 600, margin: 0 }}>
+                      {(member.slug === 'nalivkina-svetlana-andreevna' || member.slug === 'zubova-natalya-yuryevna') ? 'Цель работы' : 'Результат'}
+                    </h4>
                     <p style={{ fontSize: '15px', margin: 0, fontWeight: 500, color: 'var(--color-deep-blue)', lineHeight: 1.5 }}>{c.result}</p>
                   </div>
                 </div>
               ))}
             </div>
-            {member.cases.length > 3 && (
+            {member.cases.length > 3 && member.slug !== 'zubova-natalya-yuryevna' && (
               <div style={{ textAlign: 'center', marginTop: '40px' }}>
                 <Link href={`/praktika?specialist=${member.slug}`} className="btn-outline" data-analytics="all-cases-click">
                   Все дела из практики
@@ -657,6 +710,8 @@ export default async function SpecialistPage({ params }: PageProps) {
           ? "Корпоративная задача обычно включает несколько взаимосвязанных действий. Работа строится последовательно: от анализа структуры бизнеса и определения необходимых изменений до подготовки документов, согласования действий участников и регистрации изменений."
           : "Каждая юридическая ситуация требует отдельной стратегии, но работа по делу строится последовательно: от первичной оценки и анализа документов до защиты интересов доверителя и контроля результата."
         }
+        ctaButtonText="Обсудить ситуацию"
+        ctaButtonHref="#consultation"
         steps={[
           ...member.process.map(s => ({
             num: s.step.replace(/^0+/, ''),
@@ -669,7 +724,7 @@ export default async function SpecialistPage({ params }: PageProps) {
             desc: 'Работаем с доверителями по всей России. Первичный анализ документов, согласование позиции и подготовка процессуальных обращений проходят в удобном дистанционном формате.'
           }] : [])
         ]}
-        />
+      />
 
       {/* 8. CTA Form */}
       <div id="form" style={{ scrollMarginTop: '120px' }} />
@@ -680,7 +735,7 @@ export default async function SpecialistPage({ params }: PageProps) {
               <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '32px' }}>
                 <div style={{ width: '40px', height: '2px', backgroundColor: 'var(--color-primary)' }}></div>
                 <span style={{ textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '14px', fontWeight: 600, color: 'var(--color-primary)' }}>
-                  {member.slug === 'nalivkina-svetlana-andreevna' ? 'Консультация юриста' : (member.slug === 'gusev-oleg-yurevich' || member.slug === 'konopkin-dmitriy-sergeevich') ? 'Обращение к адвокату' : 'Связаться с нами'}
+                  {(member.slug === 'nalivkina-svetlana-andreevna' || member.slug === 'zubova-natalya-yuryevna') ? 'Консультация юриста' : (member.slug === 'gusev-oleg-yurevich' || member.slug === 'konopkin-dmitriy-sergeevich') ? 'Обращение к адвокату' : 'Связаться с нами'}
                 </span>
               </div>
               <h2 style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', marginBottom: '16px', lineHeight: 1.2, marginTop: 0, whiteSpace: 'pre-line' }}>
@@ -701,6 +756,11 @@ export default async function SpecialistPage({ params }: PageProps) {
                     <>
                       <span style={{ display: 'block' }}>Наливкина</span>
                       <span style={{ display: 'block' }}>Светлана Андреевна</span>
+                    </>
+                  ) : member.slug === 'zubova-natalya-yuryevna' ? (
+                    <>
+                      <span style={{ display: 'block' }}>Зубова</span>
+                      <span style={{ display: 'block' }}>Наталья Юрьевна</span>
                     </>
                   ) : member.slug === 'konopkin-dmitriy-sergeevich' ? (
                     <>Конопкин <br />Дмитрий Сергеевич</>
@@ -748,7 +808,7 @@ export default async function SpecialistPage({ params }: PageProps) {
                   <span style={{ display: 'block', marginTop: '4px', color: 'rgba(44,51,64,0.55)', fontSize: '12px', fontStyle: 'italic' }}>Основание: статья 10 № 152-ФЗ.</span>
                 </p>
               </div>
-              {member.slug === 'nalivkina-svetlana-andreevna' && (
+              {(member.slug === 'nalivkina-svetlana-andreevna' || member.slug === 'zubova-natalya-yuryevna') && (
                 <div style={{ marginTop: '20px', display: 'flex', flexDirection: 'column', gap: '10px' }}>
                   <p style={{ fontSize: '13.5px', color: 'var(--color-text-secondary)', lineHeight: 1.55, margin: 0 }}>
                     После звонка вы будете знать, относится ли задача к профилю специалиста, какие документы понадобятся и как записаться на удобное время.
@@ -766,7 +826,7 @@ export default async function SpecialistPage({ params }: PageProps) {
               <ContactsForm 
                 title={(member.slug === 'gusev-oleg-yurevich' || member.slug === 'konopkin-dmitriy-sergeevich') ? "Обратиться к адвокату" : "Отправить обращение"} 
                 subtitle="" 
-                buttonText={(member.slug === 'gusev-oleg-yurevich' || member.slug === 'konopkin-dmitriy-sergeevich') ? "Направить обращение адвокату" : member.slug === 'nalivkina-svetlana-andreevna' ? "Записаться на консультацию" : "Получить консультацию"}
+                buttonText={(member.slug === 'gusev-oleg-yurevich' || member.slug === 'konopkin-dmitriy-sergeevich') ? "Направить обращение адвокату" : member.slug === 'nalivkina-svetlana-andreevna' ? "Записаться на консультацию" : member.slug === 'zubova-natalya-yuryevna' ? "Отправить обращение" : "Получить консультацию"}
                 commentPlaceholder="Кратко опишите ситуацию или вопрос…"
                 hiddenFields={[
                   { name: 'specialist', value: member.name },
@@ -780,6 +840,10 @@ export default async function SpecialistPage({ params }: PageProps) {
                     { name: 'source', value: 'Персональная страница Наливкиной' },
                     { name: 'target_recipient', value: 'Юрист С.А. Наливкина' },
                     { name: 'routing_type', value: 'partner_nalivkina' }
+                  ] : member.slug === 'zubova-natalya-yuryevna' ? [
+                    { name: 'source', value: 'Персональная страница Зубовой' },
+                    { name: 'target_recipient', value: 'Юрист Н.Ю. Зубова' },
+                    { name: 'routing_type', value: 'partner_zubova' }
                   ] : []),
                   { name: 'page_url', value: `/specialisty/${member.slug}/` }
                 ]}

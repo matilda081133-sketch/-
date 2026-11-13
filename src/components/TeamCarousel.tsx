@@ -3,10 +3,17 @@
 import { useRef } from 'react';
 import Link from 'next/link';
 
+interface Subgroup {
+  title?: string;
+  slugs: string[];
+  linkText?: string;
+}
+
 interface TeamCarouselProps {
   customTitle?: string;
   customSubtitle?: React.ReactNode;
   filterSlugs?: string[];
+  subgroups?: Subgroup[];
   hideSectionLabel?: boolean;
   titleAlign?: 'left' | 'center';
   sectionPaddingTop?: string;
@@ -23,6 +30,7 @@ export default function TeamCarousel({
   customTitle, 
   customSubtitle, 
   filterSlugs, 
+  subgroups,
   hideSectionLabel = false, 
   titleAlign = 'left', 
   sectionPaddingTop, 
@@ -132,6 +140,20 @@ export default function TeamCarousel({
     {
       name: (
         <>
+          <span style={{ display: 'block' }}>Зубова</span>
+          <span style={{ display: 'block' }}>Наталья Юрьевна</span>
+        </>
+      ),
+      rawName: 'Зубова Наталья Юрьевна',
+      role: 'Юрист, партнёр ЮК «Де-Юре»',
+      desc: 'Специализация: недвижимость, земельное и жилищное право, юридическое сопровождение бизнеса. Руководила юридическим отделом Департамента экономики администрации Липецка.',
+      img: '/images/zubova.webp',
+      link: '/specialisty/zubova-natalya-yuryevna/',
+      imgPosition: 'center 15%'
+    },
+    {
+      name: (
+        <>
           <span style={{ display: 'block' }}>Полозова</span>
           <span style={{ display: 'block' }}>Елена Анатольевна</span>
         </>
@@ -170,15 +192,191 @@ export default function TeamCarousel({
           </p>
         </div>
         
-        <div style={{ position: 'relative', display: 'flex', alignItems: 'center' }}>
-          {displayedTeam.length > 3 && (
-            <>
+        {subgroups && subgroups.length > 0 ? (
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '44px', width: '100%' }}>
+            {subgroups.map((group, gIdx) => {
+              const groupTeam = team.filter(p => group.slugs.some(slug => p.link.includes(slug)));
+              return (
+                <div key={gIdx} style={{ width: '100%' }}>
+                  {group.title && (
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '20px' }}>
+                      <div style={{ width: '4px', height: '22px', backgroundColor: 'var(--color-gold)' }}></div>
+                      <h3 style={{ 
+                        margin: 0, 
+                        fontSize: '22px', 
+                        fontFamily: 'var(--font-serif)', 
+                        color: 'var(--color-deep-blue)', 
+                        fontWeight: 600,
+                        lineHeight: 1.3
+                      }}>
+                        {group.title}
+                      </h3>
+                    </div>
+                  )}
+                  <div 
+                    className="carousel-container" 
+                    style={{ 
+                      display: 'flex', 
+                      alignItems: 'stretch', 
+                      justifyContent: 'flex-start',
+                      gap: '24px', 
+                      overflowX: 'auto', 
+                      scrollBehavior: 'smooth', 
+                      paddingBottom: '16px',
+                      width: '100%'
+                    }}
+                  >
+                    {groupTeam.map((person, index) => (
+                      <div key={index} className="card team-card carousel-item" style={{ 
+                        padding: '24px', 
+                        display: 'flex', 
+                        flexDirection: 'column',
+                        justifyContent: 'space-between',
+                        width: '300px',
+                        minWidth: '280px',
+                        maxWidth: '320px',
+                        height: '600px',
+                        flex: '0 0 300px',
+                        background: '#FFFFFF',
+                        border: '1px solid rgba(16, 39, 59, 0.08)',
+                        boxShadow: '0 4px 14px rgba(16, 39, 59, 0.05)',
+                        boxSizing: 'border-box'
+                      }}>
+                        <div style={{ display: 'flex', flexDirection: 'column', flex: '1 1 auto', overflow: 'hidden' }}>
+                          <Link href={person.link} style={{ display: 'block', height: '270px', width: '100%', marginBottom: '16px', borderRadius: '0', flexShrink: 0, overflow: 'hidden', position: 'relative', background: 'var(--color-cream)', textDecoration: 'none' }}>
+                            {person.img ? (
+                              <img src={person.img} alt={person.rawName} width={300} height={270} style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: person.imgPosition || 'center 15%' }} loading="lazy" decoding="async" />
+                            ) : (
+                              <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', background: 'var(--color-deep-blue)', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', color: 'rgba(255,255,255,0.4)' }}>
+                                <div style={{ width: '40px', height: '40px', border: '1px solid rgba(212, 175, 55, 0.4)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '12px', color: 'var(--color-primary)', fontFamily: 'var(--font-serif)', fontSize: '20px' }}>DJ</div>
+                                <span style={{ fontSize: '12px', textTransform: 'uppercase', letterSpacing: '0.1em' }}>Фото ожидается</span>
+                              </div>
+                            )}
+                          </Link>
+                          <h3 style={{ margin: '0 0 8px 0', fontSize: '17px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', lineHeight: 1.3, minHeight: '52px', display: 'block' }}>
+                            <Link href={person.link} style={{ color: 'inherit', textDecoration: 'none' }}>
+                              {person.name}
+                            </Link>
+                          </h3>
+                          <p style={{ color: 'var(--color-gold-text, #80633F)', fontWeight: 600, margin: '0 0 10px 0', fontSize: '13px', lineHeight: 1.35, minHeight: '36px', display: 'flex', alignItems: 'flex-start', whiteSpace: 'pre-line' }}>{person.role}</p>
+                          <p style={{ color: 'var(--color-text-secondary)', fontSize: '13px', margin: 0, lineHeight: 1.45, overflow: 'hidden', display: '-webkit-box', WebkitLineClamp: 4, WebkitBoxOrient: 'vertical' }}>{person.desc}</p>
+                        </div>
+                        <div style={{ marginTop: 'auto', paddingTop: '14px', borderTop: '1px solid rgba(16, 39, 59, 0.08)', flexShrink: 0 }}>
+                          {person.link && (
+                            <Link href={person.link} className="spec-card-link" style={{ fontSize: '13px', color: 'var(--color-primary, #10273B)', fontWeight: 600, textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '4px' }}>
+                              <span>{group.linkText || customLinkText || (person.role.includes('Адвокат') ? 'Подробнее об адвокате' : 'Подробнее о специалисте')}</span>
+                              <span>→</span>
+                            </Link>
+                          )}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        ) : (
+          <div style={{ position: 'relative', display: 'flex', alignItems: 'center' }}>
+            {displayedTeam.length > 3 && (
+              <>
+                <button 
+                  onClick={() => scroll('left')} 
+                  className="carousel-arrow" 
+                  style={{ 
+                    position: 'absolute', 
+                    left: '-25px', 
+                    zIndex: 10, 
+                    width: '50px',
+                    height: '50px',
+                    borderRadius: '50%',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    background: '#FFFFFF', 
+                    boxShadow: '0 4px 12px rgba(23, 50, 77, 0.15)',
+                    border: '1px solid var(--color-border)',
+                    color: 'var(--color-primary)',
+                    cursor: 'pointer',
+                    transition: 'all 0.3s ease'
+                  }}
+                  aria-label="Предыдущие"
+                >
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <polyline points="15 18 9 12 15 6"></polyline>
+                  </svg>
+                </button>
+              </>
+            )}
+            
+            <div 
+              className="carousel-container" 
+              ref={scrollRef} 
+              style={{ 
+                display: 'flex', 
+                alignItems: 'stretch', 
+                justifyContent: 'flex-start',
+                gap: '24px', 
+                overflowX: 'auto', 
+                scrollBehavior: 'smooth', 
+                paddingBottom: '16px',
+                width: '100%'
+              }}
+            >
+              {displayedTeam.map((person, index) => (
+                <div key={index} className="card team-card carousel-item" style={{ 
+                  padding: '24px', 
+                  display: 'flex', 
+                  flexDirection: 'column',
+                  justifyContent: 'space-between',
+                  width: '300px',
+                  minWidth: '280px',
+                  maxWidth: '320px',
+                  height: '600px',
+                  flex: '0 0 300px',
+                  background: '#FFFFFF',
+                  border: '1px solid rgba(16, 39, 59, 0.08)',
+                  boxShadow: '0 4px 14px rgba(16, 39, 59, 0.05)',
+                  boxSizing: 'border-box'
+                }}>
+                  <div style={{ display: 'flex', flexDirection: 'column', flex: '1 1 auto', overflow: 'hidden' }}>
+                    <Link href={person.link} style={{ display: 'block', height: '270px', width: '100%', marginBottom: '16px', borderRadius: '0', flexShrink: 0, overflow: 'hidden', position: 'relative', background: 'var(--color-cream)', textDecoration: 'none' }}>
+                      {person.img ? (
+                        <img src={person.img} alt={person.rawName} width={300} height={270} style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: person.imgPosition || 'center 15%' }} loading="lazy" decoding="async" />
+                      ) : (
+                        <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', background: 'var(--color-deep-blue)', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', color: 'rgba(255,255,255,0.4)' }}>
+                          <div style={{ width: '40px', height: '40px', border: '1px solid rgba(212, 175, 55, 0.4)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '12px', color: 'var(--color-primary)', fontFamily: 'var(--font-serif)', fontSize: '20px' }}>DJ</div>
+                          <span style={{ fontSize: '12px', textTransform: 'uppercase', letterSpacing: '0.1em' }}>Фото ожидается</span>
+                        </div>
+                      )}
+                    </Link>
+                    <h3 style={{ margin: '0 0 8px 0', fontSize: '17px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', lineHeight: 1.3, minHeight: '52px', display: 'block' }}>
+                      <Link href={person.link} style={{ color: 'inherit', textDecoration: 'none' }}>
+                        {person.name}
+                      </Link>
+                    </h3>
+                    <p style={{ color: 'var(--color-gold-text, #80633F)', fontWeight: 600, margin: '0 0 10px 0', fontSize: '13px', lineHeight: 1.35, minHeight: '36px', display: 'flex', alignItems: 'flex-start', whiteSpace: 'pre-line' }}>{person.role}</p>
+                    <p style={{ color: 'var(--color-text-secondary)', fontSize: '13px', margin: 0, lineHeight: 1.45, overflow: 'hidden', display: '-webkit-box', WebkitLineClamp: 4, WebkitBoxOrient: 'vertical' }}>{person.desc}</p>
+                  </div>
+                  <div style={{ marginTop: 'auto', paddingTop: '14px', borderTop: '1px solid rgba(16, 39, 59, 0.08)', flexShrink: 0 }}>
+                    {person.link && (
+                      <Link href={person.link} className="spec-card-link" style={{ fontSize: '13px', color: 'var(--color-primary, #10273B)', fontWeight: 600, textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '4px' }}>
+                        <span>{customLinkText || 'Подробнее о специалисте'}</span>
+                        <span>→</span>
+                      </Link>
+                    )}
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {displayedTeam.length > 3 && (
               <button 
-                onClick={() => scroll('left')} 
+                onClick={() => scroll('right')} 
                 className="carousel-arrow" 
                 style={{ 
                   position: 'absolute', 
-                  left: '-25px', 
+                  right: '-25px', 
                   zIndex: 10, 
                   width: '50px',
                   height: '50px',
@@ -193,75 +391,15 @@ export default function TeamCarousel({
                   cursor: 'pointer',
                   transition: 'all 0.3s ease'
                 }}
-                aria-label="Предыдущие"
+                aria-label="Следующие"
               >
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <polyline points="15 18 9 12 15 6"></polyline>
+                  <polyline points="9 18 15 12 9 6"></polyline>
                 </svg>
               </button>
-            </>
-          )}
-          
-          <div 
-            className="carousel-container" 
-            ref={scrollRef} 
-            style={{ 
-              display: 'flex', 
-              alignItems: 'stretch', 
-              justifyContent: 'flex-start',
-              gap: '24px', 
-              overflowX: 'auto', 
-              scrollBehavior: 'smooth', 
-              paddingBottom: '16px',
-              width: '100%'
-            }}
-          >
-            {displayedTeam.map((person, index) => (
-              <div key={index} className="card team-card carousel-item" style={{ 
-                padding: '24px', 
-                display: 'flex', 
-                flexDirection: 'column',
-                justifyContent: 'space-between',
-                width: '300px',
-                minWidth: '280px',
-                maxWidth: '320px',
-                height: '600px',
-                flex: '0 0 300px',
-                background: '#FFFFFF',
-                border: '1px solid rgba(16, 39, 59, 0.08)',
-                boxShadow: '0 4px 14px rgba(16, 39, 59, 0.05)',
-                boxSizing: 'border-box'
-              }}>
-                <div style={{ display: 'flex', flexDirection: 'column', flex: '1 1 auto', overflow: 'hidden' }}>
-                  <Link href={person.link} style={{ display: 'block', height: '270px', width: '100%', marginBottom: '16px', borderRadius: '0', flexShrink: 0, overflow: 'hidden', position: 'relative', background: 'var(--color-cream)', textDecoration: 'none' }}>
-                    {person.img ? (
-                      <img src={person.img} alt={person.rawName} width={300} height={270} style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: person.imgPosition || 'center 15%' }} loading="lazy" decoding="async" />
-                    ) : (
-                      <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', background: 'var(--color-deep-blue)', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', color: 'rgba(255,255,255,0.4)' }}>
-                        <div style={{ width: '40px', height: '40px', border: '1px solid rgba(212, 175, 55, 0.4)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '12px', color: 'var(--color-primary)', fontFamily: 'var(--font-serif)', fontSize: '20px' }}>DJ</div>
-                        <span style={{ fontSize: '12px', textTransform: 'uppercase', letterSpacing: '0.1em' }}>Фото ожидается</span>
-                      </div>
-                    )}
-                  </Link>
-                  <h3 style={{ margin: '0 0 8px 0', fontSize: '17px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', lineHeight: 1.3, minHeight: '52px', display: 'block' }}>
-                    <Link href={person.link} style={{ color: 'inherit', textDecoration: 'none' }}>
-                      {person.name}
-                    </Link>
-                  </h3>
-                  <p style={{ color: 'var(--color-gold-text, #80633F)', fontWeight: 600, margin: '0 0 10px 0', fontSize: '13px', lineHeight: 1.35, minHeight: '36px', display: 'flex', alignItems: 'flex-start', whiteSpace: 'pre-line' }}>{person.role}</p>
-                  <p style={{ color: 'var(--color-text-secondary)', fontSize: '13px', margin: 0, lineHeight: 1.45, overflow: 'hidden', display: '-webkit-box', WebkitLineClamp: 4, WebkitBoxOrient: 'vertical' }}>{person.desc}</p>
-                </div>
-                <div style={{ marginTop: 'auto', paddingTop: '14px', borderTop: '1px solid rgba(16, 39, 59, 0.08)', flexShrink: 0 }}>
-                  {person.link && (
-                    <Link href={person.link} className="spec-card-link" style={{ fontSize: '13px', color: 'var(--color-primary, #10273B)', fontWeight: 600, textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '4px' }}>
-                      <span>{customLinkText || 'Подробнее о специалисте'}</span>
-                      <span>→</span>
-                    </Link>
-                  )}
-                </div>
-              </div>
-            ))}
+            )}
           </div>
+        )}
 
           <style dangerouslySetInnerHTML={{ __html: `
             .team-card {
@@ -326,36 +464,6 @@ export default function TeamCarousel({
               }
             }
           ` }} />
-
-          {displayedTeam.length > 3 && (
-            <button 
-              onClick={() => scroll('right')} 
-              className="carousel-arrow" 
-              style={{ 
-                position: 'absolute', 
-                right: '-25px', 
-                zIndex: 10, 
-                width: '50px',
-                height: '50px',
-                borderRadius: '50%',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                background: '#FFFFFF', 
-                boxShadow: '0 4px 12px rgba(23, 50, 77, 0.15)',
-                border: '1px solid var(--color-border)',
-                color: 'var(--color-primary)',
-                cursor: 'pointer',
-                transition: 'all 0.3s ease'
-              }}
-              aria-label="Следующие"
-            >
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <polyline points="9 18 15 12 9 6"></polyline>
-              </svg>
-            </button>
-          )}
-        </div>
 
         {(showDisclaimer || customDisclaimer) && (
           <div style={{ marginTop: '28px', width: '100%' }}>

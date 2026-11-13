@@ -31,7 +31,8 @@ const specialistListRoles: Record<string, string> = {
   'gusev-oleg-yurevich': 'Адвокат',
   'nacheshnikov-vladimir-viktorovich': 'Специалист ЮК «Де-Юре»',
   'polozova-elena-anatolevna': 'Юрист ЮК «Де-Юре»',
-  'nalivkina-svetlana-andreevna': 'Юрист, партнёр ЮК «Де-Юре»'
+  'nalivkina-svetlana-andreevna': 'Юрист, партнёр ЮК «Де-Юре»',
+  'zubova-natalya-yuryevna': 'Юрист, партнёр ЮК «Де-Юре»'
 };
 
 const specialistListDescriptions: Record<string, string> = {
@@ -41,7 +42,8 @@ const specialistListDescriptions: Record<string, string> = {
   'gusev-oleg-yurevich': 'Более 15 лет работал в органах прокуратуры Липецкой области,\nв том числе заместителем прокурора района. С 2015 года\nосуществляет адвокатскую деятельность. Защищает доверителей по уголовным делам общеуголовной и экономической направленности.',
   'nacheshnikov-vladimir-viktorovich': 'С 1997 года сопровождает корпоративные процедуры и проекты по изменению структуры бизнеса. Работал в различных регионах России и Республике Беларусь. Консультирует, готовит документы и координирует досудебные этапы корпоративных процедур.',
   'polozova-elena-anatolevna': 'Специалист по гражданским делам. Оказывает юридическую помощь по вопросам военного и трудового права — от консультации и подготовки документов до досудебной работы и обжалования.',
-  'nalivkina-svetlana-andreevna': 'Юридическая практика с 2001 года. Работала юрисконсультом и руководителем юридического отдела в банковской сфере. Приоритетные направления — банкротство физических лиц и арбитражные споры. Также помогает по вопросам недвижимости и земли, наследственного, военного, семейного и трудового права.'
+  'nalivkina-svetlana-andreevna': 'Юридическая практика с 2001 года. Работала юрисконсультом и руководителем юридического отдела в банковской сфере. Приоритетные направления — банкротство физических лиц и арбитражные споры. Также помогает по вопросам недвижимости и земли, наследственного, военного, семейного и трудового права.',
+  'zubova-natalya-yuryevna': 'Занималась правовым сопровождением компаний в строительстве, энергетике и ЖКХ. Руководила юридическим отделом Департамента экономики администрации Липецка. Организовывала договорную и претензионно-исковую работу, сопровождала имущественные проекты.'
 };
 
 const specialistAreas: Record<string, { name: string; href?: string }[]> = {
@@ -80,6 +82,12 @@ const specialistAreas: Record<string, { name: string; href?: string }[]> = {
     { name: 'Военное право', href: '/grazhdanam/voennyj-yurist/' },
     { name: 'Семейные споры', href: '/grazhdanam/semejnyj-yurist/' },
     { name: 'Трудовые споры', href: '/grazhdanam/trudovoj-yurist/' }
+  ],
+  'zubova-natalya-yuryevna': [
+    { name: 'Недвижимость', href: '/grazhdanam/yurist-po-nedvizhimosti/' },
+    { name: 'Земельное право', href: '/grazhdanam/zemelnyj-yurist/' },
+    { name: 'Жилищное право', href: '/grazhdanam/zhilishchnyj-yurist/' },
+    { name: 'Юридическое сопровождение бизнеса', href: '/biznesu/yuridicheskoe-soprovozhdenie-biznesa/' }
   ]
 };
 
@@ -90,7 +98,8 @@ const specialistAlts: Record<string, string> = {
   'gusev-oleg-yurevich': 'Олег Юрьевич Гусев — адвокат',
   'nacheshnikov-vladimir-viktorovich': 'Владимир Викторович Начешников — специалист ЮК Де-Юре',
   'polozova-elena-anatolevna': 'Елена Анатольевна Полозова — юрист ЮК Де-Юре',
-  'nalivkina-svetlana-andreevna': 'Светлана Андреевна Наливкина — юрист, партнёр ЮК Де-Юре'
+  'nalivkina-svetlana-andreevna': 'Светлана Андреевна Наливкина — юрист, партнёр ЮК Де-Юре',
+  'zubova-natalya-yuryevna': 'Наталья Юрьевна Зубова, юрист'
 };
 
 const specialistRegistryNumbers: Record<string, string> = {
@@ -184,6 +193,7 @@ export default function SpecialistyPage() {
             'position': 5,
             'item': {
               '@type': 'Person',
+              '@id': 'https://dejure-help.ru/specialisty/nalivkina-svetlana-andreevna/#person',
               'name': 'Наливкина Светлана Андреевна',
               'jobTitle': 'Юрист, партнёр ЮК «Де-Юре»',
               'image': 'https://dejure-help.ru/images/nalivkina.webp',
@@ -195,6 +205,18 @@ export default function SpecialistyPage() {
             'position': 6,
             'item': {
               '@type': 'Person',
+              '@id': 'https://dejure-help.ru/specialisty/zubova-natalya-yuryevna/#person',
+              'name': 'Зубова Наталья Юрьевна',
+              'jobTitle': 'Юрист, партнёр ЮК «Де-Юре»',
+              'image': 'https://dejure-help.ru/images/zubova.webp',
+              'url': 'https://dejure-help.ru/specialisty/zubova-natalya-yuryevna/'
+            }
+          },
+          {
+            '@type': 'ListItem',
+            'position': 7,
+            'item': {
+              '@type': 'Person',
               'name': 'Конопкин Дмитрий Сергеевич',
               'jobTitle': 'Адвокат',
               'identifier': '48/812',
@@ -204,7 +226,7 @@ export default function SpecialistyPage() {
           },
           {
             '@type': 'ListItem',
-            'position': 7,
+            'position': 8,
             'item': {
               '@type': 'Person',
               'name': 'Гусев Олег Юрьевич',
@@ -553,6 +575,9 @@ export default function SpecialistyPage() {
                           decoding="async"
                           {...(sp.slug === 'nalivkina-svetlana-andreevna' ? {
                             srcSet: '/images/nalivkina-420.webp 420w, /images/nalivkina.webp 683w',
+                            sizes: '(max-width: 768px) 100vw, 330px'
+                          } : sp.slug === 'zubova-natalya-yuryevna' ? {
+                            srcSet: '/images/zubova-420.webp 420w, /images/zubova.webp 683w',
                             sizes: '(max-width: 768px) 100vw, 330px'
                           } : {})}
                           style={{ 
