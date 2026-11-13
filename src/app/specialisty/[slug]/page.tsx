@@ -428,39 +428,52 @@ export default async function SpecialistPage({ params }: PageProps) {
                 display: 'block',
                 background: 'transparent'
               }}>
-                <img 
-                  src={member.image} 
-                  className="specialist-img-responsive"
-                  width={440}
-                  height={540}
-                  fetchPriority="high"
-                  decoding="async"
-                  {...(member.slug === 'nalivkina-svetlana-andreevna' ? {
-                    srcSet: '/images/nalivkina-420.webp 420w, /images/nalivkina.webp 683w',
-                    sizes: '(max-width: 768px) 100vw, 440px'
-                  } : member.slug === 'zubova-natalya-yuryevna' ? {
-                    srcSet: '/images/zubova-420.webp 420w, /images/zubova.webp 683w',
-                    sizes: '(max-width: 768px) 100vw, 440px'
-                  } : {})}
-                  alt={
-                    member.slug === 'zubova-natalya-yuryevna'
-                      ? 'Наталья Юрьевна Зубова, юрист'
-                      : member.slug === 'konopkin-dmitriy-sergeevich'
-                      ? 'Конопкин Дмитрий Сергеевич — адвокат'
-                      : member.slug === 'gusev-oleg-yurevich'
-                      ? 'Гусев Олег Юрьевич — адвокат'
-                      : member.slug === 'bobkin-arkadiy-evgenevich'
-                      ? 'Аркадий Евгеньевич Бобкин — директор, управляющий партнёр ЮК «Де-Юре»'
-                      : member.slug === 'smolyaninova-marina-valerevna'
-                      ? 'Марина Валерьевна Смольянинова — ведущий юрист ЮК «Де-Юре»'
-                      : member.slug === 'nacheshnikov-vladimir-viktorovich'
-                      ? 'Владимир Викторович Начешников — специалист ЮК «Де-Юре»'
-                      : member.slug === 'nalivkina-svetlana-andreevna'
-                      ? 'Светлана Андреевна Наливкина — юрист, партнёр ЮК «Де-Юре»'
-                      : `${member.name} — специалист ЮК «Де-Юре»`
-                  }
-                  style={{ width: '100%', height: '540px', objectFit: 'cover', objectPosition: member.slug === 'gusev-oleg-yurevich' ? 'center 32%' : member.slug === 'smolyaninova-marina-valerevna' ? 'center 28%' : member.slug === 'konopkin-dmitriy-sergeevich' ? 'center 35%' : member.slug === 'nacheshnikov-vladimir-viktorovich' ? 'center 20%' : member.slug === 'nalivkina-svetlana-andreevna' ? 'center 15%' : member.slug === 'zubova-natalya-yuryevna' ? 'center 15%' : 'center 25%', display: 'block', filter: 'brightness(1.05)' }}
-                />
+                {member.slug === 'zubova-natalya-yuryevna' ? (
+                  <div
+                    className="specialist-img-responsive"
+                    style={{
+                      width: '100%',
+                      height: '540px',
+                      background: 'var(--color-deep-blue)',
+                      display: 'flex',
+                      flexDirection: 'column',
+                      alignItems: 'center',
+                      justifyContent: 'center'
+                    }}
+                  >
+                    <div style={{ width: '56px', height: '56px', border: '1px solid rgba(212, 175, 55, 0.6)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '16px', color: 'var(--color-gold, #B89C72)', fontFamily: 'var(--font-serif)', fontSize: '26px', fontWeight: 600 }}>DJ</div>
+                    <span style={{ fontSize: '13px', textTransform: 'uppercase', letterSpacing: '0.12em', color: 'rgba(255,255,255,0.75)', fontWeight: 500 }}>Фото ожидается</span>
+                  </div>
+                ) : (
+                  <img 
+                    src={member.image} 
+                    className="specialist-img-responsive"
+                    width={440}
+                    height={540}
+                    fetchPriority="high"
+                    decoding="async"
+                    {...(member.slug === 'nalivkina-svetlana-andreevna' ? {
+                      srcSet: '/images/nalivkina-420.webp 420w, /images/nalivkina.webp 683w',
+                      sizes: '(max-width: 768px) 100vw, 440px'
+                    } : {})}
+                    alt={
+                      member.slug === 'konopkin-dmitriy-sergeevich'
+                        ? 'Конопкин Дмитрий Сергеевич — адвокат'
+                        : member.slug === 'gusev-oleg-yurevich'
+                        ? 'Гусев Олег Юрьевич — адвокат'
+                        : member.slug === 'bobkin-arkadiy-evgenevich'
+                        ? 'Аркадий Евгеньевич Бобкин — директор, управляющий партнёр ЮК «Де-Юре»'
+                        : member.slug === 'smolyaninova-marina-valerevna'
+                        ? 'Марина Валерьевна Смольянинова — ведущий юрист ЮК «Де-Юре»'
+                        : member.slug === 'nacheshnikov-vladimir-viktorovich'
+                        ? 'Владимир Викторович Начешников — специалист ЮК «Де-Юре»'
+                        : member.slug === 'nalivkina-svetlana-andreevna'
+                        ? 'Светлана Андреевна Наливкина — юрист, партнёр ЮК «Де-Юре»'
+                        : `${member.name} — специалист ЮК «Де-Юре»`
+                    }
+                    style={{ width: '100%', height: '540px', objectFit: 'cover', objectPosition: member.slug === 'gusev-oleg-yurevich' ? 'center 32%' : member.slug === 'smolyaninova-marina-valerevna' ? 'center 28%' : member.slug === 'konopkin-dmitriy-sergeevich' ? 'center 35%' : member.slug === 'nacheshnikov-vladimir-viktorovich' ? 'center 20%' : member.slug === 'nalivkina-svetlana-andreevna' ? 'center 15%' : 'center 25%', display: 'block', filter: 'brightness(1.05)' }}
+                  />
+                )}
               </div>
             </div>
           </div>
