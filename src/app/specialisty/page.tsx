@@ -205,6 +205,18 @@ export default function SpecialistyPage() {
             'position': 6,
             'item': {
               '@type': 'Person',
+              '@id': 'https://dejure-help.ru/specialisty/zubova-natalya-yuryevna/#person',
+              'name': 'Зубова Наталья Юрьевна',
+              'jobTitle': 'Юрист, партнёр ЮК «Де-Юре»',
+              'image': 'https://dejure-help.ru/images/zubova.webp',
+              'url': 'https://dejure-help.ru/specialisty/zubova-natalya-yuryevna/'
+            }
+          },
+          {
+            '@type': 'ListItem',
+            'position': 7,
+            'item': {
+              '@type': 'Person',
               'name': 'Конопкин Дмитрий Сергеевич',
               'jobTitle': 'Адвокат',
               'identifier': '48/812',
@@ -214,7 +226,7 @@ export default function SpecialistyPage() {
           },
           {
             '@type': 'ListItem',
-            'position': 7,
+            'position': 8,
             'item': {
               '@type': 'Person',
               'name': 'Гусев Олег Юрьевич',
@@ -517,7 +529,7 @@ export default function SpecialistyPage() {
 
           <div style={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>
             {specialists
-              .filter((sp) => (sp.orgType === 'partner' || sp.slug === 'nalivkina-svetlana-andreevna') && sp.slug !== 'zubova-natalya-yuryevna')
+              .filter((sp) => sp.orgType === 'partner' || sp.slug === 'nalivkina-svetlana-andreevna')
               .map((sp) => {
                 const areas = specialistAreas[sp.slug] || [];
                 const altText = specialistAlts[sp.slug] || `${sp.name} — ${sp.companyRole || sp.status}`;

@@ -140,6 +140,20 @@ export default function TeamCarousel({
     {
       name: (
         <>
+          <span style={{ display: 'block' }}>Зубова</span>
+          <span style={{ display: 'block' }}>Наталья Юрьевна</span>
+        </>
+      ),
+      rawName: 'Зубова Наталья Юрьевна',
+      role: 'Юрист, партнёр ЮК «Де-Юре»',
+      desc: 'Специализация: недвижимость, земельное и жилищное право, юридическое сопровождение бизнеса. Руководила юридическим отделом Департамента экономики администрации Липецка.',
+      img: '/images/zubova-table.webp',
+      link: '/specialisty/zubova-natalya-yuryevna/',
+      imgPosition: 'center 15%'
+    },
+    {
+      name: (
+        <>
           <span style={{ display: 'block' }}>Полозова</span>
           <span style={{ display: 'block' }}>Елена Анатольевна</span>
         </>
