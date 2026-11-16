@@ -147,7 +147,7 @@ export default function TeamCarousel({
       rawName: 'Зубова Наталья Юрьевна',
       role: 'Юрист, партнёр ЮК «Де-Юре»',
       desc: 'Специализация: недвижимость, земельное и жилищное право, юридическое сопровождение бизнеса. Руководила юридическим отделом Департамента экономики администрации Липецка.',
-      img: '',
+      img: '/images/zubova.webp',
       link: '/specialisty/zubova-natalya-yuryevna/',
       imgPosition: 'center 15%'
     },

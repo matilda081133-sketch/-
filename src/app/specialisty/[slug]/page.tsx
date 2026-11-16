@@ -24,7 +24,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     return { title: 'Специалист не найден' };
   }
 
-  const imageUrl = `https://dejure-help.ru/images/${member.slug === 'konopkin-dmitriy-sergeevich' ? 'konopkin.jpg' : member.slug === 'bobkin-arkadiy-evgenevich' ? 'bobkin.jpg' : member.slug === 'smolyaninova-marina-valerevna' ? 'smolyaninova.jpg' : member.slug === 'gusev-oleg-yurevich' ? 'gusev.jpg' : member.slug === 'nacheshnikov-vladimir-viktorovich' ? 'nacheshnikov.jpg' : member.slug === 'nalivkina-svetlana-andreevna' ? 'nalivkina.webp' : member.slug === 'zubova-natalya-yuryevna' ? 'zubova-placeholder.jpg' : 'logo_dark.png'}`;
+  const imageUrl = `https://dejure-help.ru/images/${member.slug === 'konopkin-dmitriy-sergeevich' ? 'konopkin.jpg' : member.slug === 'bobkin-arkadiy-evgenevich' ? 'bobkin.jpg' : member.slug === 'smolyaninova-marina-valerevna' ? 'smolyaninova.jpg' : member.slug === 'gusev-oleg-yurevich' ? 'gusev.jpg' : member.slug === 'nacheshnikov-vladimir-viktorovich' ? 'nacheshnikov.jpg' : member.slug === 'nalivkina-svetlana-andreevna' ? 'nalivkina.webp' : member.slug === 'zubova-natalya-yuryevna' ? 'zubova.webp' : 'logo_dark.png'}`;
 
   return {
     title: member.seo.title,
@@ -40,8 +40,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       images: [
         {
           url: imageUrl,
-          width: member.slug === 'nalivkina-svetlana-andreevna' ? 683 : 1200,
-          height: member.slug === 'nalivkina-svetlana-andreevna' ? 1024 : 630,
+          width: (member.slug === 'nalivkina-svetlana-andreevna' || member.slug === 'zubova-natalya-yuryevna') ? 683 : 1200,
+          height: (member.slug === 'nalivkina-svetlana-andreevna' || member.slug === 'zubova-natalya-yuryevna') ? 1024 : 630,
           alt: member.slug === 'bobkin-arkadiy-evgenevich'
             ? 'Аркадий Евгеньевич Бобкин — директор, управляющий партнёр ЮК «Де-Юре»'
             : member.slug === 'konopkin-dmitriy-sergeevich'
@@ -75,7 +75,7 @@ export default async function SpecialistPage({ params }: PageProps) {
     notFound();
   }
 
-  const imageUrl = `https://dejure-help.ru/images/${member.slug === 'konopkin-dmitriy-sergeevich' ? 'konopkin.jpg' : member.slug === 'bobkin-arkadiy-evgenevich' ? 'bobkin.jpg' : member.slug === 'smolyaninova-marina-valerevna' ? 'smolyaninova.jpg' : member.slug === 'gusev-oleg-yurevich' ? 'gusev.jpg' : member.slug === 'nacheshnikov-vladimir-viktorovich' ? 'nacheshnikov.jpg' : member.slug === 'polozova-elena-anatolevna' ? 'polozova.jpg' : member.slug === 'nalivkina-svetlana-andreevna' ? 'nalivkina.webp' : member.slug === 'zubova-natalya-yuryevna' ? 'zubova-placeholder.jpg' : 'logo_dark.png'}`;
+  const imageUrl = `https://dejure-help.ru/images/${member.slug === 'konopkin-dmitriy-sergeevich' ? 'konopkin.jpg' : member.slug === 'bobkin-arkadiy-evgenevich' ? 'bobkin.jpg' : member.slug === 'smolyaninova-marina-valerevna' ? 'smolyaninova.jpg' : member.slug === 'gusev-oleg-yurevich' ? 'gusev.jpg' : member.slug === 'nacheshnikov-vladimir-viktorovich' ? 'nacheshnikov.jpg' : member.slug === 'polozova-elena-anatolevna' ? 'polozova.jpg' : member.slug === 'nalivkina-svetlana-andreevna' ? 'nalivkina.webp' : member.slug === 'zubova-natalya-yuryevna' ? 'zubova.webp' : 'logo_dark.png'}`;
 
   // Generate JSON-LD Person
   const jsonLdPerson = member.slug === 'bobkin-arkadiy-evgenevich' ? {
@@ -179,7 +179,7 @@ export default async function SpecialistPage({ params }: PageProps) {
     name: 'Зубова Наталья Юрьевна',
     jobTitle: 'Юрист, партнёр ЮК «Де-Юре»',
     url: 'https://dejure-help.ru/specialisty/zubova-natalya-yuryevna/',
-    image: 'https://dejure-help.ru/images/zubova-placeholder.jpg',
+    image: 'https://dejure-help.ru/images/zubova.webp',
     alumniOf: [
       {
         '@type': 'CollegeOrUniversity',
@@ -428,52 +428,39 @@ export default async function SpecialistPage({ params }: PageProps) {
                 display: 'block',
                 background: 'transparent'
               }}>
-                {member.slug === 'zubova-natalya-yuryevna' ? (
-                  <div
-                    className="specialist-img-responsive"
-                    style={{
-                      width: '100%',
-                      height: '540px',
-                      background: 'var(--color-deep-blue)',
-                      display: 'flex',
-                      flexDirection: 'column',
-                      alignItems: 'center',
-                      justifyContent: 'center'
-                    }}
-                  >
-                    <div style={{ width: '56px', height: '56px', border: '1px solid rgba(212, 175, 55, 0.6)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '16px', color: 'var(--color-gold, #B89C72)', fontFamily: 'var(--font-serif)', fontSize: '26px', fontWeight: 600 }}>DJ</div>
-                    <span style={{ fontSize: '13px', textTransform: 'uppercase', letterSpacing: '0.12em', color: 'rgba(255,255,255,0.75)', fontWeight: 500 }}>Фото ожидается</span>
-                  </div>
-                ) : (
-                  <img 
-                    src={member.image} 
-                    className="specialist-img-responsive"
-                    width={440}
-                    height={540}
-                    fetchPriority="high"
-                    decoding="async"
-                    {...(member.slug === 'nalivkina-svetlana-andreevna' ? {
-                      srcSet: '/images/nalivkina-420.webp 420w, /images/nalivkina.webp 683w',
-                      sizes: '(max-width: 768px) 100vw, 440px'
-                    } : {})}
-                    alt={
-                      member.slug === 'konopkin-dmitriy-sergeevich'
-                        ? 'Конопкин Дмитрий Сергеевич — адвокат'
-                        : member.slug === 'gusev-oleg-yurevich'
-                        ? 'Гусев Олег Юрьевич — адвокат'
-                        : member.slug === 'bobkin-arkadiy-evgenevich'
-                        ? 'Аркадий Евгеньевич Бобкин — директор, управляющий партнёр ЮК «Де-Юре»'
-                        : member.slug === 'smolyaninova-marina-valerevna'
-                        ? 'Марина Валерьевна Смольянинова — ведущий юрист ЮК «Де-Юре»'
-                        : member.slug === 'nacheshnikov-vladimir-viktorovich'
-                        ? 'Владимир Викторович Начешников — специалист ЮК «Де-Юре»'
-                        : member.slug === 'nalivkina-svetlana-andreevna'
-                        ? 'Светлана Андреевна Наливкина — юрист, партнёр ЮК «Де-Юре»'
-                        : `${member.name} — специалист ЮК «Де-Юре»`
-                    }
-                    style={{ width: '100%', height: '540px', objectFit: 'cover', objectPosition: member.slug === 'gusev-oleg-yurevich' ? 'center 32%' : member.slug === 'smolyaninova-marina-valerevna' ? 'center 28%' : member.slug === 'konopkin-dmitriy-sergeevich' ? 'center 35%' : member.slug === 'nacheshnikov-vladimir-viktorovich' ? 'center 20%' : member.slug === 'nalivkina-svetlana-andreevna' ? 'center 15%' : 'center 25%', display: 'block', filter: 'brightness(1.05)' }}
-                  />
-                )}
+                <img 
+                  src={member.image} 
+                  className="specialist-img-responsive"
+                  width={440}
+                  height={540}
+                  fetchPriority="high"
+                  decoding="async"
+                  {...(member.slug === 'nalivkina-svetlana-andreevna' ? {
+                    srcSet: '/images/nalivkina-420.webp 420w, /images/nalivkina.webp 683w',
+                    sizes: '(max-width: 768px) 100vw, 440px'
+                  } : member.slug === 'zubova-natalya-yuryevna' ? {
+                    srcSet: '/images/zubova-420.webp 420w, /images/zubova.webp 683w',
+                    sizes: '(max-width: 768px) 100vw, 440px'
+                  } : {})}
+                  alt={
+                    member.slug === 'zubova-natalya-yuryevna'
+                      ? 'Наталья Юрьевна Зубова, юрист'
+                      : member.slug === 'konopkin-dmitriy-sergeevich'
+                      ? 'Конопкин Дмитрий Сергеевич — адвокат'
+                      : member.slug === 'gusev-oleg-yurevich'
+                      ? 'Гусев Олег Юрьевич — адвокат'
+                      : member.slug === 'bobkin-arkadiy-evgenevich'
+                      ? 'Аркадий Евгеньевич Бобкин — директор, управляющий партнёр ЮК «Де-Юре»'
+                      : member.slug === 'smolyaninova-marina-valerevna'
+                      ? 'Марина Валерьевна Смольянинова — ведущий юрист ЮК «Де-Юре»'
+                      : member.slug === 'nacheshnikov-vladimir-viktorovich'
+                      ? 'Владимир Викторович Начешников — специалист ЮК «Де-Юре»'
+                      : member.slug === 'nalivkina-svetlana-andreevna'
+                      ? 'Светлана Андреевна Наливкина — юрист, партнёр ЮК «Де-Юре»'
+                      : `${member.name} — специалист ЮК «Де-Юре»`
+                  }
+                  style={{ width: '100%', height: '540px', objectFit: 'cover', objectPosition: member.slug === 'gusev-oleg-yurevich' ? 'center 32%' : member.slug === 'smolyaninova-marina-valerevna' ? 'center 28%' : member.slug === 'konopkin-dmitriy-sergeevich' ? 'center 35%' : member.slug === 'nacheshnikov-vladimir-viktorovich' ? 'center 20%' : member.slug === 'nalivkina-svetlana-andreevna' ? 'center 15%' : member.slug === 'zubova-natalya-yuryevna' ? 'center 15%' : 'center 25%', display: 'block', filter: 'brightness(1.05)' }}
+                />
               </div>
             </div>
           </div>
@@ -575,6 +562,8 @@ export default async function SpecialistPage({ params }: PageProps) {
                   ? 'От следственной работы\nк управлению сложными юридическими проектами'
                   : member.slug === 'nalivkina-svetlana-andreevna'
                   ? 'Юридическая практика с 2001 года'
+                  : member.slug === 'zubova-natalya-yuryevna'
+                  ? 'Муниципальный и коммерческий опыт'
                   : 'Опыт и принципы работы'}
               </h3>
               
@@ -582,6 +571,22 @@ export default async function SpecialistPage({ params }: PageProps) {
                 style={{ fontSize: '16px', color: 'var(--color-deep-blue)', lineHeight: 1.7, margin: 0, textAlign: 'justify' }}
                 dangerouslySetInnerHTML={{ __html: member.experienceText || '' }}
               />
+
+              {member.slug === 'zubova-natalya-yuryevna' && (
+                <div style={{ marginTop: '28px', maxWidth: '440px', borderRadius: '0', overflow: 'hidden', boxShadow: '0 4px 14px rgba(16, 39, 59, 0.10)' }}>
+                  <img 
+                    src="/images/zubova-table.webp"
+                    srcSet="/images/zubova-table-420.webp 420w, /images/zubova-table.webp 683w"
+                    sizes="(max-width: 768px) 100vw, 440px"
+                    alt="Наталья Юрьевна Зубова на рабочей консультации"
+                    width={440}
+                    height={300}
+                    loading="lazy"
+                    decoding="async"
+                    style={{ width: '100%', height: 'auto', display: 'block', objectFit: 'cover' }}
+                  />
+                </div>
+              )}
             </div>
 
             {/* Right Column: Professional Info Card */}
