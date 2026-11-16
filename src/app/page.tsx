@@ -512,44 +512,33 @@ export default function Home() {
         ]}
       />
 
-      {/* 5. TEAM - БЛОК 1: СПЕЦИАЛИСТЫ ЮК */}
+      {/* 5. TEAM - БЛОК 1: ЮРИСТЫ */}
       <TeamCarousel 
         customSectionLabel="Наша команда"
-        customTitle="Специалисты ЮК «Де-Юре»"
-        customSubtitle="Специалисты компании с практическим опытом работы в следственных органах, службе судебных приставов и сопровождении гражданских и коммерческих споров."
+        customTitle="Юристы ЮК «Де-Юре»"
+        customSubtitle="Юристы компании и партнёры с практическим опытом работы в следственных органах, службе судебных приставов и сопровождении гражданских и коммерческих споров."
         filterSlugs={[
           'bobkin-arkadiy-evgenevich',
           'smolyaninova-marina-valerevna',
           'nacheshnikov-vladimir-viktorovich',
-          'polozova-elena-anatolevna'
+          'polozova-elena-anatolevna',
+          'nalivkina-svetlana-andreevna',
+          'zubova-natalya-yuryevna'
         ]}
         bgClass="bg-cream"
         id="team"
       />
 
-      {/* 5. TEAM - БЛОК 2: НЕЗАВИСИМЫЕ АДВОКАТЫ / ПАРТНЁРЫ */}
+      {/* 5. TEAM - БЛОК 2: АДВОКАТЫ */}
       <TeamCarousel 
-        customSectionLabel="Партнёры «Де-Юре»"
-        customTitle="Независимые специалисты и организации"
-        customSubtitle="В зависимости от задачи ЮК привлекает независимых адвокатов, экспертные, оценочные, аудиторские и иные профильные организации."
-        subgroups={[
-          {
-            title: 'Юристы-партнёры',
-            slugs: [
-              'nalivkina-svetlana-andreevna',
-              'zubova-natalya-yuryevna'
-            ],
-            linkText: 'Подробнее о специалисте'
-          },
-          {
-            title: 'Адвокаты',
-            slugs: [
-              'konopkin-dmitriy-sergeevich',
-              'gusev-oleg-yurevich'
-            ],
-            linkText: 'Подробнее об адвокате'
-          }
+        customSectionLabel="Адвокаты"
+        customTitle="Адвокаты, с которыми сотрудничает ЮК «Де-Юре»"
+        customSubtitle="В зависимости от задачи ЮК привлекает независимых адвокатов для защиты по уголовным делам и представления интересов в сложных судебных процессах."
+        filterSlugs={[
+          'konopkin-dmitriy-sergeevich',
+          'gusev-oleg-yurevich'
         ]}
+        customLinkText="Подробнее об адвокате"
         hideAllLink={true}
         bgClass="bg-white"
         id="advocates"

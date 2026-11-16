@@ -631,8 +631,19 @@ export default function SpecialistyPage() {
                           lineHeight: 1.3 
                         }}>
                           <Link href={`/specialisty/${sp.slug}/`} style={{ color: 'inherit', textDecoration: 'none' }}>
-                            <span style={{ display: 'block' }}>Наливкина</span>
-                            <span style={{ display: 'block' }}>Светлана Андреевна</span>
+                            {sp.slug === 'nalivkina-svetlana-andreevna' ? (
+                              <>
+                                <span style={{ display: 'block' }}>Наливкина</span>
+                                <span style={{ display: 'block' }}>Светлана Андреевна</span>
+                              </>
+                            ) : sp.slug === 'zubova-natalya-yuryevna' ? (
+                              <>
+                                <span style={{ display: 'block' }}>Зубова</span>
+                                <span style={{ display: 'block' }}>Наталья Юрьевна</span>
+                              </>
+                            ) : (
+                              sp.name
+                            )}
                           </Link>
                         </h3>
 
