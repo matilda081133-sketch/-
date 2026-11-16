@@ -239,7 +239,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/grazhdanam/advokat-po-ugolovnym-delam/zashchita-poterpevshego/',
   ];
 
-  const specialistRoutes = Object.keys(teamData).map((slug) => `/specialisty/${slug}/`);
+  const specialistRoutes = Object.keys(teamData)
+    .filter((slug) => slug !== 'zubova-natalya-yuryevna')
+    .map((slug) => `/specialisty/${slug}/`);
 
   const allRoutes = [...staticRoutes, ...specialistRoutes];
   const dateMap = getFileDateMap();

@@ -140,20 +140,6 @@ export default function TeamCarousel({
     {
       name: (
         <>
-          <span style={{ display: 'block' }}>Зубова</span>
-          <span style={{ display: 'block' }}>Наталья Юрьевна</span>
-        </>
-      ),
-      rawName: 'Зубова Наталья Юрьевна',
-      role: 'Юрист, партнёр ЮК «Де-Юре»',
-      desc: 'Специализация: недвижимость, земельное и жилищное право, юридическое сопровождение бизнеса. Руководила юридическим отделом Департамента экономики администрации Липецка.',
-      img: '/images/zubova-table.webp',
-      link: '/specialisty/zubova-natalya-yuryevna/',
-      imgPosition: 'center 15%'
-    },
-    {
-      name: (
-        <>
           <span style={{ display: 'block' }}>Полозова</span>
           <span style={{ display: 'block' }}>Елена Анатольевна</span>
         </>
@@ -245,7 +231,21 @@ export default function TeamCarousel({
                         <div style={{ display: 'flex', flexDirection: 'column', flex: '1 1 auto', overflow: 'hidden' }}>
                           <Link href={person.link} style={{ display: 'block', height: '270px', width: '100%', marginBottom: '16px', borderRadius: '0', flexShrink: 0, overflow: 'hidden', position: 'relative', background: 'var(--color-cream)', textDecoration: 'none' }}>
                             {person.img ? (
-                              <img src={person.img} alt={person.rawName} width={300} height={270} style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: person.imgPosition || 'center 15%' }} loading="lazy" decoding="async" />
+                              <img 
+                                src={person.img} 
+                                alt={person.rawName} 
+                                width={300} 
+                                height={270} 
+                                style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: person.imgPosition || 'center 15%' }} 
+                                loading="eager" 
+                                decoding="async" 
+                                onError={(e) => {
+                                  const target = e.currentTarget;
+                                  if (target.src.endsWith('.webp')) {
+                                    target.src = target.src.replace(/\.webp$/, '.jpg');
+                                  }
+                                }}
+                              />
                             ) : (
                               <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', background: 'var(--color-deep-blue)', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
                                 <div style={{ width: '48px', height: '48px', border: '1px solid rgba(212, 175, 55, 0.6)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '14px', color: 'var(--color-gold, #B89C72)', fontFamily: 'var(--font-serif)', fontSize: '22px', fontWeight: 600 }}>DJ</div>
@@ -342,7 +342,21 @@ export default function TeamCarousel({
                   <div style={{ display: 'flex', flexDirection: 'column', flex: '1 1 auto', overflow: 'hidden' }}>
                     <Link href={person.link} style={{ display: 'block', height: '270px', width: '100%', marginBottom: '16px', borderRadius: '0', flexShrink: 0, overflow: 'hidden', position: 'relative', background: 'var(--color-cream)', textDecoration: 'none' }}>
                       {person.img ? (
-                        <img src={person.img} alt={person.rawName} width={300} height={270} style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: person.imgPosition || 'center 15%' }} loading="lazy" decoding="async" />
+                        <img 
+                          src={person.img} 
+                          alt={person.rawName} 
+                          width={300} 
+                          height={270} 
+                          style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: person.imgPosition || 'center 15%' }} 
+                          loading="eager" 
+                          decoding="async" 
+                          onError={(e) => {
+                            const target = e.currentTarget;
+                            if (target.src.endsWith('.webp')) {
+                              target.src = target.src.replace(/\.webp$/, '.jpg');
+                            }
+                          }}
+                        />
                       ) : (
                         <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', background: 'var(--color-deep-blue)', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
                           <div style={{ width: '48px', height: '48px', border: '1px solid rgba(212, 175, 55, 0.6)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '14px', color: 'var(--color-gold, #B89C72)', fontFamily: 'var(--font-serif)', fontSize: '22px', fontWeight: 600 }}>DJ</div>

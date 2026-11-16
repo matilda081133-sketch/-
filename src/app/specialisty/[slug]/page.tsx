@@ -12,13 +12,18 @@ interface PageProps {
 }
 
 export function generateStaticParams() {
-  return Object.keys(teamData).map((slug) => ({
-    slug,
-  }));
+  return Object.keys(teamData)
+    .filter((slug) => slug !== 'zubova-natalya-yuryevna')
+    .map((slug) => ({
+      slug,
+    }));
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { slug } = await params;
+  if (slug === 'zubova-natalya-yuryevna') {
+    return { title: 'Специалист не найден' };
+  }
   const member = getTeamMember(slug);
   if (!member) {
     return { title: 'Специалист не найден' };
@@ -69,6 +74,9 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
 export default async function SpecialistPage({ params }: PageProps) {
   const { slug } = await params;
+  if (slug === 'zubova-natalya-yuryevna') {
+    notFound();
+  }
   const member = getTeamMember(slug);
 
   if (!member) {
@@ -438,8 +446,8 @@ export default async function SpecialistPage({ params }: PageProps) {
                   {...(member.slug === 'nalivkina-svetlana-andreevna' ? {
                     srcSet: '/images/nalivkina-420.webp 420w, /images/nalivkina.webp 683w',
                     sizes: '(max-width: 768px) 100vw, 440px'
-                  } : member.slug === 'zubova-natalya-yuryevna' ? {
-                    srcSet: '/images/zubova-420.webp 420w, /images/zubova.webp 683w',
+                  } : member.slug === 'polozova-elena-anatolevna' ? {
+                    srcSet: '/images/polozova-420.webp 420w, /images/polozova.webp 682w',
                     sizes: '(max-width: 768px) 100vw, 440px'
                   } : {})}
                   alt={

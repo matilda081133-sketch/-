@@ -522,8 +522,7 @@ export default function Home() {
           'smolyaninova-marina-valerevna',
           'nacheshnikov-vladimir-viktorovich',
           'polozova-elena-anatolevna',
-          'nalivkina-svetlana-andreevna',
-          'zubova-natalya-yuryevna'
+          'nalivkina-svetlana-andreevna'
         ]}
         bgClass="bg-cream"
         id="team"
