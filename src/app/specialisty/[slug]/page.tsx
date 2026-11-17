@@ -574,22 +574,6 @@ export default async function SpecialistPage({ params }: PageProps) {
                 style={{ fontSize: '16px', color: 'var(--color-deep-blue)', lineHeight: 1.7, margin: 0, textAlign: 'justify' }}
                 dangerouslySetInnerHTML={{ __html: member.experienceText || '' }}
               />
-
-              {member.slug === 'zubova-natalya-yuryevna' && (
-                <div style={{ marginTop: '28px', maxWidth: '440px', borderRadius: '0', overflow: 'hidden', boxShadow: '0 4px 14px rgba(16, 39, 59, 0.10)' }}>
-                  <img 
-                    src="/images/zubova-table.webp"
-                    srcSet="/images/zubova-table-420.webp 420w, /images/zubova-table.webp 683w"
-                    sizes="(max-width: 768px) 100vw, 440px"
-                    alt="Наталья Юрьевна Зубова"
-                    width={440}
-                    height={300}
-                    loading="lazy"
-                    decoding="async"
-                    style={{ width: '100%', height: 'auto', display: 'block', objectFit: 'cover' }}
-                  />
-                </div>
-              )}
             </div>
 
             {/* Right Column: Professional Info Card */}

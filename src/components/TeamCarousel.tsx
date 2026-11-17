@@ -161,7 +161,7 @@ export default function TeamCarousel({
       rawName: 'Полозова Елена Анатольевна',
       role: 'Юрист ЮК «Де-Юре»',
       desc: 'Специализация: военное и трудовое право. Консультации, досудебная работа, подготовка юридических документов и помощь при обжаловании.',
-      img: '/images/polozova.webp',
+      img: '/images/polozova.webp?v=2',
       link: '/specialisty/polozova-elena-anatolevna/',
       imgPosition: 'center 20%'
     }
@@ -255,8 +255,8 @@ export default function TeamCarousel({
                                 decoding="async" 
                                 onError={(e) => {
                                   const target = e.currentTarget;
-                                  if (target.src.endsWith('.webp')) {
-                                    target.src = target.src.replace(/\.webp$/, '.jpg');
+                                  if (target.src.includes('.webp')) {
+                                    target.src = target.src.replace(/\.webp(\?.*)?$/, '.jpg');
                                   }
                                 }}
                               />
@@ -366,8 +366,8 @@ export default function TeamCarousel({
                           decoding="async" 
                           onError={(e) => {
                             const target = e.currentTarget;
-                            if (target.src.endsWith('.webp')) {
-                              target.src = target.src.replace(/\.webp$/, '.jpg');
+                            if (target.src.includes('.webp')) {
+                              target.src = target.src.replace(/\.webp(\?.*)?$/, '.jpg');
                             }
                           }}
                         />
