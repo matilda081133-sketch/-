@@ -56,11 +56,11 @@ export default function ReviewsBlock() {
               <img src="/images/yandex_logo.webp" alt="Яндекс Карты" width="44" height="44" loading="lazy" decoding="async" style={{ borderRadius: '50%', objectFit: 'cover', flexShrink: 0 }} />
               <div>
                 <div style={{ color: 'var(--color-deep-blue)', fontSize: '17px', fontWeight: 600, marginBottom: '4px' }}>Яндекс Карты</div>
-                <div style={{ color: 'var(--color-text-secondary)', fontSize: '13.5px' }}>Рейтинг 4.4 • Проверенный профиль</div>
+                <div style={{ color: 'var(--color-text-secondary)', fontSize: '13.5px' }}>Рейтинг 4.9 • Проверенный профиль</div>
               </div>
             </div>
             <a 
-              href="https://yandex.ru/maps/org/de_yure/113110034639/reviews/" 
+              href="https://yandex.ru/maps/org/de_yure/194883556606/reviews/" 
               target="_blank" 
               rel="noopener noreferrer" 
               className="btn-outline" 
@@ -78,11 +78,11 @@ export default function ReviewsBlock() {
               </div>
               <div>
                 <div style={{ color: 'var(--color-deep-blue)', fontSize: '17px', fontWeight: 600, marginBottom: '4px' }}>Отзывы 2ГИС</div>
-                <div style={{ color: 'var(--color-text-secondary)', fontSize: '13.5px' }}>Рейтинг 4.5 • Подтверждённые отзывы</div>
+                <div style={{ color: 'var(--color-text-secondary)', fontSize: '13.5px' }}>Рейтинг 5.0 • Подтверждённые отзывы</div>
               </div>
             </div>
             <a 
-              href="https://2gis.ru/lipetsk/firm/70000001068352516/tab/reviews" 
+              href="https://2gis.ru/lipetsk/firm/70000001027426300/tab/reviews" 
               target="_blank" 
               rel="noopener noreferrer" 
               className="btn-outline" 
