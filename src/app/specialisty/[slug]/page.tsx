@@ -191,10 +191,9 @@ export default async function SpecialistPage({ params }: PageProps) {
       }
     ],
     knowsAbout: [
+      'Юридическое сопровождение бизнеса',
       'Недвижимость',
-      'Земельное право',
-      'Жилищное право',
-      'Юридическое сопровождение бизнеса'
+      'Земельное право'
     ]
   } : {
     '@context': 'https://schema.org',
@@ -328,10 +327,10 @@ export default async function SpecialistPage({ params }: PageProps) {
               ) : member.slug === 'zubova-natalya-yuryevna' ? (
                 <div style={{ marginBottom: '24px' }}>
                   <div style={{ fontSize: '15px', color: 'var(--color-text-secondary)', fontWeight: 600, marginBottom: '10px' }}>
-                    Недвижимость · Земельное право · Жилищное право · Юридическое сопровождение бизнеса
+                    Юридическое сопровождение бизнеса · Недвижимость · Земельное право
                   </div>
                   <div style={{ fontSize: '15px', color: 'var(--color-text-secondary)', fontWeight: 500, lineHeight: 1.6 }}>
-                    Помогает гражданам и организациям решать вопросы, связанные с недвижимостью, землёй и жильём. Сопровождает договорную работу бизнеса: от проверки условий сделки до подготовки претензии, если договорённости нарушены.
+                    Сопровождает договорную работу бизнеса: от проверки условий сделки и разработки внутренних документов до подготовки претензий, если договорённости нарушены. Помогает гражданам и организациям решать вопросы, связанные с недвижимостью и землёй.
                   </div>
                 </div>
               ) : (
@@ -663,7 +662,7 @@ export default async function SpecialistPage({ params }: PageProps) {
               </h2>
             </div>
             
-            <div className={`grid ${(member.slug === 'zubova-natalya-yuryevna' || member.cases.length === 4 || member.cases.length === 2) ? 'grid-2' : 'grid-3'}`} style={{ gap: '30px' }}>
+            <div className={`grid ${(member.cases.length === 4 || member.cases.length === 2) ? 'grid-2' : 'grid-3'}`} style={{ gap: '30px' }}>
               {(member.slug === 'zubova-natalya-yuryevna' ? member.cases : member.cases.slice(0, 3)).map((c, i) => (
                 <div key={i} className="card" style={{ padding: '40px', border: '1px solid rgba(23, 50, 77, 0.05)', borderRadius: '0', borderTop: '4px solid var(--color-primary)', display: 'flex', flexDirection: 'column', background: 'var(--color-white)', boxShadow: '0 25px 50px -12px rgba(23, 50, 77, 0.25), 0 8px 24px rgba(23, 50, 77, 0.08)' }} data-analytics="case-click">
                   <div style={{ paddingBottom: '20px', marginBottom: '24px' }}>

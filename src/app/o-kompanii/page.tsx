@@ -3,6 +3,7 @@ import Link from 'next/link';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import ContactsForm from '@/components/ContactsForm';
+import { hasPublishedNews } from '@/data/news';
 
 export const metadata: Metadata = {
   title: 'О юридической компании «Де-Юре» в Липецке',
@@ -196,6 +197,15 @@ export default function AboutPage() {
                   >
                     Посмотреть специалистов
                   </Link>
+                  {hasPublishedNews() && (
+                    <Link
+                      href="/o-kompanii/novosti/"
+                      className="btn btn-outline"
+                      style={{ padding: '14px 28px', fontSize: '15px', borderRadius: 0 }}
+                    >
+                      Новости компании
+                    </Link>
+                  )}
                 </div>
               </div>
 

@@ -1,5 +1,6 @@
 import { MetadataRoute } from 'next';
 import { teamData } from '@/data/team';
+import { getPublishedNews } from '@/data/news';
 import { execSync } from 'child_process';
 
 export const dynamic = 'force-static';
@@ -240,14 +241,38 @@ export default function sitemap(): MetadataRoute.Sitemap {
   ];
 
   const specialistRoutes = Object.keys(teamData).map((slug) => `/specialisty/${slug}/`);
+  const publishedNews = getPublishedNews();
+  const newsRoutes =
+    publishedNews.length > 0
+      ? [
+          '/o-kompanii/novosti/',
+          ...publishedNews.map((item) => `/o-kompanii/novosti/${item.slug}/`),
+        ]
+      : [];
 
-  const allRoutes = [...staticRoutes, ...specialistRoutes];
+  const allRoutes = [...staticRoutes, ...specialistRoutes, ...newsRoutes];
   const dateMap = getFileDateMap();
 
-  return allRoutes.map((route) => ({
-    url: `${baseUrl}${route}`,
-    lastModified: getRouteLastModified(route, dateMap),
-    changeFrequency: (route === '' ? 'daily' : 'weekly') as 'daily' | 'weekly',
-    priority: route === '' ? 1.0 : route.includes('/specialisty/') ? 0.8 : route.split('/').length <= 3 ? 0.9 : 0.85,
-  }));
+  return allRoutes.map((route) => {
+    const newsMatch = publishedNews.find(
+      (item) => `/o-kompanii/novosti/${item.slug}/` === route
+    );
+    return {
+      url: `${baseUrl}${route}`,
+      lastModified: newsMatch
+        ? new Date(newsMatch.publishedAt)
+        : getRouteLastModified(route, dateMap),
+      changeFrequency: (route === '' ? 'daily' : 'weekly') as 'daily' | 'weekly',
+      priority:
+        route === ''
+          ? 1.0
+          : route.includes('/specialisty/')
+            ? 0.8
+            : route.includes('/novosti/')
+              ? 0.75
+              : route.split('/').length <= 3
+                ? 0.9
+                : 0.85,
+    };
+  });
 }

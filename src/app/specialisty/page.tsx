@@ -84,10 +84,9 @@ const specialistAreas: Record<string, { name: string; href?: string }[]> = {
     { name: 'Трудовые споры', href: '/grazhdanam/trudovoj-yurist/' }
   ],
   'zubova-natalya-yuryevna': [
+    { name: 'Юридическое сопровождение бизнеса', href: '/biznesu/yuridicheskoe-soprovozhdenie-biznesa/' },
     { name: 'Недвижимость', href: '/grazhdanam/yurist-po-nedvizhimosti/' },
-    { name: 'Земельное право', href: '/grazhdanam/zemelnyj-yurist/' },
-    { name: 'Жилищное право', href: '/grazhdanam/zhilishchnyj-yurist/' },
-    { name: 'Юридическое сопровождение бизнеса', href: '/biznesu/yuridicheskoe-soprovozhdenie-biznesa/' }
+    { name: 'Земельное право', href: '/grazhdanam/zemelnyj-yurist/' }
   ]
 };
 

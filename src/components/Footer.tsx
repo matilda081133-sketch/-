@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { PAYMENT_URL, PAYMENT_BUTTON_TEXT, PAYMENT_FOOTER_NOTE } from '@/lib/payment';
+import { hasPublishedNews } from '@/data/news';
 
 export default function Footer() {
   const [openSection, setOpenSection] = useState<string | null>(null);
@@ -46,6 +47,7 @@ export default function Footer() {
 
   const companyLinks = [
     { title: "О компании", href: "/o-kompanii/" },
+    ...(hasPublishedNews() ? [{ title: "Новости компании", href: "/o-kompanii/novosti/" }] : []),
     { title: "Дистанционная помощь", href: "/distancionnaya-yuridicheskaya-pomoshch/" },
     { title: "Стоимость", href: "/stoimost/" },
     { title: "Специалисты", href: "/specialisty" },
