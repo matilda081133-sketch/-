@@ -581,7 +581,7 @@ export default async function SpecialistPage({ params }: PageProps) {
                     src="/images/zubova-table.webp"
                     srcSet="/images/zubova-table-420.webp 420w, /images/zubova-table.webp 683w"
                     sizes="(max-width: 768px) 100vw, 440px"
-                    alt="Наталья Юрьевна Зубова на рабочей консультации"
+                    alt="Наталья Юрьевна Зубова"
                     width={440}
                     height={300}
                     loading="lazy"
