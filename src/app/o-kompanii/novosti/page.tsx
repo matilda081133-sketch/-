@@ -85,8 +85,9 @@ export default function CompanyNewsListPage() {
 
       <main style={{ overflowX: 'hidden' }}>
         <section
+          className="news-list-hero"
           style={{
-            padding: 'clamp(32px, 4.5vw, 52px) 0 clamp(32px, 4.5vw, 46px)',
+            padding: '164px 0 clamp(32px, 4.5vw, 46px)',
             background: 'var(--gradient-cream)',
             borderBottom: '1px solid var(--color-border)',
           }}
@@ -266,6 +267,14 @@ export default function CompanyNewsListPage() {
       <style
         dangerouslySetInnerHTML={{
           __html: `
+            main > section.news-list-hero {
+              padding-top: 164px !important;
+            }
+            @media (max-width: 991px) {
+              main > section.news-list-hero {
+                padding-top: 120px !important;
+              }
+            }
             .news-breadcrumb-link {
               color: inherit;
               text-decoration: none;

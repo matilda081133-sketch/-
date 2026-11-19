@@ -192,7 +192,14 @@ export default async function NewsArticlePage({ params }: PageProps) {
       )}
       <Header />
 
-      <main style={{ overflowX: 'hidden', background: 'var(--color-white)' }}>
+      <main
+        className="news-article-main"
+        style={{
+          overflowX: 'hidden',
+          background: 'var(--color-white)',
+          paddingTop: '136px',
+        }}
+      >
         {isDraftPreview && (
           <div
             role="status"
@@ -476,6 +483,14 @@ export default async function NewsArticlePage({ params }: PageProps) {
       <style
         dangerouslySetInnerHTML={{
           __html: `
+            .news-article-main {
+              padding-top: 136px !important;
+            }
+            @media (max-width: 991px) {
+              .news-article-main {
+                padding-top: 94px !important;
+              }
+            }
             .news-article-bc-link {
               color: inherit;
               text-decoration: none;
