@@ -104,8 +104,8 @@ export const newsItems: NewsItem[] = [
     lead: '20 ноября 2026 года с 10:00 до 15:00 сотрудники юридической компании «Де‑Юре» проведут бесплатные консультации в рамках Всероссийского дня правовой помощи детям.',
     excerpt:
       '20 ноября с 10:00 до 15:00 — консультационная помощь в офисе «Де‑Юре» в Липецке. Приём по предварительной записи.',
-    coverImage: '/images/news/den-pravovoy-pomoshchi-detyam-2026.webp',
-    ogImage: '/images/news/den-pravovoy-pomoshchi-detyam-2026.jpg',
+    coverImage: '/images/news/den-pravovoy-pomoshchi-detyam-2026.webp?v=2',
+    ogImage: '/images/news/den-pravovoy-pomoshchi-detyam-2026.jpg?v=2',
     coverAlt:
       'День правовой помощи детям — бесплатные консультации в Де‑Юре 20 ноября 2026 года',
     sections: [
