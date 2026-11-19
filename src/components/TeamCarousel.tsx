@@ -2,6 +2,7 @@
 
 import { useRef } from 'react';
 import Link from 'next/link';
+import { teamData, prependExperienceSummary } from '@/data/team';
 
 interface Subgroup {
   title?: string;
@@ -51,7 +52,9 @@ export default function TeamCarousel({
     }
   };
 
-  const team: { name: React.ReactNode; rawName: string; role: string; desc: string; img: string; link: string; imgPosition?: string }[] = [
+  const zubovaMember = teamData['zubova-natalya-yuryevna'];
+
+  const team: { name: React.ReactNode; rawName: string; role: string; desc: string; img: string; srcSet?: string; sizes?: string; link: string; imgPosition?: string }[] = [
     {
       name: (
         <>
@@ -144,10 +147,12 @@ export default function TeamCarousel({
           <span style={{ display: 'block' }}>Наталья Юрьевна</span>
         </>
       ),
-      rawName: 'Зубова Наталья Юрьевна',
-      role: 'Юрист, партнёр ЮК «Де-Юре»',
-      desc: 'Специализация: юридическое сопровождение бизнеса, недвижимость и земельное право. Руководила юридическим отделом Департамента экономики администрации Липецка.',
-      img: '/images/zubova.webp',
+      rawName: zubovaMember.name,
+      role: zubovaMember.status,
+      desc: prependExperienceSummary(zubovaMember, zubovaMember.cardDescription || ''),
+      img: zubovaMember.image,
+      srcSet: zubovaMember.imageMeta?.srcSet,
+      sizes: '(max-width: 480px) 280px, 300px',
       link: '/specialisty/zubova-natalya-yuryevna/',
       imgPosition: 'center 15%'
     },
@@ -235,18 +240,20 @@ export default function TeamCarousel({
                         width: '300px',
                         minWidth: '280px',
                         maxWidth: '320px',
-                        height: '600px',
+                        minHeight: '600px',
                         flex: '0 0 300px',
                         background: '#FFFFFF',
                         border: '1px solid rgba(16, 39, 59, 0.08)',
                         boxShadow: '0 4px 14px rgba(16, 39, 59, 0.05)',
                         boxSizing: 'border-box'
                       }}>
-                        <div style={{ display: 'flex', flexDirection: 'column', flex: '1 1 auto', overflow: 'hidden' }}>
+                        <div style={{ display: 'flex', flexDirection: 'column', flex: '1 1 auto' }}>
                           <Link href={person.link} style={{ display: 'block', height: '270px', width: '100%', marginBottom: '16px', borderRadius: '0', flexShrink: 0, overflow: 'hidden', position: 'relative', background: 'var(--color-cream)', textDecoration: 'none' }}>
                             {person.img ? (
                               <img 
                                 src={person.img} 
+                                srcSet={person.srcSet}
+                                sizes={person.sizes}
                                 alt={person.rawName} 
                                 width={300} 
                                 height={270} 
@@ -273,7 +280,7 @@ export default function TeamCarousel({
                             </Link>
                           </h3>
                           <p style={{ color: 'var(--color-gold-text, #80633F)', fontWeight: 600, margin: '0 0 10px 0', fontSize: '13px', lineHeight: 1.35, minHeight: '36px', display: 'flex', alignItems: 'flex-start', whiteSpace: 'pre-line' }}>{person.role}</p>
-                          <p style={{ color: 'var(--color-text-secondary)', fontSize: '13px', margin: 0, lineHeight: 1.45, overflow: 'hidden', display: '-webkit-box', WebkitLineClamp: 4, WebkitBoxOrient: 'vertical' }}>{person.desc}</p>
+                          <p style={{ color: 'var(--color-text-secondary)', fontSize: '13px', margin: '0 0 12px 0', lineHeight: 1.45 }}>{person.desc}</p>
                         </div>
                         <div style={{ marginTop: 'auto', paddingTop: '14px', borderTop: '1px solid rgba(16, 39, 59, 0.08)', flexShrink: 0 }}>
                           {person.link && (
@@ -346,18 +353,20 @@ export default function TeamCarousel({
                   width: '300px',
                   minWidth: '280px',
                   maxWidth: '320px',
-                  height: '600px',
+                  minHeight: '600px',
                   flex: '0 0 300px',
                   background: '#FFFFFF',
                   border: '1px solid rgba(16, 39, 59, 0.08)',
                   boxShadow: '0 4px 14px rgba(16, 39, 59, 0.05)',
                   boxSizing: 'border-box'
                 }}>
-                  <div style={{ display: 'flex', flexDirection: 'column', flex: '1 1 auto', overflow: 'hidden' }}>
+                  <div style={{ display: 'flex', flexDirection: 'column', flex: '1 1 auto' }}>
                     <Link href={person.link} style={{ display: 'block', height: '270px', width: '100%', marginBottom: '16px', borderRadius: '0', flexShrink: 0, overflow: 'hidden', position: 'relative', background: 'var(--color-cream)', textDecoration: 'none' }}>
                       {person.img ? (
                         <img 
                           src={person.img} 
+                          srcSet={person.srcSet}
+                          sizes={person.sizes}
                           alt={person.rawName} 
                           width={300} 
                           height={270} 
@@ -384,7 +393,7 @@ export default function TeamCarousel({
                       </Link>
                     </h3>
                     <p style={{ color: 'var(--color-gold-text, #80633F)', fontWeight: 600, margin: '0 0 10px 0', fontSize: '13px', lineHeight: 1.35, minHeight: '36px', display: 'flex', alignItems: 'flex-start', whiteSpace: 'pre-line' }}>{person.role}</p>
-                    <p style={{ color: 'var(--color-text-secondary)', fontSize: '13px', margin: 0, lineHeight: 1.45, overflow: 'hidden', display: '-webkit-box', WebkitLineClamp: 4, WebkitBoxOrient: 'vertical' }}>{person.desc}</p>
+                    <p style={{ color: 'var(--color-text-secondary)', fontSize: '13px', margin: '0 0 12px 0', lineHeight: 1.45 }}>{person.desc}</p>
                   </div>
                   <div style={{ marginTop: 'auto', paddingTop: '14px', borderTop: '1px solid rgba(16, 39, 59, 0.08)', flexShrink: 0 }}>
                     {person.link && (
@@ -485,9 +494,9 @@ export default function TeamCarousel({
                 width: 280px !important;
                 min-width: 280px !important;
                 max-width: 280px !important;
-                height: 580px !important;
                 min-height: 580px !important;
-                max-height: 580px !important;
+                height: auto !important;
+                max-height: none !important;
                 padding: 20px 18px !important;
               }
             }

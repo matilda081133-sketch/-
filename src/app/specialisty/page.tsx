@@ -3,7 +3,7 @@ import Link from 'next/link';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import ContactsForm from '@/components/ContactsForm';
-import { teamData } from '@/data/team';
+import { teamData, prependExperienceSummary } from '@/data/team';
 
 export const metadata: Metadata = {
   title: 'Специалисты и адвокаты «Де-Юре»',
@@ -32,7 +32,7 @@ const specialistListRoles: Record<string, string> = {
   'nacheshnikov-vladimir-viktorovich': 'Специалист ЮК «Де-Юре»',
   'polozova-elena-anatolevna': 'Юрист ЮК «Де-Юре»',
   'nalivkina-svetlana-andreevna': 'Юрист, партнёр ЮК «Де-Юре»',
-  'zubova-natalya-yuryevna': 'Юрист, партнёр ЮК «Де-Юре»'
+  'zubova-natalya-yuryevna': teamData['zubova-natalya-yuryevna'].status
 };
 
 const specialistListDescriptions: Record<string, string> = {
@@ -43,7 +43,7 @@ const specialistListDescriptions: Record<string, string> = {
   'nacheshnikov-vladimir-viktorovich': 'С 1997 года сопровождает корпоративные процедуры и проекты по изменению структуры бизнеса. Работал в различных регионах России и Республике Беларусь. Консультирует, готовит документы и координирует досудебные этапы корпоративных процедур.',
   'polozova-elena-anatolevna': 'Специалист по гражданским делам. Оказывает юридическую помощь по вопросам военного и трудового права — от консультации и подготовки документов до досудебной работы и обжалования.',
   'nalivkina-svetlana-andreevna': 'Юридическая практика с 2001 года. Работала юрисконсультом и руководителем юридического отдела в банковской сфере. Приоритетные направления — банкротство физических лиц и арбитражные споры. Также помогает по вопросам недвижимости и земли, наследственного, военного, семейного и трудового права.',
-  'zubova-natalya-yuryevna': 'Занималась правовым сопровождением компаний в строительстве, энергетике и ЖКХ. Руководила юридическим отделом Департамента экономики администрации Липецка. Организовывала договорную и претензионно-исковую работу, сопровождала имущественные проекты.'
+  'zubova-natalya-yuryevna': prependExperienceSummary(teamData['zubova-natalya-yuryevna'], teamData['zubova-natalya-yuryevna'].listDescription || '')
 };
 
 const specialistAreas: Record<string, { name: string; href?: string }[]> = {
@@ -580,7 +580,7 @@ export default function SpecialistyPage() {
                             srcSet: '/images/nalivkina-420.webp 420w, /images/nalivkina.webp 683w',
                             sizes: '(max-width: 768px) 100vw, 330px'
                           } : sp.slug === 'zubova-natalya-yuryevna' ? {
-                            srcSet: '/images/zubova-420.webp 420w, /images/zubova.webp 683w',
+                            srcSet: sp.imageMeta?.srcSet || '/images/zubova-420.webp 420w, /images/zubova.webp 683w',
                             sizes: '(max-width: 768px) 100vw, 330px'
                           } : {})}
                           style={{ 

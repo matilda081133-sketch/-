@@ -40,8 +40,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       images: [
         {
           url: imageUrl,
-          width: (member.slug === 'nalivkina-svetlana-andreevna' || member.slug === 'zubova-natalya-yuryevna') ? 683 : 1200,
-          height: (member.slug === 'nalivkina-svetlana-andreevna' || member.slug === 'zubova-natalya-yuryevna') ? 1024 : 630,
+          width: member.imageMeta ? member.imageMeta.width : (member.slug === 'nalivkina-svetlana-andreevna' ? 683 : 1200),
+          height: member.imageMeta ? member.imageMeta.height : (member.slug === 'nalivkina-svetlana-andreevna' ? 1024 : 630),
           alt: member.slug === 'bobkin-arkadiy-evgenevich'
             ? 'Аркадий Евгеньевич Бобкин — директор, управляющий партнёр ЮК «Де-Юре»'
             : member.slug === 'konopkin-dmitriy-sergeevich'
@@ -176,8 +176,9 @@ export default async function SpecialistPage({ params }: PageProps) {
     '@context': 'https://schema.org',
     '@type': 'Person',
     '@id': 'https://dejure-help.ru/specialisty/zubova-natalya-yuryevna/#person',
-    name: 'Зубова Наталья Юрьевна',
-    jobTitle: 'Юрист, партнёр ЮК «Де-Юре»',
+    name: member.name,
+    jobTitle: member.status,
+    description: member.seo.description,
     url: 'https://dejure-help.ru/specialisty/zubova-natalya-yuryevna/',
     image: 'https://dejure-help.ru/images/zubova.webp',
     alumniOf: [
@@ -404,6 +405,11 @@ export default async function SpecialistPage({ params }: PageProps) {
                         <span className="nowrap-desk">Комплексное сопровождение от структуры</span><br className="nowrap-desk" />
                         <span className="nowrap-desk">решения до регистрации изменений</span>
                       </>
+                    ) : member.experienceYearsLabel && fact.startsWith(member.experienceYearsLabel) ? (
+                      <>
+                        <strong style={{ fontWeight: 700 }}>{member.experienceYearsLabel}</strong>
+                        {fact.slice(member.experienceYearsLabel.length)}
+                      </>
                     ) : (
                       fact
                     )}
@@ -438,7 +444,7 @@ export default async function SpecialistPage({ params }: PageProps) {
                     srcSet: '/images/nalivkina-420.webp 420w, /images/nalivkina.webp 683w',
                     sizes: '(max-width: 768px) 100vw, 440px'
                   } : member.slug === 'zubova-natalya-yuryevna' ? {
-                    srcSet: '/images/zubova-420.webp 420w, /images/zubova.webp 683w',
+                    srcSet: member.imageMeta?.srcSet || '/images/zubova-420.webp 420w, /images/zubova.webp 683w',
                     sizes: '(max-width: 768px) 100vw, 440px'
                   } : member.slug === 'polozova-elena-anatolevna' ? {
                     srcSet: '/images/polozova-420.webp 420w, /images/polozova.webp 682w',
@@ -570,7 +576,7 @@ export default async function SpecialistPage({ params }: PageProps) {
               </h3>
               
               <div 
-                style={{ fontSize: '16px', color: 'var(--color-deep-blue)', lineHeight: 1.7, margin: 0, textAlign: 'justify' }}
+                style={{ fontSize: '16px', color: 'var(--color-deep-blue)', lineHeight: 1.7, margin: 0, textAlign: member.slug === 'zubova-natalya-yuryevna' ? 'left' : 'justify' }}
                 dangerouslySetInnerHTML={{ __html: member.experienceText || '' }}
               />
             </div>
