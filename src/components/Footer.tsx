@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { PAYMENT_URL, PAYMENT_BUTTON_TEXT, PAYMENT_FOOTER_NOTE } from '@/lib/payment';
+import { SITE_PHONE_DISPLAY, SITE_PHONE_HREF } from '@/lib/contacts';
 import { hasPublishedNews } from '@/data/news';
 
 export default function Footer() {
@@ -85,8 +86,8 @@ export default function Footer() {
               Юридическая помощь гражданам <br />и бизнесу в Липецке.
             </p>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', fontSize: '13px' }}>
-              <a href="tel:+74742201525" style={{ color: 'var(--color-white)', fontWeight: 'bold', textDecoration: 'none', fontSize: '16px' }}>
-                +7 (4742) 20-15-25
+              <a href={SITE_PHONE_HREF} style={{ color: 'var(--color-white)', fontWeight: 'bold', textDecoration: 'none', fontSize: '16px' }}>
+                {SITE_PHONE_DISPLAY}
               </a>
               <span style={{ color: 'rgba(255,255,255,0.6)' }}>г. Липецк, ул. Советская, д. 35, оф. 213</span>
             </div>

@@ -3,6 +3,7 @@ import Link from 'next/link';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { getPublishedNews, formatNewsDateRu } from '@/data/news';
+import { NewsCardArchiveBadge } from '@/components/NewsEventState';
 
 export function generateMetadata(): Metadata {
   const published = getPublishedNews();
@@ -83,16 +84,15 @@ export default function CompanyNewsListPage() {
       <Header />
 
       <main style={{ overflowX: 'hidden' }}>
-        {/* HERO / HEADER РАЗДЕЛА */}
         <section
           style={{
-            padding: 'clamp(36px, 5vw, 60px) 0 clamp(36px, 5vw, 52px)',
+            padding: 'clamp(32px, 4.5vw, 52px) 0 clamp(32px, 4.5vw, 46px)',
             background: 'var(--gradient-cream)',
             borderBottom: '1px solid var(--color-border)',
           }}
         >
           <div className="container">
-            <nav aria-label="Хлебные крошки" style={{ marginBottom: '24px' }}>
+            <nav aria-label="Хлебные крошки" style={{ marginBottom: '22px' }}>
               <ol
                 style={{
                   display: 'flex',
@@ -130,11 +130,11 @@ export default function CompanyNewsListPage() {
 
             <h1
               style={{
-                fontSize: 'clamp(28px, 4vw, 44px)',
+                fontSize: 'clamp(28px, 4vw, 42px)',
                 fontFamily: 'var(--font-serif)',
                 color: 'var(--color-deep-blue)',
                 lineHeight: 1.2,
-                margin: '0 0 14px 0',
+                margin: '0 0 12px 0',
                 fontWeight: 600,
               }}
             >
@@ -143,7 +143,7 @@ export default function CompanyNewsListPage() {
 
             <p
               style={{
-                fontSize: 'clamp(16px, 1.8vw, 18px)',
+                fontSize: 'clamp(15px, 1.8vw, 17px)',
                 color: 'var(--color-text-secondary)',
                 lineHeight: 1.6,
                 margin: 0,
@@ -155,10 +155,9 @@ export default function CompanyNewsListPage() {
           </div>
         </section>
 
-        {/* СПИСОК НОВОСТЕЙ */}
         <section
           style={{
-            padding: 'clamp(44px, 6vw, 76px) 0 clamp(56px, 7vw, 92px)',
+            padding: 'clamp(40px, 5.5vw, 68px) 0 clamp(56px, 7vw, 88px)',
             background: 'var(--color-white)',
           }}
         >
@@ -191,9 +190,7 @@ export default function CompanyNewsListPage() {
                 </Link>
               </div>
             ) : (
-              <div
-                className={isSingle ? 'news-list-single' : 'news-list-grid'}
-              >
+              <div className={isSingle ? 'news-list-single' : 'news-list-grid'}>
                 {articles.map((article) => (
                   <Link
                     key={article.id}
@@ -204,14 +201,15 @@ export default function CompanyNewsListPage() {
                       <div className="news-card-cover-wrap">
                         <img
                           src={article.coverImage}
-                          alt={article.coverAlt || article.title}
-                          width={600}
-                          height={315}
-                          loading="lazy"
+                          alt={article.coverAlt || article.cardTitle || article.title}
+                          width={1200}
+                          height={630}
+                          loading="eager"
                           decoding="async"
                           style={{
                             width: '100%',
                             height: 'auto',
+                            aspectRatio: '1200 / 630',
                             display: 'block',
                           }}
                         />
@@ -219,25 +217,41 @@ export default function CompanyNewsListPage() {
                     )}
 
                     <div className="news-card-body">
-                      <time
-                        dateTime={article.publishedAt}
+                      <div
                         style={{
-                          display: 'block',
-                          fontSize: '13px',
-                          fontWeight: 600,
-                          color: 'var(--color-gold-text, #80633F)',
+                          display: 'flex',
+                          alignItems: 'center',
+                          justifyContent: 'space-between',
+                          flexWrap: 'wrap',
+                          gap: '8px',
                           marginBottom: '10px',
-                          letterSpacing: '0.02em',
                         }}
                       >
-                        {formatNewsDateRu(article.publishedAt)}
-                      </time>
+                        <time
+                          dateTime={article.publishedAt}
+                          style={{
+                            fontSize: '13px',
+                            fontWeight: 600,
+                            color: 'var(--color-gold-text, #80633F)',
+                            letterSpacing: '0.02em',
+                          }}
+                        >
+                          {formatNewsDateRu(article.publishedAt)}
+                        </time>
 
-                      <h2 className="news-card-title">{article.title}</h2>
+                        {article.booking?.endsAtIso && (
+                          <NewsCardArchiveBadge
+                            endsAtIso={article.booking.endsAtIso}
+                            badgeText={article.booking.archiveCardBadgeText}
+                          />
+                        )}
+                      </div>
 
-                      <p className="news-card-excerpt">
-                        {article.excerpt || article.lead}
-                      </p>
+                      <h2 className="news-card-title">
+                        {article.cardTitle || article.title}
+                      </h2>
+
+                      <p className="news-card-excerpt">{article.excerpt}</p>
                     </div>
                   </Link>
                 ))}
@@ -267,7 +281,7 @@ export default function CompanyNewsListPage() {
             }
             .news-list-single {
               display: block;
-              max-width: 420px;
+              max-width: 440px;
               margin: 0;
             }
             .news-list-grid {
@@ -302,10 +316,9 @@ export default function CompanyNewsListPage() {
               width: 100%;
               background: var(--color-deep-blue);
               border-bottom: 1px solid rgba(23, 50, 77, 0.08);
-              overflow: hidden;
             }
             .news-card-body {
-              padding: 24px 26px 28px;
+              padding: 22px 24px 26px;
               display: flex;
               flex-direction: column;
               flex: 1 1 auto;
@@ -315,7 +328,7 @@ export default function CompanyNewsListPage() {
               font-size: clamp(19px, 2vw, 22px);
               line-height: 1.35;
               color: var(--color-deep-blue);
-              margin: 0 0 12px 0;
+              margin: 0 0 10px 0;
               font-weight: 600;
               overflow-wrap: break-word;
             }
@@ -340,7 +353,7 @@ export default function CompanyNewsListPage() {
                 gap: 20px;
               }
               .news-card-body {
-                padding: 20px 20px 24px;
+                padding: 18px 18px 22px;
               }
             }
           `,

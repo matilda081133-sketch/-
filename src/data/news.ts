@@ -1,56 +1,68 @@
-export interface NewsSpecialistInfo {
-  name: string;
-  status: string; // Для независимого адвоката — фактический статус (напр. «Адвокат, рег. № ...»), без указания работы в штате ЮК
-  isIndependentAdvocate?: boolean;
-}
+import {
+  SITE_PHONE_DISPLAY,
+  SITE_PHONE_HREF,
+  SITE_OFFICE_ADDRESS,
+  CONTACTS_PAGE_HREF,
+} from '@/lib/contacts';
 
-export interface NewsBookingContact {
-  confirmed: boolean; // Показывать кнопку или телефон только при подтверждённом канале записи
-  type: 'phone' | 'button';
-  label: string;
+export interface NewsScheduleRow {
+  label?: string;
   value: string;
-  href: string;
-}
-
-export interface NewsParticipation {
-  enabled: boolean;
-  heading?: string; // По умолчанию «Как принять участие»
-  time?: string; // Время проведения
-  addressOrFormat?: string; // Адрес или формат
-  organizerOrVenue?: string; // Организатор или площадка
-  companyFormatAndRole?: string; // Формат и роль компании
-  specialist?: NewsSpecialistInfo; // Имя и статус специалиста
-  audience?: string; // Кому доступно / аудитория
-  topics?: string[]; // Темы консультирования
-  freeHelpScope?: string; // Объём бесплатной помощи
-  conditions?: string; // Условия участия / способ записи
-  whatToBring?: string; // Что взять с собой
-  bookingContact?: NewsBookingContact; // Подтверждённый канал записи
 }
 
 export interface NewsSection {
   subheading?: string;
-  paragraphs: string[];
+  paragraphs?: string[];
+  scheduleRows?: NewsScheduleRow[];
   listItems?: string[];
+}
+
+export interface NewsEventBooking {
+  enabled: boolean;
+  promptText: string;
+  buttonLabel: string;
+  phoneDisplay: string;
+  phoneHref: string;
+  directionsLabel?: string;
+  directionsHref?: string;
+  /** Момент окончания мероприятия с часовым поясом (например, 2026-11-20T15:00:00+03:00) */
+  endsAtIso?: string;
+  /** Текст над основным текстом после завершения приёма */
+  archiveNoticeText?: string;
+  /** Пометка в карточке списка после завершения мероприятия */
+  archiveCardBadgeText?: string;
 }
 
 export interface NewsItem {
   id: string;
   slug: string;
   status: 'draft' | 'published';
+  /** Заголовок H1 на странице новости */
   title: string;
-  publishedAt: string; // YYYY-MM-DD (фактическая дата публикации новости, отдельно от даты события)
-  lead: string; // Лид публикации и короткий анонс в карточке
-  excerpt?: string; // Опциональный отдельный короткий анонс для карточки (если не задан — используется lead)
+  /** Короткий заголовок для карточки в списке новостей (если отличается от H1) */
+  cardTitle?: string;
+  /** Короткое название последнего пункта в хлебных крошках */
+  breadcrumbTitle?: string;
+  /** Фактическая дата выхода новости с часовым поясом (ISO 8601) */
+  publishedAt: string;
+  /** Фактическая дата последнего изменения с часовым поясом (ISO 8601) */
+  modifiedAt: string;
+  /** Вступление (лид) на странице новости */
+  lead: string;
+  /** Короткий анонс для карточки в разделе «Новости компании» */
+  excerpt: string;
+  /** WebP-обложка 1200×630 для вёрстки */
   coverImage?: string;
+  /** Совместимый JPG 1200×630 для Open Graph */
+  ogImage?: string;
   coverAlt?: string;
   sections: NewsSection[];
-  participation?: NewsParticipation;
+  booking?: NewsEventBooking;
   seo: {
     title: string;
     description: string;
   };
-  /** Служебные пометки редактора — никогда не выводятся в публичную вёрстку и JSON-LD */
+  /** Служебные пометки редактора — не выводятся в публичную вёрстку */
   internalNotes?: string;
 }
 
@@ -83,105 +95,79 @@ export const newsItems: NewsItem[] = [
   {
     id: 'den-pravovoy-pomoshchi-detyam-2026',
     slug: 'den-pravovoy-pomoshchi-detyam-2026',
-    status: 'draft',
-    title: '«Де‑Юре» примет участие во Всероссийском дне правовой помощи детям',
-    publishedAt: '2026-11-17',
-    lead: 'Юридическая компания «Де‑Юре» примет участие во Всероссийском дне правовой помощи детям, который пройдёт 20 ноября 2026 года.',
+    status: 'published',
+    title: '«Де‑Юре» проведёт бесплатные консультации в День правовой помощи детям',
+    cardTitle: 'Бесплатные консультации в День правовой помощи детям',
+    breadcrumbTitle: 'День правовой помощи детям',
+    publishedAt: '2026-11-19T12:30:00+03:00',
+    modifiedAt: '2026-11-19T12:30:00+03:00',
+    lead: '20 ноября 2026 года с 10:00 до 15:00 сотрудники юридической компании «Де‑Юре» проведут бесплатные консультации в рамках Всероссийского дня правовой помощи детям.',
     excerpt:
-      'Юридическая компания «Де‑Юре» примет участие во Всероссийском дне правовой помощи детям, который пройдёт 20 ноября 2026 года.',
+      '20 ноября с 10:00 до 15:00 — консультационная помощь в офисе «Де‑Юре» в Липецке. Приём по предварительной записи.',
     coverImage: '/images/news/den-pravovoy-pomoshchi-detyam-2026.webp',
-    coverAlt: 'День правовой помощи детям — 20 ноября 2026',
+    ogImage: '/images/news/den-pravovoy-pomoshchi-detyam-2026.jpg',
+    coverAlt:
+      'День правовой помощи детям — бесплатные консультации в Де‑Юре 20 ноября 2026 года',
     sections: [
       {
+        subheading: 'Кому доступна помощь',
         paragraphs: [
-          'Всероссийский день правовой помощи детям ежегодно проводится 20 ноября и приурочен к принятию Конвенции о правах ребёнка. В этот день профильные организации и практикующие специалисты проводят правовое консультирование по вопросам защиты прав и законных интересов несовершеннолетних.',
-          'Участие ЮК «Де‑Юре» направлено на разъяснение родителям, опекунам, попечителям и законным представителям порядка защиты жилищных, имущественных и семейных прав детей в конкретных жизненных ситуациях.',
+          'Получить бесплатную консультационную помощь смогут дети-сироты, дети, оставшиеся без попечения родителей, дети, находящиеся в трудной жизненной ситуации, и их законные представители.',
+          'Сотрудники «Де‑Юре» ответят на интересующие посетителей правовые вопросы в пределах своей компетенции. Бесплатная помощь в рамках акции предоставляется в форме консультации.',
         ],
       },
       {
-        subheading: 'По каким вопросам проводится консультирование',
-        paragraphs: [
-          'В рамках мероприятия можно разобрать правовую ситуацию, связанную с правами и интересами ребёнка, и получить понятный ориентир по дальнейшим действиям:',
-        ],
-        listItems: [
-          'алиментные обязательства, порядок взыскания и изменения размера алиментов;',
-          'определение места жительства ребёнка и порядка общения с родителями;',
-          'защита жилищных и наследственных прав несовершеннолетних;',
-          'вопросы опеки, попечительства и распоряжения имуществом ребёнка;',
-          'меры социальной поддержки семей с детьми и порядок обжалования отказов.',
+        subheading: 'Где и когда пройдут консультации',
+        scheduleRows: [
+          { label: 'Дата:', value: '20 ноября 2026 года.' },
+          { label: 'Время:', value: 'с 10:00 до 15:00.' },
+          { label: 'Адрес:', value: `${SITE_OFFICE_ADDRESS}.` },
+          { value: 'Приём проводится по предварительной записи.' },
         ],
       },
     ],
-    participation: {
-      enabled: false, // Включается после подтверждения открытого формата и канала записи
-      heading: 'Как принять участие',
-      time: '20 ноября 2026 года (точное время уточняется)',
-      addressOrFormat: 'г. Липецк, ул. Советская, д. 35, офис 213 / уточняется формат площадки',
-      organizerOrVenue: '',
-      companyFormatAndRole: 'Устное правовое консультирование граждан по вопросам защиты прав несовершеннолетних',
-      specialist: {
-        name: '',
-        status: '',
-        isIndependentAdvocate: false,
-      },
-      audience: 'Родители, усыновители, опекуны, попечители, законные представители несовершеннолетних, дети-сироты и дети, оставшиеся без попечения родителей',
-      topics: [
-        'Семейные и алиментные вопросы',
-        'Жилищные и имущественные права детей',
-        'Опека, попечительство и социальные гарантии',
-      ],
-      freeHelpScope: 'Бесплатная устная первичная правовая консультация и разъяснение порядка действий по представленным документам',
-      conditions: 'Бесплатно в рамках Всероссийского дня правовой помощи детям по предварительной записи',
-      whatToBring: 'Документ, удостоверяющий личность, и копии документов по вопросу (при наличии), чтобы разбор ситуации был предметным',
-      bookingContact: {
-        confirmed: false, // Показывать телефон или кнопку только при confirmed: true
-        type: 'phone',
-        label: 'Запись по телефону',
-        value: '+7 (4742) 20-15-25',
-        href: 'tel:+74742201525',
-      },
+    booking: {
+      enabled: true,
+      promptText:
+        'Чтобы записаться на бесплатную консультацию в рамках акции, позвоните нам и сообщите, что обращаетесь по поводу Дня правовой помощи детям.',
+      buttonLabel: 'Позвонить и записаться',
+      phoneDisplay: SITE_PHONE_DISPLAY,
+      phoneHref: SITE_PHONE_HREF,
+      directionsLabel: 'Как добраться',
+      directionsHref: CONTACTS_PAGE_HREF,
+      endsAtIso: '2026-11-20T15:00:00+03:00',
+      archiveNoticeText: 'Приём в рамках акции 20 ноября 2026 года завершён',
+      archiveCardBadgeText: 'Мероприятие завершено',
     },
     seo: {
-      title: '«Де‑Юре» примет участие во Всероссийском дне правовой помощи детям — 20 ноября 2026',
+      title: 'Бесплатные консультации 20 ноября 2026 в Липецке | Де‑Юре',
       description:
-        'Юридическая компания «Де‑Юре» в Липецке примет участие во Всероссийском дне правовой помощи детям 20 ноября 2026 года.',
+        '20 ноября 2026 года с 10:00 до 15:00 «Де‑Юре» проведёт бесплатные консультации в День правовой помощи детям. Липецк, Советская, 35. По записи.',
     },
-    internalNotes:
-      'ЧЕРНОВИК. До публикации уточнить: открытое мероприятие или закрытая площадка; ФИО и точный статус специалиста (независимого адвоката указывать строго по его статусу без привязки к штату ЮК); точное время, площадку и подтверждённый канал записи. Если дата прошла или формат закрытый — переработать текст в пост-релиз по итогам участия и оставить participation.enabled = false.',
   },
 ];
 
 /**
- * Возвращает только опубликованные новости от новых к старым по дате публикации.
+ * Возвращает опубликованные новости от новых к старым по дате публикации.
  */
 export function getPublishedNews(): NewsItem[] {
   return newsItems
     .filter((item) => item.status === 'published')
-    .sort((a, b) => b.publishedAt.localeCompare(a.publishedAt));
+    .sort((a, b) => Date.parse(b.publishedAt) - Date.parse(a.publishedAt));
 }
 
-/**
- * Возвращает опубликованную новость по публичному slug.
- * Черновики по публичному URL не возвращаются (отдают 404).
- */
 export function getPublishedNewsBySlug(slug: string): NewsItem | undefined {
   return newsItems.find((item) => item.slug === slug && item.status === 'published');
 }
 
 export const PREVIEW_SLUG_PREFIX = 'preview-';
 
-/**
- * Закрытый предпросмотр черновиков по служебному префиксу preview-{slug}.
- */
 export function getDraftByPreviewSlug(paramSlug: string): NewsItem | undefined {
   if (!paramSlug.startsWith(PREVIEW_SLUG_PREFIX)) return undefined;
   const realSlug = paramSlug.slice(PREVIEW_SLUG_PREFIX.length);
-  return newsItems.find((item) => item.slug === realSlug);
+  return newsItems.find((item) => item.slug === realSlug && item.status === 'draft');
 }
 
-/**
- * Проверка, есть ли хотя бы одна опубликованная новость (для показа ссылок в «О компании» и подвале).
- */
 export function hasPublishedNews(): boolean {
   return newsItems.some((item) => item.status === 'published');
 }

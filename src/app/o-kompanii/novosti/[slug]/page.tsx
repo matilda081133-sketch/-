@@ -11,6 +11,10 @@ import {
   PREVIEW_SLUG_PREFIX,
   NewsItem,
 } from '@/data/news';
+import {
+  NewsEventArchiveNotice,
+  NewsBookingActionBlock,
+} from '@/components/NewsEventState';
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -21,10 +25,8 @@ export function generateStaticParams() {
 
   for (const item of newsItems) {
     if (item.status === 'published') {
-      // Публичный URL опубликованной новости
       params.push({ slug: item.slug });
     } else {
-      // Закрытый предпросмотр черновика (публичный URL /o-kompanii/novosti/{slug}/ не создаётся и отдаёт 404)
       params.push({ slug: `${PREVIEW_SLUG_PREFIX}${item.slug}` });
     }
   }
@@ -59,10 +61,11 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   }
 
   const canonicalUrl = `https://dejure-help.ru/o-kompanii/novosti/${article.slug}/`;
-  const ogImages = article.coverImage
+  const ogImgPath = article.ogImage || article.coverImage;
+  const ogImages = ogImgPath
     ? [
         {
-          url: `https://dejure-help.ru${article.coverImage}`,
+          url: `https://dejure-help.ru${ogImgPath}`,
           width: 1200,
           height: 630,
           alt: article.coverAlt || article.title,
@@ -82,14 +85,21 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       ? { index: false, follow: false, nocache: true }
       : { index: true, follow: true },
     openGraph: {
-      title: article.title,
-      description: article.excerpt || article.lead,
+      title: article.seo.title,
+      description: article.seo.description,
       url: canonicalUrl,
       siteName: 'Юридическая компания «Де‑Юре»',
       locale: 'ru_RU',
       type: 'article',
       publishedTime: article.publishedAt,
+      modifiedTime: article.modifiedAt,
       images: ogImages,
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: article.seo.title,
+      description: article.seo.description,
+      images: ogImgPath ? [`https://dejure-help.ru${ogImgPath}`] : undefined,
     },
   };
 }
@@ -103,14 +113,15 @@ export default async function NewsArticlePage({ params }: PageProps) {
   }
 
   const canonicalUrl = `https://dejure-help.ru/o-kompanii/novosti/${article.slug}/`;
-  const p = article.participation;
-  const showParticipation = Boolean(p && p.enabled);
+  const ogImgPath = article.ogImage || article.coverImage;
+  const breadcrumbLastLabel = article.breadcrumbTitle || article.title;
 
   const jsonLdArticle: Record<string, unknown> = {
     '@type': 'Article',
     headline: article.title,
-    description: article.lead,
+    description: article.seo.description,
     datePublished: article.publishedAt,
+    dateModified: article.modifiedAt,
     mainEntityOfPage: {
       '@type': 'WebPage',
       '@id': canonicalUrl,
@@ -131,8 +142,8 @@ export default async function NewsArticlePage({ params }: PageProps) {
     },
   };
 
-  if (article.coverImage) {
-    jsonLdArticle.image = [`https://dejure-help.ru${article.coverImage}`];
+  if (ogImgPath) {
+    jsonLdArticle.image = [`https://dejure-help.ru${ogImgPath}`];
   }
 
   const jsonLd = {
@@ -163,7 +174,7 @@ export default async function NewsArticlePage({ params }: PageProps) {
           {
             '@type': 'ListItem',
             position: 4,
-            name: article.title,
+            name: breadcrumbLastLabel,
             item: canonicalUrl,
           },
         ],
@@ -194,19 +205,19 @@ export default async function NewsArticlePage({ params }: PageProps) {
             }}
           >
             <div className="container">
-              <strong>Черновик (закрытый предпросмотр).</strong> Страница закрыта от индексации и не отображается в публичном разделе новостей и sitemap.xml.
+              <strong>Черновик (закрытый предпросмотр).</strong> Страница закрыта от индексации.
             </div>
           </div>
         )}
 
         <article
           style={{
-            padding: 'clamp(32px, 5vw, 56px) 0 clamp(56px, 7vw, 88px)',
+            padding: 'clamp(28px, 4.5vw, 48px) 0 clamp(52px, 7vw, 84px)',
           }}
         >
           <div className="container">
-            {/* Хлебные крошки */}
-            <nav aria-label="Хлебные крошки" style={{ marginBottom: '28px' }}>
+            {/* 1. Хлебные крошки */}
+            <nav aria-label="Хлебные крошки" style={{ marginBottom: '24px' }}>
               <ol
                 style={{
                   display: 'flex',
@@ -254,30 +265,29 @@ export default async function NewsArticlePage({ params }: PageProps) {
                     overflowWrap: 'anywhere',
                   }}
                 >
-                  {article.title}
+                  {breadcrumbLastLabel}
                 </li>
               </ol>
             </nav>
 
             {/* Читаемая колонка до 760 px */}
             <div style={{ maxWidth: '760px' }}>
-              {/* 1. H1 */}
+              {/* 2. H1 */}
               <h1
                 style={{
-                  fontSize: 'clamp(26px, 4vw, 40px)',
+                  fontSize: 'clamp(25px, 3.8vw, 38px)',
                   fontFamily: 'var(--font-serif)',
                   color: 'var(--color-deep-blue)',
-                  lineHeight: 1.24,
-                  margin: '0 0 16px 0',
+                  lineHeight: 1.25,
+                  margin: '0 0 14px 0',
                   fontWeight: 600,
                   overflowWrap: 'break-word',
-                  hyphens: 'auto',
                 }}
               >
                 {article.title}
               </h1>
 
-              {/* 2. Дата публикации */}
+              {/* 3. Дата публикации */}
               <time
                 dateTime={article.publishedAt}
                 style={{
@@ -285,27 +295,27 @@ export default async function NewsArticlePage({ params }: PageProps) {
                   fontSize: '14px',
                   fontWeight: 600,
                   color: 'var(--color-gold-text, #80633F)',
-                  marginBottom: '22px',
+                  marginBottom: '20px',
                   letterSpacing: '0.02em',
                 }}
               >
                 {formatNewsDateRu(article.publishedAt)}
               </time>
 
-              {/* 3. Лид */}
+              {/* 4. Вступление */}
               <p
                 style={{
-                  fontSize: 'clamp(17px, 2vw, 20px)',
+                  fontSize: 'clamp(17px, 2vw, 19px)',
                   color: 'var(--color-deep-blue)',
-                  lineHeight: 1.58,
+                  lineHeight: 1.6,
                   fontWeight: 500,
-                  margin: '0 0 28px 0',
+                  margin: '0 0 26px 0',
                 }}
               >
                 {article.lead}
               </p>
 
-              {/* 4. Опциональная обложка (масштабируется без обрезки текста) */}
+              {/* 5. Обложка целиком 1200×630 без обрезки */}
               {article.coverImage && (
                 <figure
                   style={{
@@ -313,7 +323,6 @@ export default async function NewsArticlePage({ params }: PageProps) {
                     width: '100%',
                     border: '1px solid rgba(23, 50, 77, 0.12)',
                     background: 'var(--color-deep-blue)',
-                    overflow: 'hidden',
                   }}
                 >
                   <img
@@ -321,27 +330,37 @@ export default async function NewsArticlePage({ params }: PageProps) {
                     alt={article.coverAlt || article.title}
                     width={1200}
                     height={630}
+                    fetchPriority="high"
                     decoding="async"
                     style={{
                       width: '100%',
                       height: 'auto',
+                      aspectRatio: '1200 / 630',
                       display: 'block',
                     }}
                   />
                 </figure>
               )}
 
-              {/* 5. Основной текст с подзаголовками по необходимости */}
+              {/* Пометка о завершении приёма (автоматически появляется после 15:00 20 ноября 2026 МСК) */}
+              {article.booking?.endsAtIso && (
+                <NewsEventArchiveNotice
+                  endsAtIso={article.booking.endsAtIso}
+                  noticeText={article.booking.archiveNoticeText}
+                />
+              )}
+
+              {/* 6. Основной текст */}
               <div className="news-article-body">
                 {article.sections.map((sec, idx) => (
                   <section
                     key={idx}
-                    style={{ marginTop: idx === 0 ? 0 : '32px' }}
+                    style={{ marginTop: idx === 0 ? 0 : '30px' }}
                   >
                     {sec.subheading && (
                       <h2
                         style={{
-                          fontSize: 'clamp(21px, 2.5vw, 26px)',
+                          fontSize: 'clamp(20px, 2.4vw, 25px)',
                           fontFamily: 'var(--font-serif)',
                           color: 'var(--color-deep-blue)',
                           lineHeight: 1.32,
@@ -353,19 +372,51 @@ export default async function NewsArticlePage({ params }: PageProps) {
                       </h2>
                     )}
 
-                    {sec.paragraphs.map((pText, pIdx) => (
-                      <p
-                        key={pIdx}
+                    {sec.paragraphs &&
+                      sec.paragraphs.map((pText, pIdx) => (
+                        <p
+                          key={pIdx}
+                          style={{
+                            fontSize: '16px',
+                            color: 'var(--color-deep-blue)',
+                            lineHeight: 1.7,
+                            margin: '0 0 16px 0',
+                          }}
+                        >
+                          {pText}
+                        </p>
+                      ))}
+
+                    {sec.scheduleRows && sec.scheduleRows.length > 0 && (
+                      <div
                         style={{
+                          display: 'flex',
+                          flexDirection: 'column',
+                          gap: '8px',
                           fontSize: '16px',
                           color: 'var(--color-deep-blue)',
-                          lineHeight: 1.72,
-                          margin: '0 0 16px 0',
+                          lineHeight: 1.65,
                         }}
                       >
-                        {pText}
-                      </p>
-                    ))}
+                        {sec.scheduleRows.map((row, rIdx) => (
+                          <p
+                            key={rIdx}
+                            style={{
+                              margin: 0,
+                              overflowWrap: 'break-word',
+                            }}
+                          >
+                            {row.label ? (
+                              <>
+                                <strong>{row.label}</strong> {row.value}
+                              </>
+                            ) : (
+                              row.value
+                            )}
+                          </p>
+                        ))}
+                      </div>
+                    )}
 
                     {sec.listItems && sec.listItems.length > 0 && (
                       <ul
@@ -389,154 +440,28 @@ export default async function NewsArticlePage({ params }: PageProps) {
                 ))}
               </div>
 
-              {/* Необязательный блок «Как принять участие» (при отключении пустого места нет) */}
-              {showParticipation && p && (
-                <aside
-                  aria-label={p.heading || 'Как принять участие'}
-                  style={{
-                    marginTop: '36px',
-                    padding: 'clamp(22px, 3.5vw, 32px)',
-                    background: 'var(--color-cream)',
-                    border: '1px solid rgba(23, 50, 77, 0.12)',
-                    borderLeft: '4px solid var(--color-primary)',
-                  }}
-                >
-                  <h2
-                    style={{
-                      fontSize: 'clamp(20px, 2.4vw, 24px)',
-                      fontFamily: 'var(--font-serif)',
-                      color: 'var(--color-deep-blue)',
-                      margin: '0 0 18px 0',
-                      lineHeight: 1.3,
-                      fontWeight: 600,
-                    }}
-                  >
-                    {p.heading || 'Как принять участие'}
-                  </h2>
-
-                  <dl
-                    style={{
-                      margin: 0,
-                      display: 'flex',
-                      flexDirection: 'column',
-                      gap: '12px',
-                    }}
-                  >
-                    {p.time && (
-                      <div className="news-participation-row">
-                        <dt className="news-participation-dt">Время:</dt>
-                        <dd className="news-participation-dd">{p.time}</dd>
-                      </div>
-                    )}
-                    {p.addressOrFormat && (
-                      <div className="news-participation-row">
-                        <dt className="news-participation-dt">Адрес / формат:</dt>
-                        <dd className="news-participation-dd">
-                          {p.addressOrFormat}
-                        </dd>
-                      </div>
-                    )}
-                    {p.organizerOrVenue && (
-                      <div className="news-participation-row">
-                        <dt className="news-participation-dt">Площадка:</dt>
-                        <dd className="news-participation-dd">
-                          {p.organizerOrVenue}
-                        </dd>
-                      </div>
-                    )}
-                    {p.specialist && p.specialist.name && (
-                      <div className="news-participation-row">
-                        <dt className="news-participation-dt">Специалист:</dt>
-                        <dd className="news-participation-dd">
-                          {p.specialist.name}
-                          {p.specialist.status ? ` — ${p.specialist.status}` : ''}
-                        </dd>
-                      </div>
-                    )}
-                    {p.audience && (
-                      <div className="news-participation-row">
-                        <dt className="news-participation-dt">Кому доступно:</dt>
-                        <dd className="news-participation-dd">{p.audience}</dd>
-                      </div>
-                    )}
-                    {p.freeHelpScope && (
-                      <div className="news-participation-row">
-                        <dt className="news-participation-dt">Объём помощи:</dt>
-                        <dd className="news-participation-dd">
-                          {p.freeHelpScope}
-                        </dd>
-                      </div>
-                    )}
-                    {p.conditions && (
-                      <div className="news-participation-row">
-                        <dt className="news-participation-dt">Способ записи:</dt>
-                        <dd className="news-participation-dd">{p.conditions}</dd>
-                      </div>
-                    )}
-                    {p.whatToBring && (
-                      <div className="news-participation-row">
-                        <dt className="news-participation-dt">
-                          Что взять с собой:
-                        </dt>
-                        <dd className="news-participation-dd">
-                          {p.whatToBring}
-                        </dd>
-                      </div>
-                    )}
-                  </dl>
-
-                  {/* Показывать кнопку или телефон ТОЛЬКО при подтверждённом канале записи */}
-                  {p.bookingContact && p.bookingContact.confirmed && (
-                    <div style={{ marginTop: '22px' }}>
-                      {p.bookingContact.type === 'phone' ? (
-                        <a
-                          href={p.bookingContact.href}
-                          className="btn btn-primary"
-                          style={{
-                            padding: '13px 24px',
-                            fontSize: '15px',
-                            borderRadius: 0,
-                            display: 'inline-flex',
-                            alignItems: 'center',
-                            gap: '8px',
-                            textDecoration: 'none',
-                          }}
-                        >
-                          <span>{p.bookingContact.label}:</span>
-                          <strong>{p.bookingContact.value}</strong>
-                        </a>
-                      ) : (
-                        <a
-                          href={p.bookingContact.href}
-                          className="btn btn-primary"
-                          style={{
-                            padding: '13px 24px',
-                            fontSize: '15px',
-                            borderRadius: 0,
-                            display: 'inline-block',
-                            textDecoration: 'none',
-                          }}
-                        >
-                          {p.bookingContact.label}
-                        </a>
-                      )}
-                    </div>
-                  )}
-                </aside>
+              {/* 7. Блок записи (активен до окончания акции) */}
+              {article.booking && article.booking.enabled && (
+                <NewsBookingActionBlock
+                  endsAtIso={article.booking.endsAtIso}
+                  promptText={article.booking.promptText}
+                  buttonLabel={article.booking.buttonLabel}
+                  phoneDisplay={article.booking.phoneDisplay}
+                  phoneHref={article.booking.phoneHref}
+                  directionsLabel={article.booking.directionsLabel}
+                  directionsHref={article.booking.directionsHref}
+                />
               )}
 
-              {/* 6. Ссылка «Все новости компании» */}
+              {/* 8. Ссылка «Все новости компании» */}
               <div
                 style={{
-                  marginTop: '40px',
-                  paddingTop: '24px',
+                  marginTop: '38px',
+                  paddingTop: '22px',
                   borderTop: '1px solid rgba(23, 50, 77, 0.12)',
                 }}
               >
-                <Link
-                  href="/o-kompanii/novosti/"
-                  className="news-back-link"
-                >
+                <Link href="/o-kompanii/novosti/" className="news-back-link">
                   <span aria-hidden="true">←</span>
                   <span>Все новости компании</span>
                 </Link>
@@ -564,26 +489,38 @@ export default async function NewsArticlePage({ params }: PageProps) {
               outline: 2px solid var(--color-primary);
               outline-offset: 2px;
             }
-            .news-participation-row {
-              display: grid;
-              grid-template-columns: 165px minmax(0, 1fr);
-              gap: 12px;
-              font-size: 15px;
-              line-height: 1.55;
+            .news-phone-text-link:hover {
+              color: var(--color-primary) !important;
+              text-decoration: underline !important;
             }
-            .news-participation-dt {
+            .news-phone-text-link:focus-visible {
+              outline: 2px solid var(--color-primary);
+              outline-offset: 3px;
+            }
+            .news-directions-link {
+              display: inline-flex;
+              align-items: center;
+              gap: 6px;
+              min-height: 44px;
+              font-size: 14.5px;
               font-weight: 600;
-              color: var(--color-deep-blue);
-              margin: 0;
+              color: var(--color-primary);
+              text-decoration: underline;
+              text-underline-offset: 3px;
+              transition: color 0.2s ease;
             }
-            .news-participation-dd {
-              margin: 0;
+            .news-directions-link:hover {
               color: var(--color-deep-blue);
+            }
+            .news-directions-link:focus-visible {
+              outline: 2px solid var(--color-primary);
+              outline-offset: 3px;
             }
             .news-back-link {
               display: inline-flex;
               align-items: center;
               gap: 8px;
+              min-height: 44px;
               font-size: 15px;
               font-weight: 600;
               color: var(--color-primary);
@@ -598,10 +535,9 @@ export default async function NewsArticlePage({ params }: PageProps) {
               outline: 2px solid var(--color-primary);
               outline-offset: 3px;
             }
-            @media (max-width: 640px) {
-              .news-participation-row {
-                grid-template-columns: 1fr;
-                gap: 2px;
+            @media (max-width: 480px) {
+              .news-call-btn {
+                width: 100%;
               }
             }
           `,

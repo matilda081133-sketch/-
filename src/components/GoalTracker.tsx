@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect } from 'react';
+import { SITE_PHONE_DISPLAY } from '@/lib/contacts';
 
 declare global {
   interface Window {
@@ -31,10 +32,13 @@ export default function GoalTracker() {
       const href = target.href;
 
       if (href.startsWith('tel:')) {
-        const phoneNum = href.replace('tel:', '').trim() || '+7 (4742) 20-15-25';
+        const phoneNum = href.replace('tel:', '').trim() || SITE_PHONE_DISPLAY;
 
-        // Отправляем цель только в Яндекс Метрику (без создания фантомных сделок в CRM)
-        window.trackGoal?.('CLICK_PHONE', { phone: phoneNum });
+        // Отправляем существующую цель в Яндекс Метрику с путём страницы (позволяет выделить источник новости по URL без дублирования целей)
+        window.trackGoal?.('CLICK_PHONE', {
+          phone: phoneNum,
+          page_url: window.location.pathname,
+        });
       } else if (href.includes('t.me') || href.includes('telegram')) {
         window.trackGoal?.('CLICK_TELEGRAM');
       } else if (href.includes('max.ru')) {
