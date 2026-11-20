@@ -150,8 +150,8 @@ export default function TeamCarousel({
       rawName: zubovaMember.name,
       role: zubovaMember.status,
       desc: prependExperienceSummary(zubovaMember, zubovaMember.cardDescription || ''),
-      img: zubovaMember.image,
-      srcSet: zubovaMember.imageMeta?.srcSet,
+      img: '/images/zubova.webp',
+      srcSet: '/images/zubova-420.webp 420w, /images/zubova.webp 683w',
       sizes: '(max-width: 480px) 280px, 300px',
       link: '/specialisty/zubova-natalya-yuryevna/',
       imgPosition: 'center 15%'

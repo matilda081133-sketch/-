@@ -841,10 +841,10 @@ export const teamData: Record<string, TeamMember> = {
     imageMeta: {
       width: 683,
       height: 1024,
-      srcSet: '/images/zubova-420.webp 420w, /images/zubova.webp 683w'
+      srcSet: '/images/zubova-office-420.webp 420w, /images/zubova-office.webp 683w'
     },
     shortDescription: 'Юридическое сопровождение бизнеса · Недвижимость · Земельное право',
-    image: '/images/zubova.webp',
+    image: '/images/zubova-office.webp',
     facts: [
       '34 года профессионального опыта в юридической сфере',
       'Руководила юридическим отделом Департамента экономики администрации Липецка',

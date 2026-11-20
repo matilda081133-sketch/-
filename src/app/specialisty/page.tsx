@@ -207,7 +207,7 @@ export default function SpecialistyPage() {
               '@id': 'https://dejure-help.ru/specialisty/zubova-natalya-yuryevna/#person',
               'name': 'Зубова Наталья Юрьевна',
               'jobTitle': 'Юрист, партнёр ЮК «Де-Юре»',
-              'image': 'https://dejure-help.ru/images/zubova.webp',
+              'image': `https://dejure-help.ru${teamData['zubova-natalya-yuryevna'].image}`,
               'url': 'https://dejure-help.ru/specialisty/zubova-natalya-yuryevna/'
             }
           },

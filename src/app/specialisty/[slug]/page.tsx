@@ -24,7 +24,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     return { title: 'Специалист не найден' };
   }
 
-  const imageUrl = `https://dejure-help.ru/images/${member.slug === 'konopkin-dmitriy-sergeevich' ? 'konopkin.jpg' : member.slug === 'bobkin-arkadiy-evgenevich' ? 'bobkin.jpg' : member.slug === 'smolyaninova-marina-valerevna' ? 'smolyaninova.jpg' : member.slug === 'gusev-oleg-yurevich' ? 'gusev.jpg' : member.slug === 'nacheshnikov-vladimir-viktorovich' ? 'nacheshnikov.jpg' : member.slug === 'nalivkina-svetlana-andreevna' ? 'nalivkina.webp' : member.slug === 'zubova-natalya-yuryevna' ? 'zubova.webp' : 'logo_dark.png'}`;
+  const imageUrl = `https://dejure-help.ru/images/${member.slug === 'konopkin-dmitriy-sergeevich' ? 'konopkin.jpg' : member.slug === 'bobkin-arkadiy-evgenevich' ? 'bobkin.jpg' : member.slug === 'smolyaninova-marina-valerevna' ? 'smolyaninova.jpg' : member.slug === 'gusev-oleg-yurevich' ? 'gusev.jpg' : member.slug === 'nacheshnikov-vladimir-viktorovich' ? 'nacheshnikov.jpg' : member.slug === 'nalivkina-svetlana-andreevna' ? 'nalivkina.webp' : member.slug === 'zubova-natalya-yuryevna' ? 'zubova-office.webp' : 'logo_dark.png'}`;
 
   return {
     title: member.seo.title,
@@ -75,7 +75,7 @@ export default async function SpecialistPage({ params }: PageProps) {
     notFound();
   }
 
-  const imageUrl = `https://dejure-help.ru/images/${member.slug === 'konopkin-dmitriy-sergeevich' ? 'konopkin.jpg' : member.slug === 'bobkin-arkadiy-evgenevich' ? 'bobkin.jpg' : member.slug === 'smolyaninova-marina-valerevna' ? 'smolyaninova.jpg' : member.slug === 'gusev-oleg-yurevich' ? 'gusev.jpg' : member.slug === 'nacheshnikov-vladimir-viktorovich' ? 'nacheshnikov.jpg' : member.slug === 'polozova-elena-anatolevna' ? 'polozova.jpg' : member.slug === 'nalivkina-svetlana-andreevna' ? 'nalivkina.webp' : member.slug === 'zubova-natalya-yuryevna' ? 'zubova.webp' : 'logo_dark.png'}`;
+  const imageUrl = `https://dejure-help.ru/images/${member.slug === 'konopkin-dmitriy-sergeevich' ? 'konopkin.jpg' : member.slug === 'bobkin-arkadiy-evgenevich' ? 'bobkin.jpg' : member.slug === 'smolyaninova-marina-valerevna' ? 'smolyaninova.jpg' : member.slug === 'gusev-oleg-yurevich' ? 'gusev.jpg' : member.slug === 'nacheshnikov-vladimir-viktorovich' ? 'nacheshnikov.jpg' : member.slug === 'polozova-elena-anatolevna' ? 'polozova.jpg' : member.slug === 'nalivkina-svetlana-andreevna' ? 'nalivkina.webp' : member.slug === 'zubova-natalya-yuryevna' ? 'zubova-office.webp' : 'logo_dark.png'}`;
 
   // Generate JSON-LD Person
   const jsonLdPerson = member.slug === 'bobkin-arkadiy-evgenevich' ? {
@@ -180,7 +180,7 @@ export default async function SpecialistPage({ params }: PageProps) {
     jobTitle: member.status,
     description: member.seo.description,
     url: 'https://dejure-help.ru/specialisty/zubova-natalya-yuryevna/',
-    image: 'https://dejure-help.ru/images/zubova.webp',
+    image: `https://dejure-help.ru${member.image}`,
     alumniOf: [
       {
         '@type': 'CollegeOrUniversity',
