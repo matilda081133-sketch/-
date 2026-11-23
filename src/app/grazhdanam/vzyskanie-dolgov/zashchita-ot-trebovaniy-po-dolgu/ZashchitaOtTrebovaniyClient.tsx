@@ -347,9 +347,10 @@ export default function ZashchitaOtTrebovaniyClient() {
         primaryCtaLink="#defense-form"
         secondaryCtaText="Позвонить юристу"
         secondaryCtaLink="tel:+79103503111"
-        imageUrl="/images/smolyaninova.webp"
-        imageName="Смольянинова Марина Валерьевна"
-        imageSubtitle="Ведущий юрист ЮК «Де-Юре» • куратор направления"
+        imageUrl="/images/nalivkina.webp"
+        imageObjectPosition="center 15%"
+        imageName="Наливкина Светлана Андреевна"
+        imageSubtitle="Юрист, партнёр ЮК «Де-Юре» • куратор направления"
       />
 
       {/* ═══ БЛОК 2: ЧТО СДЕЛАТЬ СЕЙЧАС (СРОЧНЫЙ БЛОК) ═══ */}
@@ -714,11 +715,11 @@ export default function ZashchitaOtTrebovaniyClient() {
               <div>
                 <div style={{ width: '100%', maxWidth: '280px', borderRadius: '4px', overflow: 'hidden', margin: '0 auto', border: '1px solid var(--color-border)' }}>
                   <Image
-                    src="/images/smolyaninova.webp"
-                    alt="Марина Смольянинова, ведущий юрист ЮК Де-Юре"
+                    src="/images/nalivkina.webp"
+                    alt="Светлана Наливкина, юрист, партнёр ЮК Де-Юре"
                     width={320}
                     height={400}
-                    style={{ width: '100%', height: 'auto', display: 'block', objectFit: 'cover' }}
+                    style={{ width: '100%', height: 'auto', display: 'block', objectFit: 'cover', objectPosition: 'center 15%' }}
                   />
                 </div>
               </div>
@@ -727,13 +728,13 @@ export default function ZashchitaOtTrebovaniyClient() {
                   Куратор услуги
                 </div>
                 <h3 style={{ fontFamily: 'var(--font-serif)', fontSize: '26px', color: 'var(--color-deep-blue)', margin: 0 }}>
-                  Смольянинова Марина Валерьевна
+                  Наливкина Светлана Андреевна
                 </h3>
                 <div style={{ fontSize: '15px', color: 'var(--color-primary)', fontWeight: 600 }}>
-                  Ведущий юрист ЮК «Де-Юре»
+                  Юрист, партнёр ЮК «Де-Юре»
                 </div>
                 <p style={{ fontSize: '14.5px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0 }}>
-                  Марина Смольянинова проверяет не только формулировки расписки или иска, но и всю хронологию отношений: передачу денег, возвраты, переписку, расчёт и процессуальную стадию. Более 13 лет работы в ФССП и более 5 лет судебной практики помогают точно оценить последствия выбранной позиции после решения суда.
+                  Светлана Наливкина проверяет не только формулировки расписки или иска, но и всю хронологию отношений: передачу денег, возвраты, переписку, расчёт и процессуальную стадию. Практика с 2001 года и опыт работы в банковской сфере помогают точно оценить финансовые и процессуальные последствия выбранной позиции защиты.
                 </p>
                 <div
                   style={{
@@ -748,7 +749,7 @@ export default function ZashchitaOtTrebovaniyClient() {
                 </div>
                 <div>
                   <Link
-                    href="/specialisty/smolyaninova-marina-valerevna/"
+                    href="/specialisty/nalivkina-svetlana-andreevna/"
                     style={{
                       fontSize: '14px',
                       color: 'var(--color-primary)',

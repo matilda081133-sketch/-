@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   description: 'Юридическое сопровождение исполнительного производства для бизнеса в Липецке: взыскание долгов по исполнительным листам с контрагентов, защита интересов компании-должника, обжалование действий и бездействия судебных приставов. 📞 +7 (4742) 20-15-25.',
   openGraph: {
     title: 'Исполнительное производство для бизнеса в Липецке | ЮК «Де-Юре»',
-    description: 'Комплексное юридическое сопровождение исполнительного производства для юридических лиц и ИП: на стороне взыскателя и должника. Куратор направления — юрист с 13-летним стажем в ФССП. 📞 +7 (4742) 20-15-25.',
+    description: 'Комплексное юридическое сопровождение исполнительного производства для юридических лиц и ИП: на стороне взыскателя и должника. Куратор направления — юрист, партнёр с практикой с 2001 года. 📞 +7 (4742) 20-15-25.',
     url: 'https://dejure-help.ru/biznesu/ispolnitelnoe-proizvodstvo-dlya-biznesa/',
     siteName: 'ЮК «Де-Юре»',
     locale: 'ru_RU',
@@ -81,10 +81,10 @@ export default function IspolnitelnoePage() {
       },
       {
         '@type': 'Person',
-        '@id': 'https://dejure-help.ru/specialisty/smolyaninova-marina-valerevna/#person',
-        name: 'Марина Валерьевна Смольянинова',
-        jobTitle: 'Ведущий юрист',
-        url: 'https://dejure-help.ru/specialisty/smolyaninova-marina-valerevna/',
+        '@id': 'https://dejure-help.ru/specialisty/nalivkina-svetlana-andreevna/#person',
+        name: 'Светлана Андреевна Наливкина',
+        jobTitle: 'Юрист, партнёр ЮК «Де-Юре»',
+        url: 'https://dejure-help.ru/specialisty/nalivkina-svetlana-andreevna/',
         worksFor: {
           '@id': 'https://dejure-help.ru/#organization'
         }

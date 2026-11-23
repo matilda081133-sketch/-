@@ -223,8 +223,8 @@ export default function MilitaryHero({
                           <div style={{ fontSize: '16px', fontWeight: 700, color: 'var(--color-deep-blue)', fontFamily: 'var(--font-serif)', marginBottom: '2px', lineHeight: 1.3 }}>
                             {imageName === 'Дмитрий Сергеевич Конопкин' || imageName === 'Конопкин Дмитрий Сергеевич' ? (
                               <>Конопкин <br />Дмитрий Сергеевич</>
-                            ) : imageName === 'Марина Валерьевна Смольянинова' || imageName === 'Смольянинова Марина Валерьевна' ? (
-                              <>Смольянинова <br />Марина Валерьевна</>
+                            ) : imageName === 'Светлана Андреевна Наливкина' || imageName === 'Наливкина Светлана Андреевна' ? (
+                              <>Наливкина <br />Светлана Андреевна</>
                             ) : imageName === 'Владимир Викторович Начешников' || imageName === 'Начешников Владимир Викторович' ? (
                               <>Начешников <br />Владимир Викторович</>
                             ) : (

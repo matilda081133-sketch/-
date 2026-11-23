@@ -131,15 +131,15 @@ export default function ObzhalovanieClient() {
           </span>
         }
         trustItems={[
-          { text: 'Опыт куратора направления — более 13 лет в ФССП' },
+          { text: 'Опыт куратора направления — практика с 2001 года' },
           { text: 'Защита компаний-взыскателей и должников' },
           { text: 'Оспаривание в суде и жалоба старшему приставу' },
           { text: 'Срочная оценка рисков для счетов и активов' },
         ]}
-        imageUrl="/images/smolyaninova.webp"
-        imageName="Марина Валерьевна Смольянинова"
-        imageSubtitle="Ведущий юрист ЮК «Де-Юре», куратор направления «Исполнительное производство»"
-        imageObjectPosition="50% -75px"
+        imageUrl="/images/nalivkina.webp"
+        imageName="Светлана Андреевна Наливкина"
+        imageSubtitle="Юрист, партнёр ЮК «Де-Юре», куратор направления «Исполнительное производство»"
+        imageObjectPosition="center 15%"
       />
 
       {/* ═══ БЛОК 2: КОГДА ДЕЙСТВИЯ ПРИСТАВА СОЗДАЮТ ПРЯМОЙ РИСК ДЛЯ БИЗНЕСА (КОГДА СРОЧНО) ═══ */}
@@ -659,22 +659,22 @@ export default function ObzhalovanieClient() {
         </div>
       </section>
 
-      {/* ═══ БЛОК 6: ВЕДУЩИЙ ЮРИСТ ПО УСЛУГЕ ═══ */}
+      {/* ═══ БЛОК 6: КУРАТОР НАПРАВЛЕНИЯ ═══ */}
       <SpecialistBlock
         title="Куратор направления"
-        name="Марина Валерьевна Смольянинова"
-        position="Ведущий юрист ЮК «Де-Юре», куратор направления «Исполнительное производство»"
-        imageUrl="/images/smolyaninova.webp"
-        profileHref="/specialisty/smolyaninova-marina-valerevna/"
-        profileText="Подробнее о Марине Валерьевне Смольяниновой →"
+        name="Светлана Андреевна Наливкина"
+        position="Юрист, партнёр ЮК «Де-Юре», куратор направления «Исполнительное производство»"
+        imageUrl="/images/nalivkina.webp"
+        profileHref="/specialisty/nalivkina-svetlana-andreevna/"
+        profileText="Подробнее о Светлане Андреевне Наливкиной →"
         description={[
           <span key="1" style={{ color: 'var(--color-deep-blue)', display: 'block' }}>
-            Марина Валерьевна Смольянинова более 13 лет работала в Федеральной службе судебных приставов, в том числе на руководящих должностях. Рассматривала обращения и жалобы, контролировала исполнительные производства и работу сотрудников, взаимодействовала с судами и государственными органами. Этот опыт помогает отделять формальный ответ от действия, которое действительно способно восстановить права бизнеса.
+            Светлана Андреевна Наливкина занимается юридической практикой с 2001 года, работала главным юрисконсультом и руководителем юридического отдела в банковской сфере (Сбербанк, Банк Москвы, Россельхозбанк). Сопровождает арбитражные споры, взыскание задолженности и взаимодействие бизнеса с банками и ФССП, что позволяет отделять формальный ответ от действия, которое действительно способно защитить активы компании.
           </span>,
           <ul key="2" style={{ listStyle: 'none', padding: 0, margin: '16px 0 0 0', display: 'flex', flexDirection: 'column', gap: '10px' }}>
             <li style={{ display: 'flex', alignItems: 'center', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)' }}>
               <div style={{ width: '6px', height: '6px', minWidth: '6px', background: 'var(--color-gold)', borderRadius: '50%', flexShrink: 0 }}></div>
-              <span>13 лет опыта работы в Федеральной службе судебных приставов (ФССП)</span>
+              <span>Более 23 лет юридической практики (с 2001 года)</span>
             </li>
             <li style={{ display: 'flex', alignItems: 'center', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)' }}>
               <div style={{ width: '6px', height: '6px', minWidth: '6px', background: 'var(--color-gold)', borderRadius: '50%', flexShrink: 0 }}></div>
@@ -686,7 +686,7 @@ export default function ObzhalovanieClient() {
             </li>
           </ul>
         ]}
-        buttonText="Задать вопрос Марине Валерьевне"
+        buttonText="Задать вопрос Светлане Андреевне"
         buttonHref="#form"
       />
 
@@ -786,7 +786,7 @@ export default function ObzhalovanieClient() {
                 Действия пристава мешают работе компании?
               </h2>
               <p style={{ color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, fontSize: '16px', lineHeight: 1.6, marginBottom: '28px', textWrap: 'balance' }}>
-                Укажите номер исполнительного производства, какое постановление или действие оспаривается и чем ситуация рискует для бизнеса. Марина Валерьевна Смольянинова проверит срочность и предложит подходящий способ защиты.
+                Укажите номер исполнительного производства, какое постановление или действие оспаривается и чем ситуация рискует для бизнеса. Светлана Андреевна Наливкина проверит срочность и предложит подходящий способ защиты.
               </p>
               
               <div style={{ background: 'var(--gradient-cream)', padding: '24px', borderLeft: '3px solid var(--color-gold)', marginTop: '0', marginBottom: '0' }}>

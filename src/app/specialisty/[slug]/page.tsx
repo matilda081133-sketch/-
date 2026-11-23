@@ -24,7 +24,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     return { title: 'Специалист не найден' };
   }
 
-  const imageUrl = `https://dejure-help.ru/images/${member.slug === 'konopkin-dmitriy-sergeevich' ? 'konopkin.jpg' : member.slug === 'bobkin-arkadiy-evgenevich' ? 'bobkin.jpg' : member.slug === 'smolyaninova-marina-valerevna' ? 'smolyaninova.jpg' : member.slug === 'gusev-oleg-yurevich' ? 'gusev.jpg' : member.slug === 'nacheshnikov-vladimir-viktorovich' ? 'nacheshnikov.jpg' : member.slug === 'nalivkina-svetlana-andreevna' ? 'nalivkina.webp' : member.slug === 'zubova-natalya-yuryevna' ? 'zubova-office.webp' : 'logo_dark.png'}`;
+  const imageUrl = `https://dejure-help.ru/images/${member.slug === 'konopkin-dmitriy-sergeevich' ? 'konopkin.jpg' : member.slug === 'bobkin-arkadiy-evgenevich' ? 'bobkin.jpg' : member.slug === 'gusev-oleg-yurevich' ? 'gusev.jpg' : member.slug === 'nacheshnikov-vladimir-viktorovich' ? 'nacheshnikov.jpg' : member.slug === 'nalivkina-svetlana-andreevna' ? 'nalivkina.webp' : member.slug === 'zubova-natalya-yuryevna' ? 'zubova-office.webp' : 'logo_dark.png'}`;
 
   return {
     title: member.seo.title,
@@ -75,7 +75,7 @@ export default async function SpecialistPage({ params }: PageProps) {
     notFound();
   }
 
-  const imageUrl = `https://dejure-help.ru/images/${member.slug === 'konopkin-dmitriy-sergeevich' ? 'konopkin.jpg' : member.slug === 'bobkin-arkadiy-evgenevich' ? 'bobkin.jpg' : member.slug === 'smolyaninova-marina-valerevna' ? 'smolyaninova.jpg' : member.slug === 'gusev-oleg-yurevich' ? 'gusev.jpg' : member.slug === 'nacheshnikov-vladimir-viktorovich' ? 'nacheshnikov.jpg' : member.slug === 'polozova-elena-anatolevna' ? 'polozova.jpg' : member.slug === 'nalivkina-svetlana-andreevna' ? 'nalivkina.webp' : member.slug === 'zubova-natalya-yuryevna' ? 'zubova-office.webp' : 'logo_dark.png'}`;
+  const imageUrl = `https://dejure-help.ru/images/${member.slug === 'konopkin-dmitriy-sergeevich' ? 'konopkin.jpg' : member.slug === 'bobkin-arkadiy-evgenevich' ? 'bobkin.jpg' : member.slug === 'gusev-oleg-yurevich' ? 'gusev.jpg' : member.slug === 'nacheshnikov-vladimir-viktorovich' ? 'nacheshnikov.jpg' : member.slug === 'polozova-elena-anatolevna' ? 'polozova.jpg' : member.slug === 'nalivkina-svetlana-andreevna' ? 'nalivkina.webp' : member.slug === 'zubova-natalya-yuryevna' ? 'zubova-office.webp' : 'logo_dark.png'}`;
 
   // Generate JSON-LD Person
   const jsonLdPerson = member.slug === 'bobkin-arkadiy-evgenevich' ? {
@@ -166,6 +166,8 @@ export default async function SpecialistPage({ params }: PageProps) {
     knowsAbout: [
       'Банкротство физических лиц',
       'Арбитражные споры',
+      'Взыскание задолженности',
+      'Исполнительное производство',
       'Недвижимость и земельные споры',
       'Наследственные вопросы',
       'Военное право',
@@ -279,11 +281,6 @@ export default async function SpecialistPage({ params }: PageProps) {
                     <span style={{ display: 'block' }}>Конопкин</span>
                     <span style={{ display: 'block' }}>Дмитрий Сергеевич</span>
                   </>
-                ) : member.slug === 'smolyaninova-marina-valerevna' ? (
-                  <>
-                    <span style={{ display: 'block' }}>Смольянинова</span>
-                    <span style={{ display: 'block' }}>Марина Валерьевна</span>
-                  </>
                 ) : member.slug === 'bobkin-arkadiy-evgenevich' ? (
                   <>
                     <span style={{ display: 'block' }}>Бобкин</span>
@@ -360,11 +357,6 @@ export default async function SpecialistPage({ params }: PageProps) {
                         <span className="nowrap-desk">Следователь по особо важным делам;</span><br className="nowrap-desk" />
                         <span className="nowrap-desk">руководитель следственной части</span>
                       </>
-                    ) : fact.includes('в том\nчисле') || fact.includes('в том числе') ? (
-                      <>
-                        <span className="nowrap-desk">Более 13 лет работы в ФССП, в том</span><br className="nowrap-desk" />
-                        <span className="nowrap-desk">числе на руководящих должностях</span>
-                      </>
                     ) : (fact.includes('С 1997 года') && fact.includes('корпоративных')) || fact.includes('юридических и корпоративных') ? (
                       <>
                         <span className="nowrap-desk">С 1997 года — практический опыт юридических</span><br className="nowrap-desk" />
@@ -389,16 +381,6 @@ export default async function SpecialistPage({ params }: PageProps) {
                       <>
                         <span className="nowrap-desk">Приоритет: банкротство физических лиц</span><br className="nowrap-desk" />
                         <span className="nowrap-desk">и арбитражные споры</span>
-                      </>
-                    ) : fact.includes('юридической практики') ? (
-                      <>
-                        <span className="nowrap-desk">Более пяти лет юридической практики</span><br className="nowrap-desk" />
-                        <span className="nowrap-desk">и судебного представительства</span>
-                      </>
-                    ) : fact.includes('исполнительное') || fact.includes('Трудовые и семейные споры') ? (
-                      <>
-                        <span className="nowrap-desk">Трудовые и семейные споры,</span><br className="nowrap-desk" />
-                        <span className="nowrap-desk">исполнительное производство</span>
                       </>
                     ) : fact.includes('структуры решения') || fact.includes('структуры') ? (
                       <>
@@ -459,15 +441,13 @@ export default async function SpecialistPage({ params }: PageProps) {
                       ? 'Гусев Олег Юрьевич — адвокат'
                       : member.slug === 'bobkin-arkadiy-evgenevich'
                       ? 'Аркадий Евгеньевич Бобкин — директор, управляющий партнёр ЮК «Де-Юре»'
-                      : member.slug === 'smolyaninova-marina-valerevna'
-                      ? 'Марина Валерьевна Смольянинова — ведущий юрист ЮК «Де-Юре»'
                       : member.slug === 'nacheshnikov-vladimir-viktorovich'
                       ? 'Владимир Викторович Начешников — специалист ЮК «Де-Юре»'
                       : member.slug === 'nalivkina-svetlana-andreevna'
                       ? 'Светлана Андреевна Наливкина — юрист, партнёр ЮК «Де-Юре»'
                       : `${member.name} — специалист ЮК «Де-Юре»`
                   }
-                  style={{ width: '100%', height: '540px', objectFit: 'cover', objectPosition: member.slug === 'gusev-oleg-yurevich' ? 'center 32%' : member.slug === 'smolyaninova-marina-valerevna' ? 'center 28%' : member.slug === 'konopkin-dmitriy-sergeevich' ? 'center 35%' : member.slug === 'nacheshnikov-vladimir-viktorovich' ? 'center 20%' : member.slug === 'nalivkina-svetlana-andreevna' ? 'center 15%' : member.slug === 'zubova-natalya-yuryevna' ? 'center 15%' : 'center 25%', display: 'block', filter: 'brightness(1.05)' }}
+                  style={{ width: '100%', height: '540px', objectFit: 'cover', objectPosition: member.slug === 'gusev-oleg-yurevich' ? 'center 32%' : member.slug === 'konopkin-dmitriy-sergeevich' ? 'center 35%' : member.slug === 'nacheshnikov-vladimir-viktorovich' ? 'center 20%' : member.slug === 'nalivkina-svetlana-andreevna' ? 'center 15%' : member.slug === 'zubova-natalya-yuryevna' ? 'center 15%' : 'center 25%', display: 'block', filter: 'brightness(1.05)' }}
                 />
               </div>
             </div>
@@ -774,8 +754,6 @@ export default async function SpecialistPage({ params }: PageProps) {
                     </>
                   ) : member.slug === 'konopkin-dmitriy-sergeevich' ? (
                     <>Конопкин <br />Дмитрий Сергеевич</>
-                  ) : member.slug === 'smolyaninova-marina-valerevna' ? (
-                    <>Смольянинова <br />Марина Валерьевна</>
                   ) : member.slug === 'gusev-oleg-yurevich' ? (
                     <>Гусев <br />Олег Юрьевич</>
                   ) : (

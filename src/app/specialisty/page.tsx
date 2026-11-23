@@ -27,7 +27,6 @@ export const metadata: Metadata = {
 const specialistListRoles: Record<string, string> = {
   'bobkin-arkadiy-evgenevich': 'Директор, управляющий партнёр\nЮК «Де-Юре»',
   'konopkin-dmitriy-sergeevich': 'Адвокат',
-  'smolyaninova-marina-valerevna': 'Ведущий юрист ЮК «Де-Юре»',
   'gusev-oleg-yurevich': 'Адвокат',
   'nacheshnikov-vladimir-viktorovich': 'Специалист ЮК «Де-Юре»',
   'polozova-elena-anatolevna': 'Юрист ЮК «Де-Юре»',
@@ -38,11 +37,10 @@ const specialistListRoles: Record<string, string> = {
 const specialistListDescriptions: Record<string, string> = {
   'bobkin-arkadiy-evgenevich': 'Более 22 лет работал в следственных подразделениях налоговой полиции и МВД, в том числе следователем по особо важным делам и руководителем Следственной части по расследованию организованной преступной деятельности. В «Де-Юре» участвует в разработке правовой позиции по сложным уголовным делам и координирует работу команды специалистов, осуществляющих правовую защиту клиента.',
   'konopkin-dmitriy-sergeevich': 'С 2016 по 2022 год работал в Следственном комитете РФ, расследовал коррупционные и экономические преступления. С 2022 года осуществляет адвокатскую деятельность. Представляет интересы доверителей по военным и уголовным делам.',
-  'smolyaninova-marina-valerevna': 'Более 13 лет работала в службе судебных приставов,\nв том числе на руководящих должностях. Более пяти лет\nпредставляет интересы граждан по семейным и трудовым\nспорам, а также вопросам исполнительного производства.',
   'gusev-oleg-yurevich': 'Более 15 лет работал в органах прокуратуры Липецкой области,\nв том числе заместителем прокурора района. С 2015 года\nосуществляет адвокатскую деятельность. Защищает доверителей по уголовным делам общеуголовной и экономической направленности.',
   'nacheshnikov-vladimir-viktorovich': 'С 1997 года сопровождает корпоративные процедуры и проекты по изменению структуры бизнеса. Работал в различных регионах России и Республике Беларусь. Консультирует, готовит документы и координирует досудебные этапы корпоративных процедур.',
   'polozova-elena-anatolevna': 'Специалист по гражданским делам. Оказывает юридическую помощь по вопросам военного и трудового права — от консультации и подготовки документов до досудебной работы и обжалования.',
-  'nalivkina-svetlana-andreevna': 'Юридическая практика с 2001 года. Работала юрисконсультом и руководителем юридического отдела в банковской сфере. Приоритетные направления — банкротство физических лиц и арбитражные споры. Также помогает по вопросам недвижимости и земли, наследственного, военного, семейного и трудового права.',
+  'nalivkina-svetlana-andreevna': 'Юридическая практика с 2001 года. Работала юрисконсультом и руководителем юридического отдела в банковской сфере. Приоритетные направления — банкротство физических лиц и арбитражные споры. Также помогает по вопросам недвижимости и земли, наследственного, военного, семейного и трудового права, взыскания задолженности и исполнительного производства.',
   'zubova-natalya-yuryevna': prependExperienceSummary(teamData['zubova-natalya-yuryevna'], teamData['zubova-natalya-yuryevna'].listDescription || '')
 };
 
@@ -53,12 +51,6 @@ const specialistAreas: Record<string, { name: string; href?: string }[]> = {
   'konopkin-dmitriy-sergeevich': [
     { name: 'Военное право', href: '/grazhdanam/voennyj-yurist/' },
     { name: 'Уголовное право', href: '/grazhdanam/advokat-po-ugolovnym-delam/' }
-  ],
-  'smolyaninova-marina-valerevna': [
-    { name: 'Исполнительное производство', href: '/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/' },
-    { name: 'Семейное право', href: '/grazhdanam/semejnyj-yurist/' },
-    { name: 'Трудовое право', href: '/grazhdanam/trudovoj-yurist/' },
-    { name: 'Взыскание задолженности', href: '/grazhdanam/vzyskanie-dolgov/' }
   ],
   'gusev-oleg-yurevich': [
     { name: 'Общеуголовные дела', href: '/grazhdanam/advokat-po-ugolovnym-delam/' },
@@ -76,6 +68,8 @@ const specialistAreas: Record<string, { name: string; href?: string }[]> = {
   'nalivkina-svetlana-andreevna': [
     { name: 'Банкротство физических лиц', href: '/grazhdanam/bankrotstvo-fizicheskih-lic/' },
     { name: 'Арбитражные споры', href: '/biznesu/arbitrazhnyj-yurist/' },
+    { name: 'Взыскание задолженности', href: '/grazhdanam/vzyskanie-dolgov/' },
+    { name: 'Исполнительное производство', href: '/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/' },
     { name: 'Земельные споры', href: '/grazhdanam/zemelnyj-yurist/' },
     { name: 'Недвижимость', href: '/grazhdanam/yurist-po-nedvizhimosti/' },
     { name: 'Наследственные вопросы', href: '/grazhdanam/nasledstvennyj-yurist/' },
@@ -93,7 +87,6 @@ const specialistAreas: Record<string, { name: string; href?: string }[]> = {
 const specialistAlts: Record<string, string> = {
   'bobkin-arkadiy-evgenevich': 'Аркадий Евгеньевич Бобкин — управляющий партнёр ЮК Де-Юре',
   'konopkin-dmitriy-sergeevich': 'Дмитрий Сергеевич Конопкин — адвокат',
-  'smolyaninova-marina-valerevna': 'Марина Валерьевна Смольянинова — ведущий юрист ЮК Де-Юре',
   'gusev-oleg-yurevich': 'Олег Юрьевич Гусев — адвокат',
   'nacheshnikov-vladimir-viktorovich': 'Владимир Викторович Начешников — специалист ЮК Де-Юре',
   'polozova-elena-anatolevna': 'Елена Анатольевна Полозова — юрист ЮК Де-Юре',
@@ -144,22 +137,6 @@ export default function SpecialistyPage() {
             'position': 2,
             'item': {
               '@type': 'Person',
-              'name': 'Смольянинова Марина Валерьевна',
-              'jobTitle': 'Ведущий юрист ЮК «Де-Юре»',
-              'image': 'https://dejure-help.ru/images/smolyaninova.webp',
-              'url': 'https://dejure-help.ru/specialisty/smolyaninova-marina-valerevna/',
-              'worksFor': {
-                '@type': 'LegalService',
-                'name': 'ЮК «Де-Юре»',
-                'url': 'https://dejure-help.ru/'
-              }
-            }
-          },
-          {
-            '@type': 'ListItem',
-            'position': 3,
-            'item': {
-              '@type': 'Person',
               'name': 'Начешников Владимир Викторович',
               'jobTitle': 'Специалист ЮК «Де-Юре»',
               'image': 'https://dejure-help.ru/images/nacheshnikov.webp',
@@ -173,7 +150,7 @@ export default function SpecialistyPage() {
           },
           {
             '@type': 'ListItem',
-            'position': 4,
+            'position': 3,
             'item': {
               '@type': 'Person',
               'name': 'Полозова Елена Анатольевна',
@@ -189,7 +166,7 @@ export default function SpecialistyPage() {
           },
           {
             '@type': 'ListItem',
-            'position': 5,
+            'position': 4,
             'item': {
               '@type': 'Person',
               '@id': 'https://dejure-help.ru/specialisty/nalivkina-svetlana-andreevna/#person',
@@ -201,7 +178,7 @@ export default function SpecialistyPage() {
           },
           {
             '@type': 'ListItem',
-            'position': 6,
+            'position': 5,
             'item': {
               '@type': 'Person',
               '@id': 'https://dejure-help.ru/specialisty/zubova-natalya-yuryevna/#person',
@@ -213,7 +190,7 @@ export default function SpecialistyPage() {
           },
           {
             '@type': 'ListItem',
-            'position': 7,
+            'position': 6,
             'item': {
               '@type': 'Person',
               'name': 'Конопкин Дмитрий Сергеевич',
@@ -225,7 +202,7 @@ export default function SpecialistyPage() {
           },
           {
             '@type': 'ListItem',
-            'position': 8,
+            'position': 7,
             'item': {
               '@type': 'Person',
               'name': 'Гусев Олег Юрьевич',
@@ -366,7 +343,7 @@ export default function SpecialistyPage() {
                             width: '100%', 
                             height: '100%', 
                             objectFit: 'cover', 
-                            objectPosition: sp.slug === 'gusev-oleg-yurevich' ? 'center 15%' : sp.slug === 'konopkin-dmitriy-sergeevich' ? 'center 18%' : sp.slug === 'smolyaninova-marina-valerevna' ? 'center 20%' : sp.slug === 'nacheshnikov-vladimir-viktorovich' ? 'center 12%' : 'center 15%',
+                            objectPosition: sp.slug === 'gusev-oleg-yurevich' ? 'center 15%' : sp.slug === 'konopkin-dmitriy-sergeevich' ? 'center 18%' : sp.slug === 'nacheshnikov-vladimir-viktorovich' ? 'center 12%' : 'center 15%',
                             display: 'block' 
                           }}
                         />
@@ -403,11 +380,6 @@ export default function SpecialistyPage() {
                               <>
                                 <span style={{ display: 'block' }}>Конопкин</span>
                                 <span style={{ display: 'block' }}>Дмитрий Сергеевич</span>
-                              </>
-                            ) : sp.slug === 'smolyaninova-marina-valerevna' ? (
-                              <>
-                                <span style={{ display: 'block' }}>Смольянинова</span>
-                                <span style={{ display: 'block' }}>Марина Валерьевна</span>
                               </>
                             ) : sp.slug === 'bobkin-arkadiy-evgenevich' ? (
                               <>
@@ -782,7 +754,7 @@ export default function SpecialistyPage() {
                             width: '100%', 
                             height: '100%', 
                             objectFit: 'cover', 
-                            objectPosition: sp.slug === 'gusev-oleg-yurevich' ? 'center 15%' : sp.slug === 'konopkin-dmitriy-sergeevich' ? 'center 18%' : sp.slug === 'smolyaninova-marina-valerevna' ? 'center 20%' : sp.slug === 'nacheshnikov-vladimir-viktorovich' ? 'center 12%' : 'center 15%',
+                            objectPosition: sp.slug === 'gusev-oleg-yurevich' ? 'center 15%' : sp.slug === 'konopkin-dmitriy-sergeevich' ? 'center 18%' : sp.slug === 'nacheshnikov-vladimir-viktorovich' ? 'center 12%' : 'center 15%',
                             display: 'block' 
                           }}
                         />

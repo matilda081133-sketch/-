@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: 'https://dejure-help.ru/images/smolyaninova.webp',
+        url: 'https://dejure-help.ru/images/nalivkina.webp',
         width: 1200,
         height: 630,
         alt: 'Установление факта принятия наследства в Липецке',

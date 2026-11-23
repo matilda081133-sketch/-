@@ -266,12 +266,12 @@ export default function VzyskanieIspolnitelnyListClient() {
           { text: 'Проверяем должника и имущество' },
           { text: 'Предъявление в банк или ФССП' },
           { text: 'Контроль и обжалование бездействия' },
-          { text: 'Куратор — 13 лет опыта в ФССП' },
+          { text: 'Куратор — партнёр ЮК с практикой с 2001 года' },
         ]}
-        imageUrl="/images/smolyaninova.webp"
-        imageName="Марина Валерьевна Смольянинова"
-        imageSubtitle="Ведущий юрист ЮК «Де-Юре», куратор направления «Исполнительное производство»"
-        imageObjectPosition="center 25%"
+        imageUrl="/images/nalivkina.webp"
+        imageName="Светлана Андреевна Наливкина"
+        imageSubtitle="Юрист, партнёр ЮК «Де-Юре», куратор направления «Исполнительное производство»"
+        imageObjectPosition="center 15%"
       />
 
       {/* ═══ БЛОК 2: В КАКИХ СИТУАЦИЯХ ПОМОГАЕМ (КОГДА СТОИТ ПОДКЛЮЧИТЬ ЮРИСТА) ═══ */}
@@ -868,21 +868,21 @@ export default function VzyskanieIspolnitelnyListClient() {
         </div>
       </section>
 
-      {/* ═══ БЛОК 5: ВЕДУЩИЙ ЮРИСТ ПО УСЛУГЕ ═══ */}
+      {/* ═══ БЛОК 5: КУРАТОР НАПРАВЛЕНИЯ ═══ */}
       <SpecialistBlock
         title="Куратор направления"
-        name="Марина Валерьевна Смольянинова"
-        position={<>Ведущий юрист ЮК «Де-Юре»,<br />куратор направления «Исполнительное производство»</>}
-        imageUrl="/images/smolyaninova.webp"
-        imagePosition="center 25%"
+        name="Светлана Андреевна Наливкина"
+        position={<>Юрист, партнёр ЮК «Де-Юре»,<br />куратор направления «Исполнительное производство»</>}
+        imageUrl="/images/nalivkina.webp"
+        imagePosition="center 15%"
         description={[
           <span key="1" style={{ color: 'var(--color-deep-blue)', display: 'block' }}>
-            Марина Валерьевна более 13 лет работала в Федеральной службе судебных приставов, в том числе на руководящих должностях. Этот опыт помогает оценивать не только формальные сроки, но и то, какие конкретные действия действительно могут привести к обнаружению активов и реальному исполнению требования.
+            Светлана Андреевна Наливкина занимается юридической практикой с 2001 года, работала главным юрисконсультом и начальником юридического отдела в банковском секторе. Опыт судебного и внесудебного взыскания задолженности помогает оценивать не только формальные сроки, но и то, какие действия в банках, суде и ФССП приводят к реальному исполнению требования.
           </span>,
           <ul key="2" style={{ listStyle: 'none', padding: 0, margin: '16px 0 0 0', display: 'flex', flexDirection: 'column', gap: '10px' }}>
             <li style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)', lineHeight: 1.55 }}>
               <div style={{ width: '6px', height: '6px', minWidth: '6px', background: 'var(--color-gold)', borderRadius: '50%', flexShrink: 0, marginTop: '8px' }}></div>
-              <span>Более 13 лет работы в ФССП, включая руководящие должности</span>
+              <span>Более 23 лет юридической практики (с 2001 года), опыт работы в банках и судах</span>
             </li>
             <li style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)', lineHeight: 1.55 }}>
               <div style={{ width: '6px', height: '6px', minWidth: '6px', background: 'var(--color-gold)', borderRadius: '50%', flexShrink: 0, marginTop: '8px' }}></div>
@@ -893,8 +893,8 @@ export default function VzyskanieIspolnitelnyListClient() {
               <span>Сопровождает доверителей в Липецке и Липецкой области, а также дистанционно по всей РФ</span>
             </li>
           </ul>,
-          <a key="3" href="/specialisty/smolyaninova-marina-valerevna/" style={{ display: 'inline-block', marginTop: '16px', fontSize: '14px', color: 'var(--color-primary)', textDecoration: 'underline', textUnderlineOffset: '4px' }}>
-            Подробнее о Марине Валерьевне Смольяниновой →
+          <a key="3" href="/specialisty/nalivkina-svetlana-andreevna/" style={{ display: 'inline-block', marginTop: '16px', fontSize: '14px', color: 'var(--color-primary)', textDecoration: 'underline', textUnderlineOffset: '4px' }}>
+            Подробнее о Светлане Андреевне Наливкиной →
           </a>
         ]}
         buttonText="Задать вопрос юристу"
@@ -1201,7 +1201,7 @@ export default function VzyskanieIspolnitelnyListClient() {
                   { name: 'source_page', value: 'https://dejure-help.ru/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/vzyskanie-po-ispolnitelnomu-listu/' },
                   { name: 'direction', value: 'Юрист по исполнительному производству' },
                   { name: 'service', value: 'Взыскание по исполнительному листу' },
-                  { name: 'selected_specialist', value: 'smolyaninova-marina-valerevna' }
+                  { name: 'selected_specialist', value: 'nalivkina-svetlana-andreevna' }
                 ]}
               />
             </div>

@@ -226,10 +226,10 @@ export default function UstanovlenieIOsparivanieOttsovstvaClient() {
       },
       {
         '@type': 'Person',
-        '@id': 'https://dejure-help.ru/specialisty/smolyaninova-marina-valerevna/#person',
-        'name': 'Марина Валерьевна Смольянинова',
-        'jobTitle': 'Ведущий юрист',
-        'url': 'https://dejure-help.ru/specialisty/smolyaninova-marina-valerevna/',
+        '@id': 'https://dejure-help.ru/specialisty/nalivkina-svetlana-andreevna/#person',
+        'name': 'Светлана Андреевна Наливкина',
+        'jobTitle': 'Юрист, партнёр ЮК «Де-Юре»',
+        'url': 'https://dejure-help.ru/specialisty/nalivkina-svetlana-andreevna/',
         'worksFor': { '@id': 'https://dejure-help.ru/#organization' }
       }
     ]
@@ -281,11 +281,11 @@ export default function UstanovlenieIOsparivanieOttsovstvaClient() {
         primaryCtaSubtext={
           <>Если требуется срочная помощь, позвоните: <a href="tel:+74742201525" style={{ color: 'var(--color-primary)', fontWeight: 'bold', textDecoration: 'none' }}>+7 (4742) 20-15-25</a></>
         }
-        trustItems={[{"text":"Установление отцовства через суд и ЗАГС"},{"text":"Оспаривание отцовства и аннулирование записи"},{"text":"Назначение судебной генетической экспертизы ДНК"},{"text":"Куратор — юрист М. В. Смольянинова"}]}
-        imageUrl="/images/smolyaninova.webp"
-        imageName="Марина Валерьевна Смольянинова"
-        imageSubtitle="Ведущий юрист ЮК «Де-Юре», куратор направления «Семейное право»"
-        imageObjectPosition="center 20%"
+        trustItems={[{"text":"Установление отцовства через суд и ЗАГС"},{"text":"Оспаривание отцовства и аннулирование записи"},{"text":"Назначение судебной генетической экспертизы ДНК"},{"text":"Куратор — юрист С. А. Наливкина"}]}
+        imageUrl="/images/nalivkina.webp"
+        imageName="Светлана Андреевна Наливкина"
+        imageSubtitle="Юрист, партнёр ЮК «Де-Юре», куратор направления «Семейное право»"
+        imageObjectPosition="center 15%"
       />
 
       {/* ═══ БЛОК 2: В КАКИХ СИТУАЦИЯХ МЫ ПОМОГАЕМ (ТИПОВОЙ ШАБЛОН) ═══ */}
@@ -435,15 +435,15 @@ export default function UstanovlenieIOsparivanieOttsovstvaClient() {
       {/* ═══ БЛОК 3: КУРАТОР НАПРАВЛЕНИЯ (ТИПОВОЙ ШАБЛОН) ═══ */}
       <SpecialistBlock
         title="Куратор направления"
-        name="Марина Валерьевна Смольянинова"
-        position={<>Ведущий юрист ЮК &#171;Де-Юре&#187;,<br />куратор направления &#171;Семейное право&#187;</>}
-        imageUrl="/images/smolyaninova.webp"
-        imagePosition="center 20%"
-        profileHref="/specialisty/smolyaninova-marina-valerevna/"
-        profileText="Подробнее о Марине Валерьевне Смольяниновой →"
+        name="Светлана Андреевна Наливкина"
+        position={<>Юрист, партнёр ЮК &#171;Де-Юре&#187;,<br />куратор направления &#171;Семейное право&#187;</>}
+        imageUrl="/images/nalivkina.webp"
+        imagePosition="center 15%"
+        profileHref="/specialisty/nalivkina-svetlana-andreevna/"
+        profileText="Подробнее о Светлане Андреевне Наливкиной →"
         description={[
           <span key="1" style={{ color: 'var(--color-deep-blue)', display: 'block' }}>
-            13 лет профессионального опыта в сфере правоприменения, защиты прав граждан и семейных правоотношений.
+            Более 23 лет юридической практики (с 2001 года) в сфере защиты прав граждан, имущественных и семейных споров.
           </span>,
           <ul key="2" style={{ listStyle: 'none', padding: 0, margin: '16px 0 0 0', display: 'flex', flexDirection: 'column', gap: '10px' }}>
             <li style={{ display: 'flex', alignItems: 'center', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)' }}>
@@ -560,7 +560,7 @@ export default function UstanovlenieIOsparivanieOttsovstvaClient() {
                 hiddenFields={[
                   { name: 'source_page', value: 'https://dejure-help.ru/grazhdanam/semejnyj-yurist/ustanovlenie-i-osparivanie-ottsovstva/' },
                   { name: 'direction', value: 'Семейный юрист' },
-                  { name: 'selected_specialist', value: 'smolyaninova-marina-valerevna' }
+                  { name: 'selected_specialist', value: 'nalivkina-svetlana-andreevna' }
                 ]}
               />
             </div>

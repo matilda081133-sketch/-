@@ -235,10 +235,10 @@ export default function RastorzhenieBrakaClient() {
       },
       {
         '@type': 'Person',
-        '@id': 'https://dejure-help.ru/specialisty/smolyaninova-marina-valerevna/#person',
-        'name': 'Марина Валерьевна Смольянинова',
-        'jobTitle': 'Ведущий юрист',
-        'url': 'https://dejure-help.ru/specialisty/smolyaninova-marina-valerevna/',
+        '@id': 'https://dejure-help.ru/specialisty/nalivkina-svetlana-andreevna/#person',
+        'name': 'Светлана Андреевна Наливкина',
+        'jobTitle': 'Юрист, партнёр ЮК «Де-Юре»',
+        'url': 'https://dejure-help.ru/specialisty/nalivkina-svetlana-andreevna/',
         'worksFor': { '@id': 'https://dejure-help.ru/#organization' }
       }
     ]
@@ -291,12 +291,12 @@ export default function RastorzhenieBrakaClient() {
           { text: 'Развод без личного присутствия в суде' },
           { text: 'Защита от затягивания процесса' },
           { text: 'Сопровождение при наличии несовершеннолетних детей' },
-          { text: 'Куратор — юрист М. В. Смольянинова' }
+          { text: 'Куратор — юрист С. А. Наливкина' }
         ]}
-        imageUrl="/images/smolyaninova.webp"
-        imageName="Марина Валерьевна Смольянинова"
-        imageSubtitle="Ведущий юрист ЮК «Де-Юре», куратор направления «Семейное право»"
-        imageObjectPosition="center 20%"
+        imageUrl="/images/nalivkina.webp"
+        imageName="Светлана Андреевна Наливкина"
+        imageSubtitle="Юрист, партнёр ЮК «Де-Юре», куратор направления «Семейное право»"
+        imageObjectPosition="center 15%"
       />
 
       {/* ═══ БЛОК 2: В КАКИХ СИТУАЦИЯХ МЫ ПОМОГАЕМ ═══ */}
@@ -458,22 +458,22 @@ export default function RastorzhenieBrakaClient() {
         </div>
       </section>
 
-      {/* ═══ БЛОК 3: ВЕДУЩИЙ ЮРИСТ ПО УСЛУГЕ ═══ */}
+      {/* ═══ БЛОК 3: КУРАТОР НАПРАВЛЕНИЯ ═══ */}
       <SpecialistBlock
-        title="Ведущий юрист по услуге"
-        name="Марина Валерьевна Смольянинова"
-        position={<>Ведущий юрист ЮК «Де-Юре»,<br />куратор направления «Семейное право»</>}
-        imageUrl="/images/smolyaninova.webp"
-        profileHref="/specialisty/smolyaninova-marina-valerevna/"
-        profileText="Подробнее о Марине Валерьевне Смольяниновой →"
+        title="Куратор направления"
+        name="Светлана Андреевна Наливкина"
+        position={<>Юрист, партнёр ЮК «Де-Юре»,<br />куратор направления «Семейное право»</>}
+        imageUrl="/images/nalivkina.webp"
+        profileHref="/specialisty/nalivkina-svetlana-andreevna/"
+        profileText="Подробнее о Светлане Андреевне Наливкиной →"
         description={[
           <span key="1" style={{ color: 'var(--color-deep-blue)', display: 'block' }}>
-            Марина Валерьевна более 13 лет занимается сложными судебными спорами. Практический опыт позволяет быстро оформить расторжение брака, пресечь попытки затягивания процесса со стороны второго супруга и обеспечить полную защиту интересов доверителя без его личного присутствия в заседаниях.
+            Светлана Андреевна ведёт юридическую практику с 2001 года и сопровождает сложные судебные и имущественные споры. Практический опыт позволяет грамотно оформить расторжение брака, пресечь попытки затягивания процесса со стороны второго супруга и обеспечить защиту интересов доверителя без его личного присутствия в заседаниях.
           </span>,
           <ul key="2" style={{ listStyle: 'none', padding: 0, margin: '16px 0 0 0', display: 'flex', flexDirection: 'column', gap: '10px' }}>
             <li style={{ display: 'flex', alignItems: 'center', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)' }}>
               <div style={{ width: '6px', height: '6px', minWidth: '6px', background: 'var(--color-gold)', borderRadius: '50%', flexShrink: 0 }}></div>
-              <span>Более 13 лет юридической практики в семейных и имущественных спорах</span>
+              <span>Более 23 лет юридической практики (с 2001 года) в имущественных и семейных спорах</span>
             </li>
             <li style={{ display: 'flex', alignItems: 'center', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)' }}>
               <div style={{ width: '6px', height: '6px', minWidth: '6px', background: 'var(--color-gold)', borderRadius: '50%', flexShrink: 0 }}></div>
@@ -546,7 +546,7 @@ export default function RastorzhenieBrakaClient() {
                 <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>брака с юристом</span>
               </h2>
               <p style={{ color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, fontSize: '16px', lineHeight: 1.6, marginBottom: '24px', textWrap: 'balance' }}>
-                Укажите, есть ли несовершеннолетние дети, согласен ли второй супруг на развод и известны ли его контакты. Обращение передадим Марине Валерьевне Смольяниновой. Она оценит сроки и предложит оптимальный порядок расторжения брака.
+                Укажите, есть ли несовершеннолетние дети, согласен ли второй супруг на развод и известны ли его контакты. Обращение передадим Светлане Андреевне Наливкиной. Она оценит сроки и предложит оптимальный порядок расторжения брака.
               </p>
               
               <div style={{ background: 'var(--gradient-cream)', padding: '24px', borderLeft: '3px solid var(--color-gold)', marginTop: '0', marginBottom: '20px' }}>
@@ -585,7 +585,7 @@ export default function RastorzhenieBrakaClient() {
                 hiddenFields={[
                   { name: 'source_page', value: 'https://dejure-help.ru/grazhdanam/semejnyj-yurist/rastorzhenie-braka/' },
                   { name: 'direction', value: 'Семейный юрист' },
-                  { name: 'selected_specialist', value: 'smolyaninova-marina-valerevna' }
+                  { name: 'selected_specialist', value: 'nalivkina-svetlana-andreevna' }
                 ]}
               />
             </div>

@@ -260,12 +260,12 @@ export default function VzyskanieClient() {
           { text: 'Проверим счета и реальные активы должника' },
           { text: 'Выберем банк или ФССП для быстрого исполнения' },
           { text: 'Контролируем ход взыскания до зачисления денег' },
-          { text: 'Куратор — 13 лет опыта в органах ФССП' },
+          { text: 'Куратор — партнёр ЮК с практикой с 2001 года' },
         ]}
-        imageUrl="/images/smolyaninova.webp"
-        imageName="Марина Валерьевна Смольянинова"
-        imageSubtitle="Ведущий юрист ЮК «Де-Юре», куратор направления «Исполнительное производство»"
-        imageObjectPosition="50% -75px"
+        imageUrl="/images/nalivkina.webp"
+        imageName="Светлана Андреевна Наливкина"
+        imageSubtitle="Юрист, партнёр ЮК «Де-Юре», куратор направления «Исполнительное производство»"
+        imageObjectPosition="center 15%"
       />
 
       {/* ═══ БЛОК 2: СИТУАЦИИ ═══ */}
@@ -751,22 +751,22 @@ export default function VzyskanieClient() {
         </div>
       </section>
 
-      {/* ═══ БЛОК 6: ВЕДУЩИЙ ЮРИСТ ПО УСЛУГЕ ═══ */}
+      {/* ═══ БЛОК 6: КУРАТОР НАПРАВЛЕНИЯ ═══ */}
       <SpecialistBlock
-        title="Взысканием руководит юрист с опытом работы в ФССП"
-        name="Марина Валерьевна Смольянинова"
-        position="Ведущий юрист ЮК «Де-Юре», куратор направления «Исполнительное производство»"
-        imageUrl="/images/smolyaninova.webp"
-        profileHref="/specialisty/smolyaninova-marina-valerevna/"
-        profileText="Подробнее о Марине Валерьевне Смольяниновой →"
+        title="Куратор направления взыскания задолженности"
+        name="Светлана Андреевна Наливкина"
+        position="Юрист, партнёр ЮК «Де-Юре», куратор направления «Исполнительное производство»"
+        imageUrl="/images/nalivkina.webp"
+        profileHref="/specialisty/nalivkina-svetlana-andreevna/"
+        profileText="Подробнее о Светлане Андреевне Наливкиной →"
         description={[
           <span key="1" style={{ color: 'var(--color-deep-blue)', display: 'block' }}>
-            Марина Валерьевна Смольянинова более 13 лет работала в Федеральной службе судебных приставов, в том числе на руководящих должностях. Этот опыт помогает оценивать не только формальные сроки, но и практическую последовательность действий: какой источник исполнения проверять первым, какие ходатайства имеют смысл и когда нужно менять маршрут.
+            Светлана Андреевна Наливкина занимается юридической практикой с 2001 года, работала главным юрисконсультом и руководителем юридического отдела в банковской сфере (Сбербанк, Банк Москвы, Россельхозбанк). Практический опыт судебного и банковского взыскания помогает оценивать не только формальные сроки, но и реальную последовательность действий: какой источник исполнения проверять первым, какие ходатайства имеют смысл и когда нужно менять маршрут.
           </span>,
           <ul key="2" style={{ listStyle: 'none', padding: 0, margin: '16px 0 0 0', display: 'flex', flexDirection: 'column', gap: '10px' }}>
             <li style={{ display: 'flex', alignItems: 'center', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)' }}>
               <div style={{ width: '6px', height: '6px', minWidth: '6px', background: 'var(--color-gold)', borderRadius: '50%', flexShrink: 0 }}></div>
-              <span>13 лет опыта работы в Федеральной службе судебных приставов (ФССП)</span>
+              <span>Более 23 лет юридической практики (с 2001 года)</span>
             </li>
             <li style={{ display: 'flex', alignItems: 'center', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)' }}>
               <div style={{ width: '6px', height: '6px', minWidth: '6px', background: 'var(--color-gold)', borderRadius: '50%', flexShrink: 0 }}></div>
@@ -778,7 +778,7 @@ export default function VzyskanieClient() {
             </li>
           </ul>
         ]}
-        buttonText="Обратиться к Марине Смольяниновой"
+        buttonText="Обратиться к Светлане Наливкиной"
         buttonHref="#form"
       />
 
@@ -931,7 +931,7 @@ export default function VzyskanieClient() {
                 Есть исполнительный лист к организации, но деньги не поступают?
               </h2>
               <p style={{ color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, fontSize: '16px', lineHeight: 1.6, marginBottom: '28px', textWrap: 'balance' }}>
-                Укажите сумму требования, организацию-должника и что уже предпринималось. Марина Валерьевна Смольянинова проверит документы, доступные источники исполнения и предложит практический маршрут взыскания.
+                Укажите сумму требования, организацию-должника и что уже предпринималось. Светлана Андреевна Наливкина проверит документы, доступные источники исполнения и предложит практический маршрут взыскания.
               </p>
               
               <div style={{ background: 'var(--gradient-cream)', padding: '24px', borderLeft: '3px solid var(--color-gold)', marginTop: '0', marginBottom: '0' }}>

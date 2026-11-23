@@ -797,7 +797,7 @@ export default function BiznesuClient() {
       </section>
 
 
-      {/* ═══ 5. СПЕЦИАЛИСТЫ ПО РАБОТЕ С БИЗНЕСОМ (Точный состав из ТЗ п. 6: Бобкин, Смолянинова, Начешников) ═══ */}
+      {/* ═══ 5. СПЕЦИАЛИСТЫ ПО РАБОТЕ С БИЗНЕСОМ (Бобкин, Наливкина, Начешников) ═══ */}
       <TeamCarousel 
         hideSectionLabel={true}
         titleAlign="center"
@@ -810,7 +810,7 @@ export default function BiznesuClient() {
         }
         filterSlugs={[
           'bobkin-arkadiy-evgenevich',
-          'smolyaninova-marina-valerevna',
+          'nalivkina-svetlana-andreevna',
           'nacheshnikov-vladimir-viktorovich'
         ]}
         sectionPaddingTop="100px"

@@ -53,16 +53,16 @@ export default function ZashchitaOtTrebovaniyPage() {
           'addressCountry': 'RU'
         },
         'employee': {
-          '@id': 'https://dejure-help.ru/specialisty/smolyaninova-marina-valerevna/#person'
+          '@id': 'https://dejure-help.ru/specialisty/nalivkina-svetlana-andreevna/#person'
         }
       },
       {
-        '@id': 'https://dejure-help.ru/specialisty/smolyaninova-marina-valerevna/#person',
+        '@id': 'https://dejure-help.ru/specialisty/nalivkina-svetlana-andreevna/#person',
         '@type': 'Person',
-        'name': 'Смольянинова Марина Валерьевна',
-        'url': 'https://dejure-help.ru/specialisty/smolyaninova-marina-valerevna/',
-        'jobTitle': 'Ведущий юрист ЮК «Де-Юре»',
-        'image': 'https://dejure-help.ru/images/smolyaninova.webp',
+        'name': 'Наливкина Светлана Андреевна',
+        'url': 'https://dejure-help.ru/specialisty/nalivkina-svetlana-andreevna/',
+        'jobTitle': 'Юрист, партнёр ЮК «Де-Юре»',
+        'image': 'https://dejure-help.ru/images/nalivkina.webp',
         'worksFor': {
           '@id': 'https://dejure-help.ru/#organization'
         }

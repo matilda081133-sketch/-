@@ -70,11 +70,11 @@ export default function RassledovanieSluchayaClient() {
     },
     {
       "@type": "Person",
-      "@id": "https://dejure-help.ru/specialisty/smolyaninova-marina-valerevna/#person",
-      "name": "Марина Валерьевна Смольянинова",
-      "jobTitle": "Ведущий юрист",
-      "image": "https://dejure-help.ru/images/smolyaninova.webp",
-      "url": "https://dejure-help.ru/specialisty/smolyaninova-marina-valerevna/",
+      "@id": "https://dejure-help.ru/specialisty/nalivkina-svetlana-andreevna/#person",
+      "name": "Светлана Андреевна Наливкина",
+      "jobTitle": "Юрист, партнёр ЮК «Де-Юре»",
+      "image": "https://dejure-help.ru/images/nalivkina.webp",
+      "url": "https://dejure-help.ru/specialisty/nalivkina-svetlana-andreevna/",
       "worksFor": {
         "@type": "LegalService",
         "@id": "https://dejure-help.ru/#organization",
@@ -370,13 +370,13 @@ export default function RassledovanieSluchayaClient() {
     "text": "При риске уголовного преследования формируем команду с независимым адвокатом; адвокатская помощь оформляется отдельным соглашением."
   },
   {
-    "text": "Куратор — Марина Валерьевна Смольянинова"
+    "text": "Куратор — Светлана Андреевна Наливкина"
   }
 ]}
-        imageUrl="/images/smolyaninova.webp"
-        imageObjectPosition="50% -75px"
-        imageName="Марина Валерьевна Смольянинова"
-        imageSubtitle="Ведущий юрист ЮК «Де-Юре», куратор направления «Трудовые споры с работниками»"
+        imageUrl="/images/nalivkina.webp"
+        imageObjectPosition="center 15%"
+        imageName="Светлана Андреевна Наливкина"
+        imageSubtitle="Юрист, партнёр ЮК «Де-Юре», куратор направления «Трудовые споры с работниками»"
       />
 
       {/* ═══ БЛОК 2: СИТУАЦИИ ═══ */}
@@ -563,32 +563,32 @@ export default function RassledovanieSluchayaClient() {
       {/* ═══ БЛОК: КУРАТОР НАПРАВЛЕНИЯ ═══ */}
       <SpecialistBlock 
         title="Куратор направления"
-        name="Марина Валерьевна Смольянинова"
-        position={<>Ведущий юрист ЮК «Де-Юре»,<br />куратор направления «Трудовые споры с работниками»</>}
-        imageUrl="/images/smolyaninova.webp"
-        imagePosition="50% -75px"
-        profileHref="/specialisty/smolyaninova-marina-valerevna/"
-        profileText="Подробнее о Марине Валерьевне Смольяниновой →"
+        name="Светлана Андреевна Наливкина"
+        position={<>Юрист, партнёр ЮК «Де-Юре»,<br />куратор направления «Трудовые споры с работниками»</>}
+        imageUrl="/images/nalivkina.webp"
+        imagePosition="center 15%"
+        profileHref="/specialisty/nalivkina-svetlana-andreevna/"
+        profileText="Подробнее о Светлане Андреевне Наливкиной →"
         description={[
           <span key="1" style={{ color: 'var(--color-deep-blue)', display: 'block' }}>
-            Марина Валерьевна курирует обращения работодателей по трудовым спорам: проводит первичную правовую оценку, определяет необходимые документы и последовательность действий, готовит позицию для переговоров, взаимодействия с государственными органами и судебной защиты.
+            Светлана Андреевна курирует обращения работодателей по трудовым спорам: проводит первичную правовую оценку, определяет необходимые документы и последовательность действий, готовит позицию для переговоров, взаимодействия с государственными органами и судебной защиты.
           </span>,
           <ul key="2" style={{ listStyle: 'none', padding: 0, margin: '16px 0 0 0', display: 'flex', flexDirection: 'column', gap: '10px' }}>
             <li style={{ display: 'flex', alignItems: 'center', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)' }}>
               <div style={{ width: '6px', height: '6px', minWidth: '6px', background: 'var(--color-gold)', borderRadius: '50%', flexShrink: 0 }}></div>
-              <span>2005 год — окончила Институт международного права и экономики имени А. С. Грибоедова</span>
+              <span>2001 год — окончила Московский институт международного права и экономики имени А. С. Грибоедова</span>
             </li>
             <li style={{ display: 'flex', alignItems: 'center', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)' }}>
               <div style={{ width: '6px', height: '6px', minWidth: '6px', background: 'var(--color-gold)', borderRadius: '50%', flexShrink: 0 }}></div>
-              <span>Более 13 лет работы в Федеральной службе судебных приставов, включая руководящие должности</span>
+              <span>Более 23 лет юридической практики (с 2001 года), опыт руководства юридическим отделом в банковской сфере</span>
             </li>
             <li style={{ display: 'flex', alignItems: 'center', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)' }}>
               <div style={{ width: '6px', height: '6px', minWidth: '6px', background: 'var(--color-gold)', borderRadius: '50%', flexShrink: 0 }}></div>
-              <span>Более 5 лет юридической практики с представительством организаций в судах и государственных органах</span>
+              <span>Представительство организаций и граждан в судах общей юрисдикции, арбитражных судах и государственных органах</span>
             </li>
           </ul>
         ]}
-        buttonText="Задать вопрос Марине Валерьевне"
+        buttonText="Задать вопрос Светлане Андреевне"
         buttonHref="#form"
       />
 
@@ -719,7 +719,7 @@ export default function RassledovanieSluchayaClient() {
                 <span className="hero-title-span-mobile" style={{ display: "block", whiteSpace: "nowrap" }}>Помощь при несчастном</span> <span className="hero-title-span-mobile" style={{ display: "block", whiteSpace: "nowrap" }}>случае</span>
               </h2>
               <p style={{ color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, fontSize: '16px', lineHeight: 1.6, marginBottom: '24px', textWrap: 'balance' }}>
-                Оставьте контактные данные и кратко укажите, когда произошло происшествие и на каком этапе находится расследование. Обращение будет передано Марине Валерьевне Смольяниновой. Она уточнит срочность, ближайшие сроки и согласует консультацию.
+                Оставьте контактные данные и кратко укажите, когда произошло происшествие и на каком этапе находится расследование. Обращение будет передано Светлане Андреевне Наливкиной. Она уточнит срочность, ближайшие сроки и согласует консультацию.
               </p>
               
               <div style={{ background: 'var(--gradient-cream)', padding: '24px', borderLeft: '3px solid var(--color-gold)', marginTop: '0', marginBottom: '20px' }}>
@@ -766,7 +766,7 @@ export default function RassledovanieSluchayaClient() {
   },
   {
     "name": "selected_specialist",
-    "value": "smolyaninova-marina-valerevna"
+    "value": "nalivkina-svetlana-andreevna"
   },
   {
     "name": "service_id",

@@ -86,20 +86,6 @@ export default function TeamCarousel({
     {
       name: (
         <>
-          <span style={{ display: 'block' }}>Смольянинова</span>
-          <span style={{ display: 'block' }}>Марина Валерьевна</span>
-        </>
-      ),
-      rawName: 'Смольянинова Марина Валерьевна',
-      role: 'Ведущий юрист ЮК «Де-Юре»',
-      desc: 'Специализация: гражданские и семейные споры, недвижимость, взыскание задолженности. Опыт работы в УФССП России более 10 лет, из них 6 лет на руководящих должностях.',
-      img: '/images/smolyaninova.webp',
-      link: '/specialisty/smolyaninova-marina-valerevna/',
-      imgPosition: 'center 20%'
-    },
-    {
-      name: (
-        <>
           <span style={{ display: 'block' }}>Начешников</span>
           <span style={{ display: 'block' }}>Владимир Викторович</span>
         </>
@@ -138,7 +124,7 @@ export default function TeamCarousel({
       desc: 'Специализация: банкротство граждан и бизнеса, арбитражные споры. Стаж с 2001 г.',
       img: '/images/nalivkina.webp',
       link: '/specialisty/nalivkina-svetlana-andreevna/',
-      imgPosition: 'center 20%'
+      imgPosition: 'center 15%'
     },
     {
       name: (

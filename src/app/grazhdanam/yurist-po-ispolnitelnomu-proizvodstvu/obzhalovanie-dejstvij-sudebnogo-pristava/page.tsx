@@ -77,10 +77,10 @@ export default function ObzhalovaniePage() {
       },
       {
         '@type': 'Person',
-        '@id': 'https://dejure-help.ru/specialisty/smolyaninova-marina-valerevna/#person',
-        name: 'Марина Валерьевна Смольянинова',
-        jobTitle: 'Ведущий юрист',
-        url: 'https://dejure-help.ru/specialisty/smolyaninova-marina-valerevna/',
+        '@id': 'https://dejure-help.ru/specialisty/nalivkina-svetlana-andreevna/#person',
+        name: 'Светлана Андреевна Наливкина',
+        jobTitle: 'Юрист, партнёр ЮК «Де-Юре»',
+        url: 'https://dejure-help.ru/specialisty/nalivkina-svetlana-andreevna/',
         worksFor: {
           '@id': 'https://dejure-help.ru/#organization'
         }

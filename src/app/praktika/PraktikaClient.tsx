@@ -217,7 +217,7 @@ export default function PraktikaClient() {
             </p>
           </div>
 
-          {/* БЛОК 4. КАРТОЧКА КЕЙСА СМОЛЬЯНИНОВОЙ (На всю ширину) */}
+          {/* БЛОК 4. КАРТОЧКА КЕЙСА (На всю ширину) */}
           <article
             className="praktika-case-card"
             style={{
@@ -621,6 +621,7 @@ export default function PraktikaClient() {
                     height: '64px',
                     borderRadius: '50%',
                     objectFit: 'cover',
+                    objectPosition: 'center 15%',
                     border: '2px solid var(--color-gold, #C1A066)',
                     flexShrink: 0,
                   }}

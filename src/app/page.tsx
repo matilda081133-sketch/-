@@ -239,7 +239,7 @@ export default function Home() {
             }}>
               {[
                 'Подбираем специалиста под профиль вашего дела',
-                'Опыт изнутри системы: СК, прокуратура, МВД, налоговая полиция (ФСНП), ФССП',
+                'Опыт изнутри системы: СК, прокуратура, МВД, налоговая полиция (ФСНП)',
                 'Честный договор: фиксируем план работ и цены'
               ].map((bulletText, i) => (
                 <div key={i} className="specialist-fact-block" style={{ 
@@ -516,10 +516,9 @@ export default function Home() {
       <TeamCarousel 
         customSectionLabel="Наша команда"
         customTitle="Юристы ЮК «Де-Юре»"
-        customSubtitle="Юристы компании и партнёры с практическим опытом работы в следственных органах, службе судебных приставов и сопровождении гражданских и коммерческих споров."
+        customSubtitle="Юристы компании и партнёры с практическим опытом работы в следственных органах, банковской сфере и сопровождении гражданских и коммерческих споров."
         filterSlugs={[
           'bobkin-arkadiy-evgenevich',
-          'smolyaninova-marina-valerevna',
           'nacheshnikov-vladimir-viktorovich',
           'polozova-elena-anatolevna',
           'nalivkina-svetlana-andreevna',

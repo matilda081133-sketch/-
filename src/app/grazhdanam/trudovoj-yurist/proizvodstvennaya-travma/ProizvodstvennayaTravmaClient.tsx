@@ -436,10 +436,10 @@ export default function ProizvodstvennayaTravmaClient() {
       },
       {
         '@type': 'Person',
-        '@id': 'https://dejure-help.ru/specialisty/smolyaninova-marina-valerevna/#person',
-        'name': 'Марина Валерьевна Смольянинова',
-        'jobTitle': 'Ведущий юрист',
-        'url': 'https://dejure-help.ru/specialisty/smolyaninova-marina-valerevna/',
+        '@id': 'https://dejure-help.ru/specialisty/nalivkina-svetlana-andreevna/#person',
+        'name': 'Светлана Андреевна Наливкина',
+        'jobTitle': 'Юрист, партнёр ЮК «Де-Юре»',
+        'url': 'https://dejure-help.ru/specialisty/nalivkina-svetlana-andreevna/',
         'worksFor': { '@id': 'https://dejure-help.ru/#legalservice' }
       },
       {
@@ -511,12 +511,12 @@ export default function ProizvodstvennayaTravmaClient() {
           { text: 'Официальное расследование и оформление акта Н-1' },
           { text: 'Оспаривание выводов о вине или грубой неосторожности' },
           { text: 'Оформление страховых выплат СФР и возмещения вреда' },
-          { text: 'Куратор — юрист М. В. Смольянинова' }
+          { text: 'Куратор — юрист С. А. Наливкина' }
         ]}
-        imageUrl="/images/smolyaninova.webp"
-        imageName="Марина Валерьевна Смольянинова"
-        imageSubtitle="Ведущий юрист ЮК «Де-Юре», куратор направления «Трудовое право»"
-        imageObjectPosition="center 20%"
+        imageUrl="/images/nalivkina.webp"
+        imageName="Светлана Андреевна Наливкина"
+        imageSubtitle="Юрист, партнёр ЮК «Де-Юре», куратор направления «Трудовое право»"
+        imageObjectPosition="center 15%"
       />
 
       {/* ═══ БЛОК 2: В КАКИХ СИТУАЦИЯХ МЫ ПОМОГАЕМ ═══ */}
@@ -992,16 +992,16 @@ export default function ProizvodstvennayaTravmaClient() {
       {/* ═══ БЛОК 5: СПЕЦИАЛИСТ ПО ДЕЛУ ═══ */}
             {/* ═══ БЛОК: СПЕЦИАЛИСТ ПО ДЕЛУ (ШАБЛОННЫЙ) ═══ */}
       <SpecialistBlock
-        title={<><span style={{ display: 'block' }}>Вашим делом займется</span><span style={{ display: 'block' }}>Марина Валерьевна Смольянинова</span></>}
-        name="Марина Валерьевна Смольянинова"
-        position={<>Ведущий юрист ЮК «Де-Юре»,<br />куратор направления «Трудовое право»</>}
-        imageUrl="/images/smolyaninova.webp"
-        imagePosition="center 20%"
-        profileHref="/specialisty/smolyaninova-marina-valerevna/"
-        profileText="Подробнее о Марине Валерьевне Смольяниновой →"
+        title={<><span style={{ display: 'block' }}>Вашим делом займется</span><span style={{ display: 'block' }}>Светлана Андреевна Наливкина</span></>}
+        name="Светлана Андреевна Наливкина"
+        position={<>Юрист, партнёр ЮК «Де-Юре»,<br />куратор направления «Трудовое право»</>}
+        imageUrl="/images/nalivkina.webp"
+        imagePosition="center 15%"
+        profileHref="/specialisty/nalivkina-svetlana-andreevna/"
+        profileText="Подробнее о Светлане Андреевне Наливкиной →"
         description={[
           <span key="1" style={{ color: 'var(--color-deep-blue)', display: 'block' }}>
-            Более пяти лет юридической практики и судебного представительства по защите прав граждан.
+            Более 23 лет юридической практики (с 2001 года) и судебного представительства по защите прав граждан.
           </span>,
           <ul key="2" style={{ listStyle: 'none', padding: 0, margin: '16px 0 0 0', display: 'flex', flexDirection: 'column', gap: '12px' }}>
             <li style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)', lineHeight: 1.55 }}>
@@ -1024,7 +1024,7 @@ export default function ProizvodstvennayaTravmaClient() {
             </li>
           </ul>
         ]}
-        buttonText="Задать вопрос Марине Валерьевне"
+        buttonText="Задать вопрос Светлане Андреевне"
         buttonHref="#form"
       />
 
@@ -1190,10 +1190,10 @@ export default function ProizvodstvennayaTravmaClient() {
                 <span style={{ textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '14px', fontWeight: 600, color: 'var(--color-primary)' }}>Связаться с нами</span>
               </div>
               <h2 style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', marginBottom: '16px', lineHeight: 1.2, marginTop: 0, textWrap: 'balance' }}>
-                Обсудите производственную травму с Мариной Валерьевной Смольяниновой
+                Обсудите производственную травму со Светланой Андреевной Наливкиной
               </h2>
               <p style={{ color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, fontSize: '16px', lineHeight: 1.6, marginBottom: '28px', textWrap: 'balance' }}>
-                Кратко опишите, когда и при каких обстоятельствах произошла травма и проводит ли работодатель расследование. Обращение будет передано Марине Валерьевне Смольяниновой. Она уточнит обстоятельства, имеющиеся документы и согласует с Вами консультацию.
+                Кратко опишите, когда и при каких обстоятельствах произошла травма и проводит ли работодатель расследование. Обращение будет передано Светлане Андреевне Наливкиной. Она уточнит обстоятельства, имеющиеся документы и согласует с Вами консультацию.
               </p>
               <a href="tel:+74742201525" style={{ display: 'flex', alignItems: 'center', gap: '12px', fontSize: '24px', fontWeight: 'bold', color: 'var(--color-deep-blue)', textDecoration: 'none', marginBottom: '16px' }}>
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">

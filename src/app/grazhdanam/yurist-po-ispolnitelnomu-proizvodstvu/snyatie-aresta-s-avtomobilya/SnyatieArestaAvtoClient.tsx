@@ -279,12 +279,12 @@ export default function SnyatieArestaAvtoClient() {
           { text: 'Проверяем основания каждого запрета' },
           { text: 'Заявления приставу, жалобы и судебные иски' },
           { text: 'Помощь должникам, собственникам и покупателям' },
-          { text: 'Куратор — 13 лет опыта в ФССП' },
+          { text: 'Куратор — партнёр ЮК с практикой с 2001 года' },
         ]}
-        imageUrl="/images/smolyaninova.webp"
-        imageName="Марина Валерьевна Смольянинова"
-        imageSubtitle="Ведущий юрист ЮК «Де-Юре», куратор направления «Исполнительное производство»"
-        imageObjectPosition="center 25%"
+        imageUrl="/images/nalivkina.webp"
+        imageName="Светлана Андреевна Наливкина"
+        imageSubtitle="Юрист, партнёр ЮК «Де-Юре», куратор направления «Исполнительное производство»"
+        imageObjectPosition="center 15%"
       />
 
       {/* ═══ БЛОК 2: В КАКИХ СИТУАЦИЯХ ПОМОГАЕМ ═══ */}
@@ -759,20 +759,20 @@ export default function SnyatieArestaAvtoClient() {
         </div>
       </section>
 
-      {/* ═══ БЛОК 6: ВЕДУЩИЙ ЮРИСТ ПО УСЛУГЕ ═══ */}
+      {/* ═══ БЛОК 6: КУРАТОР НАПРАВЛЕНИЯ ═══ */}
       <SpecialistBlock
         title={
           <span style={{ display: 'block' }}>
-            <span style={{ display: 'block' }}>Ограничения проверяет юрист</span>{' '}
-            <span style={{ display: 'block' }}>с опытом работы в ФССП</span>
+            <span style={{ display: 'block' }}>Ограничения проверяет юрист,</span>{' '}
+            <span style={{ display: 'block' }}>партнёр ЮК «Де-Юре»</span>
           </span>
         }
-        name="Марина Валерьевна Смольянинова"
-        position={<>Ведущий юрист ЮК «Де-Юре»,<br />куратор направления «Исполнительное производство»</>}
-        imageUrl="/images/smolyaninova.webp"
+        name="Светлана Андреевна Наливкина"
+        position={<>Юрист, партнёр ЮК «Де-Юре»,<br />куратор направления «Исполнительное производство»</>}
+        imageUrl="/images/nalivkina.webp"
         description={[
           <span key="1" style={{ color: 'var(--color-deep-blue)', display: 'block' }}>
-            Марина Валерьевна Смольянинова более 13 лет работала в Федеральной службе судебных приставов, в том числе на руководящих должностях. Этот опыт помогает оценивать не только формальное основание запрета, но и реальный порядок движения постановлений между приставом и регистрационным органом.
+            Светлана Андреевна Наливкина занимается юридической практикой с 2001 года, работала главным юрисконсультом и начальником юридического отдела в банковской сфере. Многолетняя судебная практика и опыт сопровождения взысканий помогают оценивать не только формальное основание запрета, но и реальный порядок взаимодействия приставов, банков и регистрационных органов.
           </span>,
           <ul key="2" style={{ listStyle: 'none', padding: 0, margin: '16px 0 0 0', display: 'flex', flexDirection: 'column', gap: '10px' }}>
             <li style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)', lineHeight: 1.55 }}>
@@ -788,11 +788,11 @@ export default function SnyatieArestaAvtoClient() {
               <span>Сопровождает доверителей в Липецке и Липецкой области, а также ведёт дистанционную подготовку процессуальных документов по всей России.</span>
             </li>
           </ul>,
-          <a key="3" href="/specialisty/smolyaninova-marina-valerevna/" style={{ display: 'inline-block', marginTop: '16px', fontSize: '14px', color: 'var(--color-primary)', textDecoration: 'underline', textUnderlineOffset: '4px' }}>
-            Подробнее о Марине Валерьевне Смольяниновой →
+          <a key="3" href="/specialisty/nalivkina-svetlana-andreevna/" style={{ display: 'inline-block', marginTop: '16px', fontSize: '14px', color: 'var(--color-primary)', textDecoration: 'underline', textUnderlineOffset: '4px' }}>
+            Подробнее о Светлане Андреевне Наливкиной →
           </a>
         ]}
-        buttonText="Обратиться к Марине Смольяниновой"
+        buttonText="Обратиться к Светлане Наливкиной"
         buttonHref="#form"
       />
 
@@ -1094,7 +1094,7 @@ export default function SnyatieArestaAvtoClient() {
                 Не можете продать или зарегистрировать автомобиль из-за запрета?
               </h2>
               <p style={{ color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, fontSize: '16px', lineHeight: 1.6, marginBottom: '24px', textWrap: 'balance' }}>
-                Пришлите сведения об ограничении, постановление пристава и документы на автомобиль. Обращение передадим Марине Валерьевне Смольяниновой. Она проверит основания, количество запретов и согласует с вами понятный план действий.
+                Пришлите сведения об ограничении, постановление пристава и документы на автомобиль. Обращение передадим Светлане Андреевне Наливкиной. Она проверит основания, количество запретов и согласует с вами понятный план действий.
               </p>
 
               <div style={{ background: 'var(--gradient-cream)', padding: '24px', borderLeft: '3px solid var(--color-gold)', marginTop: '0', marginBottom: '0' }}>
@@ -1120,7 +1120,7 @@ export default function SnyatieArestaAvtoClient() {
                   { name: 'source_page', value: 'https://dejure-help.ru/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/snyatie-aresta-s-avtomobilya/' },
                   { name: 'direction', value: 'Юрист по исполнительному производству' },
                   { name: 'service', value: 'Снятие ареста с автомобиля' },
-                  { name: 'selected_specialist', value: 'smolyaninova-marina-valerevna' }
+                  { name: 'selected_specialist', value: 'nalivkina-svetlana-andreevna' }
                 ]}
               />
             </div>

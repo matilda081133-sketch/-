@@ -276,12 +276,12 @@ export default function SnyatieArestaSchetaClient() {
           { text: 'Проверяем основание каждого ареста' },
           { text: 'Отмена блокировки счетов и карт' },
           { text: 'Защита зарплаты, пенсий и пособий' },
-          { text: 'Куратор — 13 лет опыта в ФССП' },
+          { text: 'Куратор — партнёр ЮК с практикой с 2001 года' },
         ]}
-        imageUrl="/images/smolyaninova.webp"
-        imageName="Марина Валерьевна Смольянинова"
-        imageSubtitle="Ведущий юрист ЮК «Де-Юре», куратор направления «Исполнительное производство»"
-        imageObjectPosition="center 25%"
+        imageUrl="/images/nalivkina.webp"
+        imageName="Светлана Андреевна Наливкина"
+        imageSubtitle="Юрист, партнёр ЮК «Де-Юре», куратор направления «Исполнительное производство»"
+        imageObjectPosition="center 15%"
       />
 
       {/* ═══ БЛОК 2: В КАКИХ СИТУАЦИЯХ ПОМОГАЕМ СНЯТЬ АРЕСТ ═══ */}
@@ -795,33 +795,33 @@ export default function SnyatieArestaSchetaClient() {
         </div>
       </section>
 
-      {/* ═══ БЛОК 5: ВЕДУЩИЙ ЮРИСТ ПО УСЛУГЕ ═══ */}
+      {/* ═══ БЛОК 5: КУРАТОР НАПРАВЛЕНИЯ ═══ */}
       <SpecialistBlock
         title="Куратор направления"
-        name="Марина Валерьевна Смольянинова"
-        position={<>Ведущий юрист ЮК «Де-Юре»,<br />куратор направления «Исполнительное производство»</>}
-        imageUrl="/images/smolyaninova.webp"
-        imagePosition="center 25%"
+        name="Светлана Андреевна Наливкина"
+        position={<>Юрист, партнёр ЮК «Де-Юре»,<br />куратор направления «Исполнительное производство»</>}
+        imageUrl="/images/nalivkina.webp"
+        imagePosition="center 15%"
         description={[
           <span key="1" style={{ color: 'var(--color-deep-blue)', display: 'block' }}>
-            Марина Валерьевна более 13 лет работала в Федеральной службе судебных приставов, в том числе на руководящих должностях. Контролировала исполнительные производства, рассматривала обращения и жалобы, взаимодействовала с судами, банками и государственными органами. Этот опыт помогает определить источник ограничения, проверить правомерность ареста и выстроить маршрут до фактической разблокировки счёта.
+            Светлана Андреевна Наливкина занимается юридической практикой с 2001 года, работала ведущим и главным юрисконсультом, руководителем юридического отдела в крупнейших банках (Сбербанк, Банк Москвы, Россельхозбанк). Знание банковских процедур исполнения постановлений и судебного оспаривания помогает быстро определить источник ограничения, проверить правомерность ареста и выстроить маршрут до фактической разблокировки счёта.
           </span>,
           <ul key="2" style={{ listStyle: 'none', padding: 0, margin: '16px 0 0 0', display: 'flex', flexDirection: 'column', gap: '10px' }}>
             <li style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)', lineHeight: 1.55 }}>
               <div style={{ width: '6px', height: '6px', minWidth: '6px', background: 'var(--color-gold)', borderRadius: '50%', flexShrink: 0, marginTop: '8px' }}></div>
-              <span>Более 13 лет работы в ФССП, включая руководящие должности</span>
+              <span>Более 23 лет юридической практики (с 2001 года), опыт работы в банках и судах</span>
             </li>
             <li style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)', lineHeight: 1.55 }}>
               <div style={{ width: '6px', height: '6px', minWidth: '6px', background: 'var(--color-gold)', borderRadius: '50%', flexShrink: 0, marginTop: '8px' }}></div>
-              <span>Практическое знание порядка взаимодействия приставов с банками и вынесения постановлений</span>
+              <span>Глубокое знание порядка исполнения постановлений в банках и судебного оспаривания</span>
             </li>
             <li style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)', lineHeight: 1.55 }}>
               <div style={{ width: '6px', height: '6px', minWidth: '6px', background: 'var(--color-gold)', borderRadius: '50%', flexShrink: 0, marginTop: '8px' }}></div>
               <span>Сопровождает доверителей в Липецке и Липецкой области, а также дистанционно по всей РФ</span>
             </li>
           </ul>,
-          <a key="3" href="/specialisty/smolyaninova-marina-valerevna/" style={{ display: 'inline-block', marginTop: '16px', fontSize: '14px', color: 'var(--color-primary)', textDecoration: 'underline', textUnderlineOffset: '4px' }}>
-            Подробнее о Марине Валерьевне Смольяниновой →
+          <a key="3" href="/specialisty/nalivkina-svetlana-andreevna/" style={{ display: 'inline-block', marginTop: '16px', fontSize: '14px', color: 'var(--color-primary)', textDecoration: 'underline', textUnderlineOffset: '4px' }}>
+            Подробнее о Светлане Андреевне Наливкиной →
           </a>
         ]}
         buttonText="Задать вопрос юристу"
@@ -1104,10 +1104,10 @@ export default function SnyatieArestaSchetaClient() {
                 </span>
               </div>
               <h2 style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', marginBottom: '16px', lineHeight: 1.2, marginTop: 0, textWrap: 'balance' }}>
-                Обсудите арест счёта с Мариной Валерьевной Смольяниновой
+                Обсудите арест счёта со Светланой Андреевной Наливкиной
               </h2>
               <p style={{ color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, fontSize: '16px', lineHeight: 1.6, marginBottom: '24px', textWrap: 'balance' }}>
-                Кратко укажите банк, когда обнаружили ограничение, номер исполнительного производства и погашен ли долг, если это известно. Обращение передадим Марине Валерьевне Смольяниновой. Она проверит основания, подскажет необходимые документы и согласует с вами консультацию.
+                Кратко укажите банк, когда обнаружили ограничение, номер исполнительного производства и погашен ли долг, если это известно. Обращение передадим Светлане Андреевне Наливкиной. Она проверит основания, подскажет необходимые документы и согласует с вами консультацию.
               </p>
 
               <div style={{ background: 'var(--gradient-cream)', padding: '24px', borderLeft: '3px solid var(--color-gold)', marginTop: '0', marginBottom: '0' }}>
@@ -1133,7 +1133,7 @@ export default function SnyatieArestaSchetaClient() {
                   { name: 'source_page', value: 'https://dejure-help.ru/grazhdanam/yurist-po-ispolnitelnomu-proizvodstvu/snyatie-aresta-so-scheta/' },
                   { name: 'direction', value: 'Юрист по исполнительному производству' },
                   { name: 'service', value: 'Снятие ареста со счёта' },
-                  { name: 'selected_specialist', value: 'smolyaninova-marina-valerevna' }
+                  { name: 'selected_specialist', value: 'nalivkina-svetlana-andreevna' }
                 ]}
               />
             </div>

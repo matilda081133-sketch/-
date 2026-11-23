@@ -410,9 +410,10 @@ export default function VzyskanieDolgovClient() {
         primaryCtaSubtext="Ответим в течение 15 минут в рабочее время"
         secondaryCtaText="Позвонить юристу"
         secondaryCtaLink="tel:+74742201525"
-        imageUrl="/images/smolyaninova.webp"
-        imageName="Смольянинова Марина Валерьевна"
-        imageSubtitle="Ведущий юрист ЮК «Де-Юре» • куратор направления"
+        imageUrl="/images/nalivkina.webp"
+        imageObjectPosition="center 15%"
+        imageName="Наливкина Светлана Андреевна"
+        imageSubtitle="Юрист, партнёр ЮК «Де-Юре» • куратор направления"
       />
 
       {/* ═══ БЛОК 2: СИТУАЦИИ (ШАБЛОН ИНТЕРАКТИВНОГО НАВИГАТОРА СИТУАЦИЙ) ═══ */}
@@ -1385,13 +1386,13 @@ export default function VzyskanieDolgovClient() {
       {/* ═══ БЛОК 10: КУРАТОР НАПРАВЛЕНИЯ (ШАБЛОН SPECIALIST BLOCK) ═══ */}
       <SpecialistBlock
         title="Куратор направления"
-        name="Марина Валерьевна Смольянинова"
-        position={<>Ведущий юрист ЮК «Де-Юре»,<br />куратор направления по взысканию задолженности</>}
-        imageUrl="/images/smolyaninova.webp"
-        imagePosition="center 25%"
+        name="Светлана Андреевна Наливкина"
+        position={<>Юрист, партнёр ЮК «Де-Юре»,<br />куратор направления по взысканию задолженности</>}
+        imageUrl="/images/nalivkina.webp"
+        imagePosition="center 15%"
         description={[
           <span key="1" style={{ color: 'var(--color-deep-blue)', display: 'block' }}>
-            Марина Смольянинова оценивает взыскание с учётом всего маршрута: от доказательств и судебной позиции до практических вопросов исполнения. Более 13 лет работы в органах принудительного исполнения и более 5 лет судебной практики помогают заранее видеть, какие действия после решения действительно имеют значение, а какие создают только формальную активность.
+            Светлана Наливкина оценивает взыскание с учётом всего маршрута: от доказательств и судебной позиции до практических вопросов исполнения. Практика с 2001 года и многолетний опыт руководства юридическим отделом в банковской сфере помогают заранее видеть, какие действия до суда и после решения действительно приводят к возврату средств.
           </span>,
           <div
             key="2"
@@ -1409,7 +1410,7 @@ export default function VzyskanieDolgovClient() {
           <ul key="3" style={{ listStyle: 'none', padding: 0, margin: '16px 0 0 0', display: 'flex', flexDirection: 'column', gap: '10px' }}>
             <li style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)', lineHeight: 1.55 }}>
               <div style={{ width: '6px', height: '6px', minWidth: '6px', background: 'var(--color-gold)', borderRadius: '50%', flexShrink: 0, marginTop: '8px' }}></div>
-              <span>Более 13 лет работы в органах принудительного исполнения, включая руководящие должности</span>
+              <span>Юридическая практика с 2001 года, опыт руководства юридическим отделом в банковском секторе</span>
             </li>
             <li style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)', lineHeight: 1.55 }}>
               <div style={{ width: '6px', height: '6px', minWidth: '6px', background: 'var(--color-gold)', borderRadius: '50%', flexShrink: 0, marginTop: '8px' }}></div>
@@ -1420,7 +1421,7 @@ export default function VzyskanieDolgovClient() {
               <span>Сопровождает доверителей в Липецке и Липецкой области, а также дистанционно по всей РФ</span>
             </li>
           </ul>,
-          <a key="4" href="/specialisty/smolyaninova-marina-valerevna/" style={{ display: 'inline-block', marginTop: '16px', fontSize: '14px', color: 'var(--color-primary)', textDecoration: 'underline', textUnderlineOffset: '4px' }}>
+          <a key="4" href="/specialisty/nalivkina-svetlana-andreevna/" style={{ display: 'inline-block', marginTop: '16px', fontSize: '14px', color: 'var(--color-primary)', textDecoration: 'underline', textUnderlineOffset: '4px' }}>
             Подробнее о специалисте →
           </a>
         ]}

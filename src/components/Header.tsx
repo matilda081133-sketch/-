@@ -86,7 +86,6 @@ export default function Header() {
 
   const specialistsList = [
     { name: "Бобкин Аркадий Евгеньевич", role: "Директор, управляющий партнёр", href: "/specialisty/bobkin-arkadiy-evgenevich/" },
-    { name: "Смольянинова Марина Валерьевна", role: "Руководитель практики", href: "/specialisty/smolyaninova-marina-valerevna/" },
     { name: "Начешников Владимир Викторович", role: "Специалист ЮК «Де-Юре»", href: "/specialisty/nacheshnikov-vladimir-viktorovich/" },
     { name: "Полозова Елена Анатольевна", role: "Юрист", href: "/specialisty/polozova-elena-anatolevna/" },
     { name: "Наливкина Светлана Андреевна", role: "Юрист, партнёр", href: "/specialisty/nalivkina-svetlana-andreevna/" },

@@ -479,7 +479,7 @@ export default function GrazhdanamClient() {
       </section>
 
       <TeamCarousel 
-        filterSlugs={['bobkin-arkadiy-evgenevich', 'konopkin-dmitriy-sergeevich', 'smolyaninova-marina-valerevna', 'gusev-oleg-yurevich']} 
+        filterSlugs={['bobkin-arkadiy-evgenevich', 'konopkin-dmitriy-sergeevich', 'nalivkina-svetlana-andreevna', 'gusev-oleg-yurevich']} 
         showDisclaimer={true} 
       />
 

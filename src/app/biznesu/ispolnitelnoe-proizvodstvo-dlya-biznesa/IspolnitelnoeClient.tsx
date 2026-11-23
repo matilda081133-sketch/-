@@ -96,7 +96,7 @@ export default function IspolnitelnoeClient() {
         }
         subtitle={
           <span style={{ display: 'inline-block', maxWidth: '750px', textWrap: 'balance' }}>
-            Работаем на стороне взыскателя и должника. Оцениваем операционные риски, взаимодействуем с ФССП, банками и судами. Куратор направления — юрист с 13-летним опытом в службе судебных приставов.
+            Работаем на стороне взыскателя и должника. Оцениваем операционные риски, взаимодействуем с ФССП, банками и судами. Куратор направления — юрист, партнёр с практикой с 2001 года и опытом руководства юридическим отделом в банковской сфере.
           </span>
         }
         primaryCtaText="Обсудить ситуацию"
@@ -116,12 +116,12 @@ export default function IspolnitelnoeClient() {
           { text: 'Работаем на стороне взыскателя и должника' },
           { text: 'Оцениваем операционные риски бизнеса' },
           { text: 'Взаимодействуем с ФССП, банками, судами' },
-          { text: 'Куратор — 13 лет опыта в ФССП' },
+          { text: 'Куратор — партнёр ЮК с практикой с 2001 года' },
         ]}
-        imageUrl="/images/smolyaninova.webp"
-        imageObjectPosition="50% -75px"
-        imageName="Марина Валерьевна Смольянинова"
-        imageSubtitle="Ведущий юрист ЮК «Де-Юре», куратор направления «Исполнительное производство»"
+        imageUrl="/images/nalivkina.webp"
+        imageObjectPosition="center 15%"
+        imageName="Светлана Андреевна Наливкина"
+        imageSubtitle="Юрист, партнёр ЮК «Де-Юре», куратор направления «Исполнительное производство»"
       />
 
       {/* BLOK 2: RISKI */}
@@ -586,19 +586,19 @@ export default function IspolnitelnoeClient() {
       {/* BLOK 6: KURATOR */}
       <SpecialistBlock 
         title="Куратор направления"
-        name="Марина Валерьевна Смольянинова"
-        position={<>Ведущий юрист ЮК «Де-Юре»,<br />куратор направления «Исполнительное производство»</>}
-        imageUrl="/images/smolyaninova.webp"
-        profileHref="/specialisty/smolyaninova-marina-valerevna/"
-        profileText="Подробнее о Марине Валерьевне Смольяниновой →"
+        name="Светлана Андреевна Наливкина"
+        position={<>Юрист, партнёр ЮК «Де-Юре»,<br />куратор направления «Исполнительное производство»</>}
+        imageUrl="/images/nalivkina.webp"
+        profileHref="/specialisty/nalivkina-svetlana-andreevna/"
+        profileText="Подробнее о Светлане Андреевне Наливкиной →"
         description={[
           <span key="1" style={{ color: 'var(--color-deep-blue)', display: 'block' }}>
-            Марина Валерьевна Смольянинова курирует сопровождение исполнительного производства для юридических лиц и индивидуальных предпринимателей. Выстраивает стратегию защиты активов компании, взаимодействия со службой судебных приставов и банками, оспаривания незаконных действий и возврата задолженности.
+            Светлана Андреевна Наливкина курирует сопровождение исполнительного производства для юридических лиц и индивидуальных предпринимателей. Выстраивает стратегию защиты активов компании, взаимодействия со службой судебных приставов и банками, оспаривания незаконных действий и возврата задолженности.
           </span>,
           <ul key="2" style={{ listStyle: 'none', padding: 0, margin: '16px 0 0 0', display: 'flex', flexDirection: 'column', gap: '10px' }}>
             <li style={{ display: 'flex', alignItems: 'center', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)' }}>
               <div style={{ width: '6px', height: '6px', minWidth: '6px', background: 'var(--color-gold)', borderRadius: '50%', flexShrink: 0 }}></div>
-              <span>13 лет опыта работы в Федеральной службе судебных приставов (ФССП)</span>
+              <span>Более 23 лет юридической практики (с 2001 года)</span>
             </li>
             <li style={{ display: 'flex', alignItems: 'center', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)' }}>
               <div style={{ width: '6px', height: '6px', minWidth: '6px', background: 'var(--color-gold)', borderRadius: '50%', flexShrink: 0 }}></div>
@@ -610,7 +610,7 @@ export default function IspolnitelnoeClient() {
             </li>
           </ul>
         ]}
-        buttonText="Задать вопрос Марине Валерьевне"
+        buttonText="Задать вопрос Светлане Андреевне"
         buttonHref="#form"
       />
 

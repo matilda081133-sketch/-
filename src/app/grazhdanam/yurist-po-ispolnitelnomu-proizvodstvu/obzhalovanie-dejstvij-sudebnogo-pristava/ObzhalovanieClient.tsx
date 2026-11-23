@@ -343,15 +343,15 @@ export default function ObzhalovanieClient() {
           </span>
         }
         trustItems={[
-          { text: 'Куратор — Марина Смольянинова (13 лет в ФССП)' },
+          { text: 'Куратор — Светлана Наливкина (практика с 2001 года)' },
           { text: 'Оспаривание постановлений, действий и бездействия' },
           { text: 'Жалоба в порядке подчинённости и административный иск' },
           { text: 'Защита прав должников и взыскателей' }
         ]}
-        imageUrl="/images/smolyaninova.webp"
-        imageName="Марина Валерьевна Смольянинова"
-        imageSubtitle="Ведущий юрист ЮК «Де-Юре», куратор направления «Исполнительное производство»"
-        imageObjectPosition="center 25%"
+        imageUrl="/images/nalivkina.webp"
+        imageName="Светлана Андреевна Наливкина"
+        imageSubtitle="Юрист, партнёр ЮК «Де-Юре», куратор направления «Исполнительное производство»"
+        imageObjectPosition="center 15%"
       />
 
       {/* ═══ БЛОК 2: КОГДА ВАЖНО ОБРАТИТЬСЯ БЕЗ ПРОМЕДЛЕНИЯ ═══ */}
@@ -623,26 +623,26 @@ export default function ObzhalovanieClient() {
         </div>
       </section>
 
-      {/* ═══ БЛОК 6: ВЕДУЩИЙ ЮРИСТ ПО УСЛУГЕ ═══ */}
+      {/* ═══ БЛОК 6: КУРАТОР НАПРАВЛЕНИЯ ═══ */}
       <SpecialistBlock
-        title="Ведущий юрист по услуге"
-        name="Марина Валерьевна Смольянинова"
-        position={<>Ведущий юрист ЮК «Де-Юре»,<br />куратор направления «Исполнительное производство»</>}
-        imageUrl="/images/smolyaninova.webp"
-        profileHref="/specialisty/smolyaninova-marina-valerevna/"
-        profileText="Подробнее о Марине Валерьевне Смольяниновой →"
+        title="Куратор направления"
+        name="Светлана Андреевна Наливкина"
+        position={<>Юрист, партнёр ЮК «Де-Юре»,<br />куратор направления «Исполнительное производство»</>}
+        imageUrl="/images/nalivkina.webp"
+        profileHref="/specialisty/nalivkina-svetlana-andreevna/"
+        profileText="Подробнее о Светлане Андреевне Наливкиной →"
         description={[
           <span key="1" style={{ color: 'var(--color-deep-blue)', display: 'block' }}>
-            Марина Валерьевна более 13 лет работала в Федеральной службе судебных приставов, в том числе на руководящих должностях. Рассматривала обращения и жалобы, контролировала исполнительные производства и работу сотрудников, участвовала во взаимодействии с судами и государственными органами. Этот опыт помогает оценивать не только формальное нарушение, но и то, какое требование способно привести к реальному действию.
+            Светлана Андреевна Наливкина занимается юридической практикой с 2001 года, работала главным юрисконсультом и начальником юридического отдела в банковском секторе, представляет интересы граждан и организаций в судах и государственных органах. Этот опыт помогает оценивать не только формальное нарушение, но и то, какое правовое требование способно привести к реальному результату.
           </span>,
           <ul key="2" style={{ listStyle: 'none', padding: 0, margin: '16px 0 0 0', display: 'flex', flexDirection: 'column', gap: '10px' }}>
             <li style={{ display: 'flex', alignItems: 'center', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)' }}>
               <div style={{ width: '6px', height: '6px', minWidth: '6px', background: 'var(--color-gold)', borderRadius: '50%', flexShrink: 0 }}></div>
-              <span>Более 13 лет работы в ФССП, включая руководящие должности</span>
+              <span>Более 23 лет юридической практики (с 2001 года), опыт работы в банках и судах</span>
             </li>
             <li style={{ display: 'flex', alignItems: 'center', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)' }}>
               <div style={{ width: '6px', height: '6px', minWidth: '6px', background: 'var(--color-gold)', borderRadius: '50%', flexShrink: 0 }}></div>
-              <span>Практическое знание порядка рассмотрения жалоб и организации исполнительных действий</span>
+              <span>Практика судебного и ведомственного обжалования, сопровождения исполнительных действий</span>
             </li>
             <li style={{ display: 'flex', alignItems: 'center', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)' }}>
               <div style={{ width: '6px', height: '6px', minWidth: '6px', background: 'var(--color-gold)', borderRadius: '50%', flexShrink: 0 }}></div>
@@ -935,11 +935,11 @@ export default function ObzhalovanieClient() {
               </div>
               <h2 style={{ fontSize: '36px', fontFamily: 'var(--font-serif)', color: 'var(--color-deep-blue)', marginBottom: '16px', lineHeight: 1.2, marginTop: 0, textWrap: 'balance' }}>
                 <span style={{ display: 'inline-block' }}>Обсудите ситуацию</span> <br />
-                <span style={{ display: 'inline-block' }}>с Мариной Валерьевной</span> <br />
-                <span style={{ display: 'inline-block' }}>Смольяниновой</span>
+                <span style={{ display: 'inline-block' }}>со Светланой Андреевной</span> <br />
+                <span style={{ display: 'inline-block' }}>Наливкиной</span>
               </h2>
               <p style={{ color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, fontSize: '16px', lineHeight: 1.6, marginBottom: '24px', textWrap: 'balance' }}>
-                Кратко опишите, какое постановление получили, что сделал или не сделал пристав и когда Вы об этом узнали. Обращение передадим Марине Валерьевне Смольяниновой. Она проверит документы, оценит ситуацию и согласует с Вами консультацию.
+                Кратко опишите, какое постановление получили, что сделал или не сделал пристав и когда Вы об этом узнали. Обращение передадим Светлане Андреевне Наливкиной. Она проверит документы, оценит ситуацию и согласует с Вами консультацию.
               </p>
               
               <div style={{ background: 'var(--gradient-cream)', padding: '24px', borderLeft: '3px solid var(--color-gold)', marginTop: '0', marginBottom: '0' }}>
@@ -975,7 +975,7 @@ export default function ObzhalovanieClient() {
                   { name: 'page_type', value: 'service' },
                   { name: 'direction', value: 'Юрист по исполнительному производству' },
                   { name: 'service', value: 'Обжалование действий и бездействия пристава' },
-                  { name: 'selected_specialist', value: 'smolyaninova-marina-valerevna' }
+                  { name: 'selected_specialist', value: 'nalivkina-svetlana-andreevna' }
                 ]}
               />
             </div>

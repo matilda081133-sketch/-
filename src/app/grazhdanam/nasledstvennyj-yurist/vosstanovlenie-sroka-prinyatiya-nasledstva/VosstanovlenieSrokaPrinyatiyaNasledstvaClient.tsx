@@ -230,10 +230,10 @@ export default function VosstanovlenieSrokaPrinyatiyaNasledstvaClient() {
       },
       {
         '@type': 'Person',
-        '@id': 'https://dejure-help.ru/specialisty/smolyaninova-marina-valerevna/#person',
-        'name': 'Марина Валерьевна Смольянинова',
-        'jobTitle': 'Ведущий юрист',
-        'url': 'https://dejure-help.ru/specialisty/smolyaninova-marina-valerevna/',
+        '@id': 'https://dejure-help.ru/specialisty/nalivkina-svetlana-andreevna/#person',
+        'name': 'Светлана Андреевна Наливкина',
+        'jobTitle': 'Юрист, партнёр ЮК «Де-Юре»',
+        'url': 'https://dejure-help.ru/specialisty/nalivkina-svetlana-andreevna/',
         'worksFor': { '@id': 'https://dejure-help.ru/#organization' }
       }
     ]
@@ -292,11 +292,11 @@ export default function VosstanovlenieSrokaPrinyatiyaNasledstvaClient() {
             </span>
           </span>
         }
-        trustItems={[{"text":"Восстановление срока по ст. 1155 ГК РФ"},{"text":"Доказывание уважительности причин пропуска в суде"},{"text":"Аннулирование ранее выданных свидетельств нотариуса"},{"text":"Куратор — юрист М. В. Смольянинова"}]}
-        imageUrl="/images/smolyaninova.webp"
-        imageName="Марина Валерьевна Смольянинова"
-        imageSubtitle="Ведущий юрист ЮК «Де-Юре», куратор направления «Наследственное право»"
-        imageObjectPosition="center 20%"
+        trustItems={[{"text":"Восстановление срока по ст. 1155 ГК РФ"},{"text":"Доказывание уважительности причин пропуска в суде"},{"text":"Аннулирование ранее выданных свидетельств нотариуса"},{"text":"Куратор — юрист С. А. Наливкина"}]}
+        imageUrl="/images/nalivkina.webp"
+        imageName="Светлана Андреевна Наливкина"
+        imageSubtitle="Юрист, партнёр ЮК «Де-Юре», куратор направления «Наследственное право»"
+        imageObjectPosition="center 15%"
       />
 
       {/* ═══ БЛОК 2: В КАКИХ СИТУАЦИЯХ МЫ ПОМОГАЕМ (ТИПОВОЙ ШАБЛОН) ═══ */}
@@ -465,15 +465,15 @@ export default function VosstanovlenieSrokaPrinyatiyaNasledstvaClient() {
       {/* ═══ БЛОК 3: КУРАТОР НАПРАВЛЕНИЯ (ТИПОВОЙ ШАБЛОН) ═══ */}
       <SpecialistBlock
         title="Куратор направления"
-        name="Марина Валерьевна Смольянинова"
-        position={<>Ведущий юрист ЮК &#171;Де-Юре&#187;,<br />куратор направления &#171;Наследственное право&#187;</>}
-        imageUrl="/images/smolyaninova.webp"
-        imagePosition="center 20%"
-        profileHref="/specialisty/smolyaninova-marina-valerevna/"
-        profileText="Подробнее о Марине Валерьевне Смольяниновой →"
+        name="Светлана Андреевна Наливкина"
+        position={<>Юрист, партнёр ЮК &#171;Де-Юре&#187;,<br />куратор направления &#171;Наследственное право&#187;</>}
+        imageUrl="/images/nalivkina.webp"
+        imagePosition="center 15%"
+        profileHref="/specialisty/nalivkina-svetlana-andreevna/"
+        profileText="Подробнее о Светлане Андреевне Наливкиной →"
         description={[
           <span key="1" style={{ color: 'var(--color-deep-blue)', display: 'block' }}>
-            13 лет профессионального опыта в сфере правоприменения и защиты прав граждан: глубокое знание процедур, требований нотариата и судебной практики.
+            Более 23 лет юридической практики (с 2001 года) в сфере защиты прав граждан и имущественных споров: глубокое знание процедур, требований нотариата и судебной практики.
           </span>,
           <ul key="2" style={{ listStyle: 'none', padding: 0, margin: '16px 0 0 0', display: 'flex', flexDirection: 'column', gap: '10px' }}>
             <li style={{ display: 'flex', alignItems: 'center', gap: '12px', fontSize: '15px', color: 'var(--color-deep-blue)' }}>
@@ -554,7 +554,7 @@ export default function VosstanovlenieSrokaPrinyatiyaNasledstvaClient() {
                 <span className="hero-title-span-mobile" style={{ display: 'block', whiteSpace: 'nowrap' }}>с наследственным юристом</span>
               </h2>
               <p style={{ color: 'var(--color-deep-blue)', opacity: 0.9, fontWeight: 500, fontSize: '16px', lineHeight: 1.6, marginBottom: '24px', textWrap: 'balance' }}>
-                Опишите ситуацию, состав имущества и статус обращения к нотариусу. Обращение передадим Марине Валерьевне Смольяниновой. Она проверит документы, оценит риски и свяжется с вами для согласования порядка действий.
+                Опишите ситуацию, состав имущества и статус обращения к нотариусу. Обращение передадим Светлане Андреевне Наливкиной. Она проверит документы, оценит риски и свяжется с вами для согласования порядка действий.
               </p>
               
                             <div style={{ background: 'var(--gradient-cream)', padding: '24px', borderLeft: '3px solid var(--color-gold)', marginTop: '0', marginBottom: '20px' }}>
@@ -593,7 +593,7 @@ export default function VosstanovlenieSrokaPrinyatiyaNasledstvaClient() {
                 hiddenFields={[
                     { name: 'service', value: 'Восстановление срока принятия наследства в Липецке | Де-Юре' },
                     { name: 'category', value: 'nasledstvennyj-yurist/vosstanovlenie-sroka-prinyatiya-nasledstva' },
-                    { name: 'specialist', value: 'Марина Валерьевна Смольянинова' }
+                    { name: 'specialist', value: 'Светлана Андреевна Наливкина' }
                   ]}
               />
             </div>
