@@ -44,8 +44,6 @@ export function resolveDirection(
   if (cleanPath.includes('/avtoyurist')) return 'Автоюрист';
   if (cleanPath.includes('/trudovye-spory-s-rabotnikami')) return 'Трудовые споры с работниками';
   if (cleanPath.includes('/trudovoj-yurist')) return 'Трудовой юрист';
-  if (cleanPath.includes('/migracionnoe-soprovozhdenie-biznesa')) return 'Миграционное сопровождение бизнеса';
-  if (cleanPath.includes('/migracionnyj-yurist')) return 'Миграционный юрист';
   if (cleanPath.includes('/bankrotstvo-fizicheskih-lic')) return 'Банкротство физических лиц';
   if (cleanPath.includes('/bankrotstvo-biznesa')) return 'Банкротство бизнеса';
   if (cleanPath.includes('/yuridicheskoe-soprovozhdenie-biznesa')) return 'Юридическое сопровождение бизнеса';

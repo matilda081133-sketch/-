@@ -521,10 +521,6 @@
       {
         "label": "Соколов и партнеры",
         "href": "/sokolov-i-partnery"
-      },
-      {
-        "label": "Миграционные споры (физические лица)",
-        "href": "/migratsionnye-spory-(fizicheskie-litsa)"
       }
     ]
   }
@@ -623,10 +619,6 @@ export const megaMenuB2B = [
   {
     "title": "Прочее для бизнеса",
     "links": [
-      {
-        "label": "Миграционные споры (юридические лица)",
-        "href": "/migratsionnye-spory-(yuridicheskie-litsa)"
-      },
       {
         "label": "Исполнительное производство",
         "href": "/ispolnitelьnoe-proizvodstvo"

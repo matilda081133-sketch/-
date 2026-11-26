@@ -43,7 +43,7 @@ export default function GrazhdanamPage() {
       "@type": "ItemList",
       "@id": "https://dejure-help.ru/grazhdanam/#itemlist",
       "name": "Направления юридической помощи гражданам",
-      "numberOfItems": 14,
+      "numberOfItems": 13,
       "itemListElement": [
         { "@type": "ListItem", "position": 1, "name": "Семейный юрист" },
         { "@type": "ListItem", "position": 2, "name": "Наследственный юрист" },
@@ -57,8 +57,7 @@ export default function GrazhdanamPage() {
         { "@type": "ListItem", "position": 10, "name": "Автоюрист" },
         { "@type": "ListItem", "position": 11, "name": "Трудовой юрист" },
         { "@type": "ListItem", "position": 12, "name": "Адвокат по уголовным делам", "url": "https://dejure-help.ru/grazhdanam/advokat-po-ugolovnym-delam/" },
-        { "@type": "ListItem", "position": 13, "name": "Военный юрист", "url": "https://dejure-help.ru/grazhdanam/voennyj-yurist/" },
-        { "@type": "ListItem", "position": 14, "name": "Миграционный юрист" }
+        { "@type": "ListItem", "position": 13, "name": "Военный юрист", "url": "https://dejure-help.ru/grazhdanam/voennyj-yurist/" }
       ]
     },
     {

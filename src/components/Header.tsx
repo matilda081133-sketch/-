@@ -64,8 +64,7 @@ export default function Header() {
     { title: "Автоюрист", href: "/grazhdanam/avtoyurist/" },
     { title: "Трудовой юрист", href: "/grazhdanam/trudovoj-yurist/" },
     { title: "Адвокат по уголовным делам", href: "/grazhdanam/advokat-po-ugolovnym-delam/" },
-    { title: "Военный юрист", href: "/grazhdanam/voennyj-yurist/" },
-    { title: "Миграционный юрист", href: "/grazhdanam/migracionnyj-yurist/" }
+    { title: "Военный юрист", href: "/grazhdanam/voennyj-yurist/" }
   ];
 
   const b2bHubs = [
@@ -79,7 +78,6 @@ export default function Header() {
     { title: "Юридическое сопровождение бизнеса", href: "/biznesu/yuridicheskoe-soprovozhdenie-biznesa/" },
     { title: "Юрист по недвижимости и строительству для бизнеса", href: "/biznesu/yurist-po-nedvizhimosti-i-stroitelstvu-dlya-biznesa/" },
     { title: "Исполнительное производство для бизнеса", href: "/biznesu/ispolnitelnoe-proizvodstvo-dlya-biznesa/" },
-    { title: "Миграционное сопровождение бизнеса", href: "/biznesu/migracionnoe-soprovozhdenie-biznesa/" },
     { title: "Разблокировка расчётного счёта по 115-ФЗ", href: "/biznesu/razblokirovka-raschetnogo-scheta-po-115-fz/" },
     { title: "Уголовно-правовая защита бизнеса", href: "/biznesu/ugolovno-pravovaya-zashchita-biznesa/" }
   ];

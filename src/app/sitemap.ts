@@ -107,12 +107,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/biznesu/nalogovyj-yurist-dlya-biznesa/soprovozhdenie-nalogovyh-proverok/',
     '/biznesu/nalogovyj-yurist-dlya-biznesa/osparivanie-donachislenij-i-reshenij-fns/',
     '/biznesu/nalogovyj-yurist-dlya-biznesa/zashchita-pri-obvinenii-v-droblenii-biznesa/',
-    // Миграционное сопровождение бизнеса
-    '/biznesu/migracionnoe-soprovozhdenie-biznesa/',
-    '/biznesu/migracionnoe-soprovozhdenie-biznesa/yuridicheskoe-oformlenie-inostrannyh-rabotnikov/',
-    '/biznesu/migracionnoe-soprovozhdenie-biznesa/migracionnyj-audit-rabotodatelya/',
-    '/biznesu/migracionnoe-soprovozhdenie-biznesa/yurist-pri-migracionnoj-proverke-mvd/',
-    '/biznesu/migracionnoe-soprovozhdenie-biznesa/zashchita-rabotodatelya-po-state-18-15-koap-rf/',
     // Банкротство физических лиц
     '/grazhdanam/bankrotstvo-fizicheskih-lic/',
     '/grazhdanam/bankrotstvo-fizicheskih-lic/cherez-mfc/',
@@ -215,17 +209,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/grazhdanam/trudovoj-yurist/nezakonnoe-sokrashchenie/',
     '/grazhdanam/trudovoj-yurist/vzyskanie-zarabotnoj-platy/',
     '/grazhdanam/trudovoj-yurist/proizvodstvennaya-travma/',
-    // Миграционный юрист
-    '/grazhdanam/migracionnyj-yurist/',
-    '/grazhdanam/migracionnyj-yurist/otmena-zapreta-na-vezd-v-rossiyu/',
-    '/grazhdanam/migracionnyj-yurist/obzhalovanie-administrativnogo-vydvoreniya/',
-    '/grazhdanam/migracionnyj-yurist/obzhalovanie-resheniya-o-deportacii/',
-    '/grazhdanam/migracionnyj-yurist/obzhalovanie-nezhelatelnosti-prebyvaniya/',
-    '/grazhdanam/migracionnyj-yurist/isklyuchenie-iz-reestra-kontroliruemyh-lic/',
-    '/grazhdanam/migracionnyj-yurist/otkaz-annulirovanie-rvp-vnzh/',
-    '/grazhdanam/migracionnyj-yurist/poluchenie-rvp/',
-    '/grazhdanam/migracionnyj-yurist/poluchenie-vida-na-zhitelstvo/',
-    '/grazhdanam/migracionnyj-yurist/poluchenie-grazhdanstva-rf/',
     // Адвокат по уголовным делам
     '/grazhdanam/advokat-po-ugolovnym-delam/',
     '/grazhdanam/advokat-po-ugolovnym-delam/advokat-po-moshennichestvu/',

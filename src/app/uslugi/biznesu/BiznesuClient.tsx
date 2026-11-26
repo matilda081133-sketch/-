@@ -75,14 +75,6 @@ export default function BiznesuClient() {
       link: '/biznesu/trudovye-spory-s-rabotnikami/'
     },
     {
-      id: 'B2B-08',
-      group: 'group2',
-      groupName: 'Корпоративные, налоговые и кадровые вопросы',
-      title: 'Миграционное сопровождение бизнеса',
-      desc: 'Оформление иностранных работников, уведомления и кадровые документы, проверки МВД, обжалование штрафов.',
-      link: '/biznesu/migracionnoe-soprovozhdenie-biznesa/'
-    },
-    {
       id: 'B2B-09',
       group: 'group2',
       groupName: 'Корпоративные, налоговые и кадровые вопросы',
@@ -378,7 +370,7 @@ export default function BiznesuClient() {
 
 
 
-      {/* ═══ 2. КАТАЛОГ 13 НАПРАВЛЕНИЙ БИЗНЕСУ ═══ */}
+      {/* ═══ 2. КАТАЛОГ 12 НАПРАВЛЕНИЙ БИЗНЕСУ ═══ */}
       <section className="section bg-light" id="catalog" style={{ padding: '64px 0', background: 'var(--gradient-cream)' }}>
         <div className="container">
           <div style={{ maxWidth: '780px', marginBottom: '32px' }}>
@@ -399,7 +391,7 @@ export default function BiznesuClient() {
               className={`tab-btn ${activeTab === 'all' ? 'tab-btn-active' : 'tab-btn-inactive'}`}
               style={{ padding: '12px 24px', fontSize: '15px', fontWeight: 600, cursor: 'pointer', transition: 'all 0.3s' }}
             >
-              Все направления (13)
+              Все направления (12)
             </button>
             <button 
               onClick={() => setActiveTab('group1')}
@@ -413,7 +405,7 @@ export default function BiznesuClient() {
               className={`tab-btn ${activeTab === 'group2' ? 'tab-btn-active' : 'tab-btn-inactive'}`}
               style={{ padding: '12px 24px', fontSize: '15px', fontWeight: 600, cursor: 'pointer', transition: 'all 0.3s' }}
             >
-              Корпоративные, налоговые и кадровые (5)
+              Корпоративные, налоговые и кадровые (4)
             </button>
             <button 
               onClick={() => setActiveTab('group3')}
